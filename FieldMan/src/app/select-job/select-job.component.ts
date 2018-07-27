@@ -1,21 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Job } from '../BusinessModel/job';
 import {JobService} from '../service/job.service';
 import { Subscription } from 'rxjs/Subscription';
 import { CrewConfigComponent } from '../crew-config/crew-config.component';
-import { DialogService } from "ng2-bootstrap-modal";
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-select-job',
   templateUrl: './select-job.component.html',
-  styles: [] 
+  styles: [] ,
+  providers: [NgbModal],
 })
 export class SelectJobComponent implements OnInit{  
 
   public CurrentJob:Job;
   subscription: Subscription;
 
-  constructor(private jobService: JobService,private dialogService:DialogService) {
+  constructor(private jobService: JobService,private modalService: NgbModal) {
     this.CurrentJob=this.jobService.getCurrentJobObject();     
   }
 
@@ -33,15 +36,10 @@ export class SelectJobComponent implements OnInit{
   }
 
   OpenCrewConfig(){
-    let disposable = this.dialogService.addDialog(CrewConfigComponent)
-      // .subscribe((isConfirmed)=>{
-      //     //We get dialog result
-      //     if(isConfirmed) {
-      //         alert('accepted');
-      //     }
-      //     else {
-      //         alert('declined');
-      //     }
-      // });
+    alert("1");
+    let options: NgbModalOptions = {windowClass: 'modal-opened'};
+    const modalRef = this.modalService.open(CrewConfigComponent);   
+   alert("2");
+    
   }
 }

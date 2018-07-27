@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
 import { Crew } from '../BusinessModel/crew';
 
 
@@ -9,7 +8,7 @@ import { Crew } from '../BusinessModel/crew';
   templateUrl: './manage-crew.component.html',
   styles: []
 })
-export class ManageCrewComponent extends DialogComponent<Crew, boolean> implements Crew,OnInit {
+export class ManageCrewComponent implements Crew,OnInit {
   CrewId: string;
   CrewDescription:string
   ShiftLength:number
@@ -23,8 +22,8 @@ export class ManageCrewComponent extends DialogComponent<Crew, boolean> implemen
   SelectedCrew:String
   
 
-  constructor(dialogService: DialogService) {    
-    super(dialogService); 
+  constructor() {    
+    
   }
     
 

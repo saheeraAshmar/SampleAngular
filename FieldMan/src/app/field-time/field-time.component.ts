@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
 import { CrewConfigComponent } from '../crew-config/crew-config.component';
-import { DialogService } from "ng2-bootstrap-modal";
+
 
 import { Job } from '../BusinessModel/job';
 
