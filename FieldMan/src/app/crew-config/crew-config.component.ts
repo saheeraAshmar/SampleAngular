@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 import { ManageCrewComponent } from '../manage-crew/manage-crew.component';
 import { Crew } from '../BusinessModel/crew';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
@@ -6,7 +6,15 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-crew-config',
   templateUrl: './crew-config.component.html',
-  styles: []
+  encapsulation: ViewEncapsulation.None,
+  styles: [`
+    @media screen {
+        .modal-adaptive .modal-lg {
+            width: 65% !important;
+            max-width: calc(90%);
+            opacity: 1 !important;
+        }
+        `]
 })
 export class CrewConfigComponent{ 
   Roles=[];
@@ -27,36 +35,21 @@ export class CrewConfigComponent{
       new Crew("01-1000.003","Crew3",8,true),
       new Crew("01-1000.004","Crew4",8,true)
     ]; 
-
-   // alert("Opening");
-
-    
-
   }
 
   
  
   OpenManageCrew(flag):void{   
     
-    if(flag){
-    //  this.dialogService.addDialog(ManageCrewComponent,{
-    //     CrewId:""
-    //  });        
+    if(flag){  
   }
     else{
       if(this.SelectedCrew==""){
         alert("Select a Crew for Updation")
         return;
       }      
-    //  this.dialogService.addDialog(ManageCrewComponent,{
-    //     CrewId:this.SelectedCrew,
-    //   })  
+    
     }      
   }
-  // confirm() {
-  //   // we set dialog result as true on click on confirm button, 
-  //   // then we can get dialog result from caller code 
-  //   this.result = true;
-  //   this.close();
-  // }
+ 
 }

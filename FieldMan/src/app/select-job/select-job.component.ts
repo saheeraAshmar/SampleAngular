@@ -35,11 +35,9 @@ export class SelectJobComponent implements OnInit{
     this.jobService.setCurrentJob(newJob);
   }
 
-  OpenCrewConfig(){
-    alert("1");
-    let options: NgbModalOptions = {windowClass: 'modal-opened'};
-    const modalRef = this.modalService.open(CrewConfigComponent);   
-   alert("2");
+  OpenCrewConfig(){    
+    let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
+    const modalRef = this.modalService.open(CrewConfigComponent,options);     
     
   }
 }

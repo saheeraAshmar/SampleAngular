@@ -1,7 +1,8 @@
-<div class="modal-dialog" style="width: 1300px;">
-  <div class="modal-content" >
+<!-- <div class="modal-dialog" style="width: 1300px;"> -->
+<!-- <ng-template #content let-c="close" let-d="dismiss"> -->
+  <!-- <div class="modal-content" > -->
      <div class="modal-header">
-       <button type="button" class="close" (click)="close()" >&times;</button>
+       <button type="button" class="close" (click)="activeModal.dismiss('Cross click')" >&times;</button>
        <h4 class="modal-title">Crew Configuration</h4>
      </div>
      <div class="modal-body">
@@ -83,7 +84,8 @@
         </div>   
      </div>     
      <div class="modal-footer">
-       <button type="button" class="btn btn-default" (click)="close()" >Cancel</button>
+       <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')" >Cancel</button>
      </div>
-   </div>
-</div>
+   <!-- </div> -->
+<!-- </ng-template> -->
+<!-- </div> -->
