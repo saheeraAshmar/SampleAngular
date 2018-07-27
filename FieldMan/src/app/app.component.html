@@ -1,0 +1,52 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<div class="container">
+    <div class="page-header">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="col-12 col-md-2">
+      <label style="color:blue">{{version}}</label>
+    </div>
+    <div class="col-12 col-md-4">
+      <table class="table table-bordered">
+        <thead style="background-color: #ddd">
+          <tr>
+            <td style="text-align: center;">
+              Job Name
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center;">
+              {{CurrentJob.jobId}} : {{CurrentJob.jobDescription}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+<app-menu></app-menu>
+
+ <router-outlet></router-outlet>
+
+<!-- <div class="container">
+  <div class="page-header"> -->
+    <!-- <div class="row">
+      <div class="col">    
+        <h1>{{title}}</h1>
+      </div>
+      <div class="col">
+        {{version}}
+      </div>
+      <div class="col">
+        Job Table
+      </div>
+    </div> -->
+  <!-- </div>
+  </div> -->

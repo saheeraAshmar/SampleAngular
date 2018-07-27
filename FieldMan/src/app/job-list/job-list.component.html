@@ -1,0 +1,5 @@
+<select [(ngModel)]='SelectedJobId' (ngModelChange)="onChangeJob($event)" class="form-control">
+    <option *ngFor="let job of jobs" value= {{job.jobId}}>
+       {{job.jobId }} : {{ job.jobDescription}}
+    </option>
+  </select>

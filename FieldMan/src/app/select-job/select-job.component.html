@@ -1,0 +1,35 @@
+<div class="container">
+    <div style="height:35px"></div>
+    <div class="well well-sm" style="background-color: #ddd">
+        Job Information
+    </div>
+    <div style="padding-left: 75px;padding-right: 75px;">
+        <div class="row">
+            <div class="col col-md-8">
+                Job : <app-job-list (jobChanged)="UpdateCurrentJob($event)" [SelectedJobId]="getCurrentJobId()"></app-job-list>
+            </div>
+            <div class="col col-md-4">
+                Constr.Mgr : <input type="text" [(ngModel)]="CurrentJob.ConstructionManager" class="form-control">
+            </div>
+        </div>
+        <div style="height: 28px;"></div>
+        <div  class="row">
+            <!-- <div class="col col-md-8">
+                <input type="checkbox" [(ngModel)]="CurrentJob.IsCertifiedJob">Certified Job 
+            </div> -->
+            <div class="col col-md-8 checkbox">
+                <label><input type="checkbox" [(ngModel)]="CurrentJob.IsCertifiedJob">Certified Job</label>
+            </div>
+            <div class="col col-md-4">
+                Foreman : <input type="text" [(ngModel)]="CurrentJob.ForeMan" class="form-control">    
+            </div>   
+        </div>
+    </div>
+    <div style="height: 28px;"></div>
+    <div class="well well-sm" style="background-color: #ddd">
+            Job Configuration Items
+    </div>
+    <div style="padding-left: 75px;padding-right: 75px;">
+        <input type="button" value="Create or Change Crew Information" class="btn btn-default" (click)="OpenCrewConfig()">
+    </div>
+</div>

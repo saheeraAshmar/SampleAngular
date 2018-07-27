@@ -1,0 +1,36 @@
+<div class="modal-dialog">
+  <div class="modal-content" >
+    <div class="modal-header">
+      <button type="button" class="close" (click)="close()" >&times;</button>
+      <h4 class="modal-title">{{title}}</h4>
+    </div>
+    
+    <div class="modal-body">
+     <div class="row">
+       <div class="col col-md-4">
+         CREW ID:
+         <input type="text" class="form-control" [(ngModel)]="Crew.CrewId" disabled="true" >         
+       </div>
+       <div class="col col-md-8" >
+         Crew Description:
+         <input type="text" class="form-control" [(ngModel)]="Crew.CrewDescription">
+       </div>
+     </div>
+     <div class="row">
+        <div class="col col-md-4"></div>
+        <div class="col col-md-4">
+            Crew HRS / DAY :
+            <input type="text" class="form-control" [(ngModel)]="Crew.ShiftLength">
+        </div>
+        <div class="col col-md-4 checkbox" *ngIf="IsUpdate" >
+          <label><input type="checkbox" [(ngModel)] = "!Crew.IsActive">Mark this Crew As INACTIVE</label>
+        </div>
+     </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger mr-auto" *ngIf="IsUpdate" >Delete This Crew</button>
+        <button type="button" class="btn btn-default" (click)="close()" >Cancel</button>
+    </div>
+  </div>
+</div>

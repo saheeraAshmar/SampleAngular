@@ -1,0 +1,89 @@
+<div class="modal-dialog" style="width: 1300px;">
+  <div class="modal-content" >
+     <div class="modal-header">
+       <button type="button" class="close" (click)="close()" >&times;</button>
+       <h4 class="modal-title">Crew Configuration</h4>
+     </div>
+     <div class="modal-body">
+       <div class="row">
+          <div class="col col-md-6">
+            <div style="text-align: center;">
+                <label>Search Crew Resource List</label>
+                <hr size="30">
+            </div>
+              <div class="row">
+                  <div class="col col-md-4">
+                      <div style="text-align: center;background-color: #ddd">
+                          Role
+                      </div>
+                      <div>
+                        <select class="form-control" [(ngModel)]='SelectedRole'>
+                              <option *ngFor="let r of Roles" value={{r}}>
+                                 {{r}}
+                              </option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="col col-md-4">
+                    <div style="text-align: center;background-color: #ddd">
+                      Name
+                    </div>
+                    <div>
+                      <input type="text" [(ngModel)]='SelectedName' class="form-control">
+                    </div>
+                  </div>
+                  <div class="col col-md-2">
+                      <div class="checkbox">
+                        <label><input type="checkbox" value="">This Job</label>
+                      </div>
+                      <div class="checkbox">
+                          <label><input type="checkbox" value="">Unassigned</label>
+                      </div>
+                  </div>
+                  <div class="col col-md-1" style="position: absolute;bottom: 8px;right: 55px;">
+                    <input type="button" value="Show All" class="btn btn-default">
+                  </div>
+              </div>
+           </div>
+           <div class="col col-md-6">
+              <div style="text-align: center;">
+                  <label>Crew Selection</label>
+                  <hr size="30">
+              </div>
+              <div class="row">
+               <div class="col col-md-8">
+                      <div style="text-align: center;background-color: #ddd">
+                          Select Crew:
+                      </div>
+                      <div>
+                        <select class="form-control" [(ngModel)]='SelectedCrew'>
+                              <option *ngFor="let c of Crews" value={{c.CrewId}}>
+                               {{c.CrewId}} : {{c.CrewDescription}}
+                              </option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="col col-md-4">
+                    <ul style="list-style-type: none;">
+                      <li style="margin: 10px 0;">
+                        <input type="button" value="New Crew" class="btn btn-default btn-sm" (click)="OpenManageCrew(true)">
+                      </li>
+                      <li>
+                          <input type="button" value="Change" class="btn btn-default btn-sm" (click)="OpenManageCrew(false)">
+                      </li>
+                    </ul>
+                  </div>            
+              </div>              
+           </div>
+       </div>    
+       <div class="row" style="padding-left: 650px;">
+          <div class="col col-md-12 checkbox">
+              <label><input type="checkbox" value="">Show Inactive Crews</label>
+          </div>
+        </div>   
+     </div>     
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" (click)="close()" >Cancel</button>
+     </div>
+   </div>
+</div>

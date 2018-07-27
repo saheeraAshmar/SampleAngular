@@ -1,0 +1,57 @@
+<div class="container">
+  <div style="height:35px"></div>
+  <div class="row">
+    <div class="col col-md-2">
+        <div style="text-align: center;background-color: #9e9898">
+            Job
+        </div>
+        <div>
+          <input type="text" [(ngModel)]="CurrentJob.jobId" disabled="true" class="form-control" style="text-align: center" >
+        </div>
+    </div>
+    <div class="col col-md-2">
+        <div style="text-align: center;background-color: #9e9898">
+            Extra / Area
+        </div>
+        <div>
+            <select class="form-control">
+                <option *ngFor="let ar of Areas" value= {{ar.Area}}>
+                   {{ ar.AreaDescription}}
+                </option>
+              </select>
+        </div>
+    </div>
+    <div class="col col-md-2">
+        <div style="text-align: center;background-color: #9e9898">
+            Division
+        </div>
+        <div>
+            <select class="form-control">
+                <option *ngFor="let dv of Divisions" value= {{dv.CostCode}}>
+                   {{ dv.CostCodeDescription}}
+                </option>
+              </select>
+        </div>
+    </div>
+    <div class="col col-md-2">
+        <div style="text-align: center;background-color: #9e9898">
+            Entry Type
+        </div>
+        <div>
+            <select class="form-control">
+                <option value="L">L</option>
+                <option value="Temporary Labor">Temporary Labor</option>
+                <option value="Equipment">Equipment</option>
+            </select>
+        </div>
+    </div>
+    <div class="col col-md-2">
+        <div style="text-align: center;background-color: #9e9898">
+            Date
+        </div>
+        <div>
+            <!-- <ng-datepicker [(ngModel)]="date" /> -->
+        </div>
+    </div>
+  </div>
+</div>
