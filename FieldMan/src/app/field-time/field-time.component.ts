@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
 import { CrewConfigComponent } from '../crew-config/crew-config.component';
+import { DailyCrewTimeComponent } from '../daily-crew-time/daily-crew-time.component';
 
 
 import { Job } from '../BusinessModel/job';
@@ -85,6 +86,10 @@ export class FieldTimeComponent implements OnInit {
     let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
     const modalRef = this.modalService.open(CrewConfigComponent,options);  
     modalRef.componentInstance.SelectedCrew= this.crew        
+  }
+
+  getCurrentJobId():string{
+    return this.CurrentJob.jobId;
   }
 
   ngOnInit() {

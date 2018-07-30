@@ -95,7 +95,7 @@
         <ngb-tabset>
             <ngb-tab title="Daily Crew Time">
                 <ng-template ngbTabContent>
-                
+                    <app-daily-crew-time [JobId]="getCurrentJobId()"></app-daily-crew-time>
                 </ng-template>
             </ngb-tab>  
             <ngb-tab title="Daily Employee Time">

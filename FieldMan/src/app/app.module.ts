@@ -16,6 +16,7 @@ import { JobListComponent } from './job-list/job-list.component';
 import { CrewConfigComponent } from './crew-config/crew-config.component';
 import { ManageCrewComponent } from './manage-crew/manage-crew.component';
 import { FieldTimeComponent } from './field-time/field-time.component';
+import { DailyCrewTimeComponent } from './daily-crew-time/daily-crew-time.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FieldTimeComponent } from './field-time/field-time.component';
     JobListComponent,
     CrewConfigComponent,
     ManageCrewComponent,
-    FieldTimeComponent
+    FieldTimeComponent,
+    DailyCrewTimeComponent
   ],
   entryComponents: [CrewConfigComponent,ManageCrewComponent],
   imports: [
