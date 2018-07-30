@@ -3,7 +3,7 @@ import { Job } from '../BusinessModel/job';
 import {JobService} from '../service/job.service';
 import { Subscription } from 'rxjs/Subscription';
 import { CrewConfigComponent } from '../crew-config/crew-config.component';
-import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 

@@ -1,5 +1,6 @@
 <div class="container">
   <div style="height:35px"></div>
+  <div>
   <div class="row">
     <div class="col col-md-2">
         <div style="text-align: center;background-color: #9e9898">
@@ -14,7 +15,7 @@
             Extra / Area
         </div>
         <div>
-            <select class="form-control">
+            <select class="form-control" [(ngModel)]="area">
                 <option *ngFor="let ar of Areas" value= {{ar.Area}}>
                    {{ ar.AreaDescription}}
                 </option>
@@ -26,7 +27,7 @@
             Division
         </div>
         <div>
-            <select class="form-control">
+            <select class="form-control" [(ngModel)]="division">
                 <option *ngFor="let dv of Divisions" value= {{dv.CostCode}}>
                    {{ dv.CostCodeDescription}}
                 </option>
@@ -50,8 +51,64 @@
             Date
         </div>
         <div>
-            <!-- <ng-datepicker [(ngModel)]="date" /> -->
+            <div class="input-group">
+                <input class="form-control" style="width: 122px;" placeholder="yyyy-mm-dd" 
+                name="dp" [(ngModel)]="SelectedDate" ngbDatepicker #d="ngbDatepicker" >
+                <button class="input-group-addon btn btn-default" type="button" style="height: 34px;width: 38px;" 
+                (click)="d.toggle();">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col col-md-2">
+        <div style="text-align: center;background-color: #9e9898">
+            Crew
+        </div>
+        <div>
+            <select class="form-control" [(ngModel)]='crew'>
+                <option *ngFor="let c of Crews" value={{c.CrewId}}>
+                    {{c.CrewId}} : {{c.CrewDescription}}
+                </option>
+            </select>
         </div>
     </div>
   </div>
+  <div style="height: 15px;"></div>
+  <div class="row">
+        <div class="col col-md-2"></div>
+        <div class="col col-md-4" style="text-align: center;">
+            <input type="button" style="width: 250px;" value="Clear Selection" (click)="ClearSelection()">
+        </div>
+        <div class="col col-md-2"></div>
+        <div class="col col-md-2">
+            <input type="button" value="<" style="width: 65px;" (click)="PrevDate()">      
+            <input type="button" value=">" style="float: right; width: 65px;" (click)="nextDate()">
+        </div>
+        <div class="col col-md-2" style="text-align: center;">
+            <input type="button" value="Configure Crew" (click)="OpenCrewConfig()">
+        </div>
+    </div>
+</div>
+    <div style="height: 15px;"></div>
+    <div class="row">
+        <ngb-tabset>
+            <ngb-tab title="Daily Crew Time">
+                <ng-template ngbTabContent>
+                
+                </ng-template>
+            </ngb-tab>  
+            <ngb-tab title="Daily Employee Time">
+                <ng-template ngbTabContent>
+                    
+                </ng-template>
+            </ngb-tab>  
+            <ngb-tab title="Reimbursables">
+                <ng-template ngbTabContent>
+                        
+                </ng-template>
+            </ngb-tab>                
+        </ngb-tabset>
+    </div>
+
 </div>

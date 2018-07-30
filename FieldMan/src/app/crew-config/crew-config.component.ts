@@ -16,7 +16,7 @@ import {NgbModal, NgbActiveModal, NgbModalOptions} from '@ng-bootstrap/ng-bootst
         }
         `]
 })
-export class CrewConfigComponent{ 
+export class CrewConfigComponent implements OnInit{ 
   Roles=[];
   Crews=[];
   SelectedRole:String
@@ -37,6 +37,15 @@ export class CrewConfigComponent{
     ]; 
   }
 
+  ngOnInit(): void {   
+    
+    if(this.SelectedCrew ==""){
+        //Load Members of the Crew
+    }
+    else{
+      
+    }
+  }
   
  
   OpenManageCrew(flag):void{   
