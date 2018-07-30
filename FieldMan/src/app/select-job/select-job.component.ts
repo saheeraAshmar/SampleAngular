@@ -38,6 +38,5 @@ export class SelectJobComponent implements OnInit{
   OpenCrewConfig(){    
     let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
     const modalRef = this.modalService.open(CrewConfigComponent,options);     
-    
   }
 }

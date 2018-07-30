@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Crew } from '../BusinessModel/crew';
-
+import {NgbModal, NgbActiveModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class ManageCrewComponent implements Crew,OnInit {
   SelectedCrew:String
   
 
-  constructor() {    
+  constructor(public activeModal: NgbActiveModal) {    
     
   }
     

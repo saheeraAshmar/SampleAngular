@@ -1,7 +1,7 @@
 import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 import { ManageCrewComponent } from '../manage-crew/manage-crew.component';
 import { Crew } from '../BusinessModel/crew';
-import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbActiveModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-crew-config',
@@ -10,7 +10,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
   styles: [`
     @media screen {
         .modal-adaptive .modal-lg {
-            width: 65% !important;
+            width: 75% !important;
             max-width: calc(90%);
             opacity: 1 !important;
         }
@@ -23,7 +23,7 @@ export class CrewConfigComponent{
   SelectedName:String
   SelectedCrew:String
 
-  constructor(public activeModal: NgbActiveModal) {
+  constructor(public activeModal: NgbActiveModal,private modalService: NgbModal) {
     this.Roles=["Select", "CARPENTERS", "CARPENTERS APPRENTICE","ENG TECH AIDE","JOB SECRETARY","LABORERS"]
     this.SelectedRole="Select";
     this.SelectedName="";
@@ -41,13 +41,19 @@ export class CrewConfigComponent{
  
   OpenManageCrew(flag):void{   
     
-    if(flag){  
+    if(flag){
+      let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
+      const modalRef = this.modalService.open(ManageCrewComponent,options);
+      modalRef.componentInstance.CrewId= this.SelectedCrew            
   }
     else{
       if(this.SelectedCrew==""){
         alert("Select a Crew for Updation")
         return;
       }      
+      let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
+      const modalRef = this.modalService.open(ManageCrewComponent,options);
+      modalRef.componentInstance.CrewId= this.SelectedCrew     
     
     }      
   }
