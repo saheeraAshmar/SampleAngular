@@ -15,7 +15,7 @@
             Extra / Area
         </div>
         <div>
-            <select class="form-control" [(ngModel)]="area">
+            <select class="form-control" [(ngModel)]="area" (ngModelChange)="onAreaChange($event)">
                 <option *ngFor="let ar of Areas" value= {{ar.Area}}>
                    {{ ar.AreaDescription}}
                 </option>
@@ -66,7 +66,7 @@
             Crew
         </div>
         <div>
-            <select class="form-control" [(ngModel)]='crew'>
+            <select class="form-control" [(ngModel)]='crew' (ngModelChange)="onCrewChange($event)">
                 <option *ngFor="let c of Crews" value={{c.CrewId}}>
                     {{c.CrewId}} : {{c.CrewDescription}}
                 </option>
@@ -92,10 +92,10 @@
 </div>
     <div style="height: 15px;"></div>
     <div class="row">
-        <ngb-tabset>
+        <ngb-tabset [destroyOnHide]="false">
             <ngb-tab title="Daily Crew Time">
                 <ng-template ngbTabContent>
-                    <app-daily-crew-time [JobId]="getCurrentJobId()"></app-daily-crew-time>
+                    <app-daily-crew-time [JobId]="getCurrentJobId()" [area]="area"></app-daily-crew-time>
                 </ng-template>
             </ngb-tab>  
             <ngb-tab title="Daily Employee Time">

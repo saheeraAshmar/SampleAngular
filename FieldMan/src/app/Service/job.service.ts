@@ -1,5 +1,5 @@
 import { Job } from '../BusinessModel/job';
-import { Injectable } from '../../../node_modules/@angular/core';
+import { Injectable } from '@angular/core';
 import { Subject, Observable }    from 'rxjs';
 
 @Injectable()

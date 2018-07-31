@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
 .modal-opened{
     opacity: 1 !important;
 }
@@ -7,3 +10,15 @@
     max-width: 90%;
     opacity: 1 !important;
 }
+
+.edit-cell{
+    width:35px;text-align: center
+}
+
+.style-header{
+    text-align: center!important;    
+}
+.style-cell{
+    text-align: center!important;
+}
+

@@ -1,4 +1,203 @@
-<p>
-  daily-crew-time works!
-  <input type="text" [(ngModel)]='JobId'>
-</p>
+
+ 
+<div style="height: 15px;"></div>
+<div class="row">
+<div class="col" style="border:1px solid black;height: 500px;overflow-y: scroll;min-width: 810px" >
+  <div style="padding: 15px;text-align: center">
+<ngx-datatable #dailyCrewTime class="material" [headerHeight]="50" [footerHeight]="50"
+        [rowHeight]="40" [rows]="CrewTimeEntries" [rowClass]="getRowClass">
+  
+  <ngx-datatable-column name="Crew" headerClass="style-header" cellClass ="style-cell" [width]="103">
+    <ng-template ngx-datatable-cell-template let-value="value">
+      {{value}}
+    </ng-template>
+  </ngx-datatable-column>    
+
+  <ngx-datatable-column name="Cost Code" headerClass="style-header" cellClass ="style-cell" [width]="72">
+    <ng-template ngx-datatable-cell-template let-value="value">
+      {{value}}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column prop="costCodeDescription" name ="" headerClass="style-header">
+    <ng-template ngx-datatable-cell-template let-value="value">
+      {{value}}
+    </ng-template>
+  </ngx-datatable-column>
+  
+  <ngx-datatable-column name="Area" headerClass="style-header" cellClass ="style-cell" [width]="54">
+    <ng-template ngx-datatable-cell-template let-value="value">
+      {{value}}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Reg" headerClass="style-header" cellClass ="style-cell" [width]="54">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span title="Double click to edit"  (dblclick)="editing[rowIndex + '-reg'] = true" *ngIf="!editing[rowIndex + '-reg']">
+        {{value}}
+      </span>
+      <input autofocus (blur)="UpdateCrewTime($event, 'reg', rowIndex)" *ngIf="editing[rowIndex+ '-reg']" type="number" [value]="value" style="width:35px;text-align: center" />
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="OT" headerClass="style-header" cellClass ="style-cell" [width]="54">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span title="Double click to edit" (dblclick)="editing[rowIndex + '-ot'] = true" *ngIf="!editing[rowIndex + '-ot']">
+        {{value}}
+      </span>
+      <input autofocus (blur)="UpdateCrewTime($event, 'ot', rowIndex)" *ngIf="editing[rowIndex+ '-ot']" type="number" [value]="value" style="width:35px;text-align: center"/>
+    </ng-template>
+  </ngx-datatable-column>
+    
+  <ngx-datatable-column name="DT" headerClass="style-header" cellClass ="style-cell" [width]="54">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span title="Double click to edit" (dblclick)="editing[rowIndex + '-dt'] = true" *ngIf="!editing[rowIndex + '-dt']">
+        {{value}}
+      </span>
+      <input autofocus (blur)="UpdateCrewTime($event, 'dt', rowIndex)" *ngIf="editing[rowIndex+ '-dt']" type="number" [value]="value" style="width:35px;text-align: center"/>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Other" headerClass="style-header" cellClass ="style-cell" [width]="54">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span title="Double click to edit" (dblclick)="editing[rowIndex + '-other'] = true" *ngIf="!editing[rowIndex + '-other']">
+        {{value}}
+      </span>
+      <input autofocus (blur)="UpdateCrewTime($event, 'other', rowIndex)" *ngIf="editing[rowIndex+ '-other']" type="number" [value]="value" style="width:35px;text-align: center"/>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Other Type" headerClass="style-header" cellClass ="style-cell" [width]="73"  >
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+      <span title="Double click to edit" (dblclick)="editing[rowIndex + '-otherType'] = true" *ngIf="!editing[rowIndex + '-otherType']">
+        {{value}}
+      </span>
+      <select *ngIf="editing[rowIndex + '-otherType']" (blur)="editing[rowIndex + '-otherType'] = false"
+        (change)="UpdateCrewTime($event, 'otherType', rowIndex)" [value]="value" style="width:61px">
+        <option *ngFor="let hr of HRTypes" value= {{hr.HrTypeId}}>
+          {{hr.HrType }}
+        </option>
+      </select>
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column headerClass="style-header" cellClass ="style-cell" [width]="54">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value" >
+        <input type="button" value="X" style="color: red;font-weight: 700;line-height: normal" (click)="DeleteTimeEntry($event, rowIndex)">
+      </ng-template>
+  </ngx-datatable-column> 
+</ngx-datatable>
+</div>
+</div>
+<div class="col">
+  
+</div>
+  <div class="col">
+    <div class="row" style="border:1px solid black;width:330px;height: 245px;overflow-y: scroll;min-width: 330px" >
+        <div style="padding: 15px;text-align: center">
+        <ngx-datatable #crewMembers class="material" [headerHeight]="0" [footerHeight]="0"
+          [rowHeight]="'auto'" [rows]="CrewMembers" [rowClass]="getRowClass">
+          <ngx-datatable-column name="Employee Name" headerClass="style-header" >
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value" >
+                    <span>
+                      {{value}}
+                    </span>
+              </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Role" headerClass="style-header"   [width]="130" >
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value" >
+                    <span>
+                      {{value}}
+                    </span>
+              </ng-template>
+          </ngx-datatable-column> 
+        </ngx-datatable>
+      </div>
+    </div>
+    <div style="height: 15px;"></div>
+    <div class="row">
+        <div style="border:1px solid black;min-width: 330px;height: 207px;">
+          
+            <div style="text-align: center;background-color: #9e9898;border-bottom:1px solid black">
+                Crew Daily Totals
+            </div>
+            <div style="padding: 10px">
+            
+            <div>
+              <div style="text-align: center">
+                Crew Totals - This Area
+              </div>
+              <div>
+                <ngx-datatable #dailyCrewTime class="material" [headerHeight]="25" [footerHeight]="0"
+                  [rowHeight]="25" [rows]="CrewDailyTotal_Area" [rowClass]="getRowClass">
+                  <ngx-datatable-column name="REG" headerClass="style-header" cellClass ="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="OT" headerClass="style-header" cellClass ="style-cell" [width]="74">
+                      <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                      </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="DT" headerClass="style-header" cellClass ="style-cell" [width]="74">
+                        <ng-template ngx-datatable-cell-template let-value="value">
+                          {{value}}
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Other" headerClass="style-header" cellClass ="style-cell" [width]="75">
+                          <ng-template ngx-datatable-cell-template let-value="value">
+                            {{value}}
+                          </ng-template>
+                        </ngx-datatable-column>
+                </ngx-datatable>
+              </div>
+            </div>
+            <div style="height: 10px;"></div>
+            <div>
+              <div style="text-align: center">
+                Crew Totals - All Areas
+              </div>
+              <div>
+                  <ngx-datatable #dailyCrewTime class="material" [headerHeight]="25" [footerHeight]="0"
+                  [rowHeight]="25" [rows]="CrewDailyTotal" [rowClass]="getRowClass">
+                  <ngx-datatable-column name="REG" headerClass="style-header" cellClass ="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="OT" headerClass="style-header" cellClass ="style-cell" [width]="74">
+                      <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                      </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="DT" headerClass="style-header" cellClass ="style-cell" [width]="74">
+                        <ng-template ngx-datatable-cell-template let-value="value">
+                          {{value}}
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Other" headerClass="style-header" cellClass ="style-cell" [width]="75">
+                          <ng-template ngx-datatable-cell-template let-value="value">
+                            {{value}}
+                          </ng-template>
+                        </ngx-datatable-column>
+                </ngx-datatable>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div style="height: 7px;"></div>
+    <div class="row">
+      <input type="Button" value="Crew Time Review">
+    </div>
+  </div>
+  
+</div>
+

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 import { CONST_ROUTING } from './app.routing'; 
@@ -38,6 +39,7 @@ import { DailyCrewTimeComponent } from './daily-crew-time/daily-crew-time.compon
     CONST_ROUTING,
     FormsModule,
     HttpModule,
+    NgxDatatableModule,
     NgbModule.forRoot()
   ],
   providers: [],

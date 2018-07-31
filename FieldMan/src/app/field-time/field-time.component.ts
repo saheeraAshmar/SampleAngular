@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
 import { CrewConfigComponent } from '../crew-config/crew-config.component';
@@ -33,15 +33,17 @@ export class FieldTimeComponent implements OnInit {
   Crews=[];
   crew:string;
   SelectedDate: NgbDateStruct = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
+  
+  @ViewChild(DailyCrewTimeComponent) DailyCrewTime:DailyCrewTimeComponent;
 
   constructor(private jobService:JobService,private modalService: NgbModal) {
     this.CurrentJob= this.jobService.getCurrentJobObject();
     this.Areas=[
-      new Area("","Select"),
-      new Area("Main Job"," : Main Job"),
+      new Area("Select",""),
+      new Area(""," : Main Job"),
       new Area("P2","P2 : Masse Ave Portal")
     ];
-    this.area="";
+    this.area="Select";
 
     this.Divisions=[
       new CostCode("","Select"),
@@ -61,6 +63,10 @@ export class FieldTimeComponent implements OnInit {
     
     this.crew="";
   }
+
+  ngOnInit() {
+    
+  } 
 
   ClearSelection():void{
     this.area="";
@@ -92,8 +98,17 @@ export class FieldTimeComponent implements OnInit {
     return this.CurrentJob.jobId;
   }
 
-  ngOnInit() {
-    
-  } 
+  onCrewChange():void{
+    this.DailyCrewTime.UpdateCrewTimeTab(this.crew);
+  }
+
+  onAreaChange():void{
+    this.DailyCrewTime.FilterCrewTime(this.area,this.division);
+  }
+  getArea():string{
+    return this.area;
+  }
+
+  
 
 }
