@@ -93,16 +93,17 @@
     <div style="height: 15px;"></div>
     <div class="row">
         <ngb-tabset [destroyOnHide]="false">
-            <ngb-tab title="Daily Crew Time">
+           <ngb-tab title="Daily Crew Time">
                 <ng-template ngbTabContent>
-                    <app-daily-crew-time [JobId]="getCurrentJobId()" [area]="area"></app-daily-crew-time>
+                    <app-daily-crew-time [JobId]="getCurrentJobId()" [area]="area" [HRTypes]="getHRTypeList()"></app-daily-crew-time>
                 </ng-template>
-            </ngb-tab>  
+            </ngb-tab> 
             <ngb-tab title="Daily Employee Time">
-                <ng-template ngbTabContent>
-                    
-                </ng-template>
+                    <ng-template ngbTabContent>
+                        <app-daily-employee-time [Areas]="getAreaList()" [CostCodes]="getCostCodeList()" [HRTypes]="getHRTypeList()"></app-daily-employee-time>
+                    </ng-template>
             </ngb-tab>  
+            
             <ngb-tab title="Reimbursables">
                 <ng-template ngbTabContent>
                         

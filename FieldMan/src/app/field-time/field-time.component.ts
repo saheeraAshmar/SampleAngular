@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { CrewConfigComponent } from '../crew-config/crew-config.component';
 import { DailyCrewTimeComponent } from '../daily-crew-time/daily-crew-time.component';
+import { DailyEmployeeTimeComponent } from '../daily-employee-time/daily-employee-time.component';
 
 
 import { Job } from '../BusinessModel/job';
@@ -14,6 +15,7 @@ import { Crew } from '../BusinessModel/crew';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { HrType } from '../BusinessModel/HRType';
 
 const now = new Date();
 
@@ -31,6 +33,7 @@ export class FieldTimeComponent implements OnInit {
   Divisions=[];
   division:string
   Crews=[];
+  HRTypes=[];
   crew:string;
   SelectedDate: NgbDateStruct = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
   
@@ -59,6 +62,14 @@ export class FieldTimeComponent implements OnInit {
       new Crew("01-1000.002","Crew2",8,false),
       new Crew("01-1000.003","Crew3",8,true),
       new Crew("01-1000.004","Crew4",8,true)
+    ];
+
+    this.HRTypes=[
+      new HrType("","Select"),
+      new HrType("HOL","HOL"),
+      new HrType("VAC","VAC"),
+      new HrType("OT","OT"),
+      new HrType("REG","REG")
     ];
     
     this.crew="";
@@ -107,6 +118,24 @@ export class FieldTimeComponent implements OnInit {
   }
   getArea():string{
     return this.area;
+  }
+
+  getAreaList(){
+    return this.Areas
+  }
+  getCostCodeList(){
+    return [
+      new CostCode("G-08","MIS"),
+      new CostCode("G-09","SITE SB FAB"),
+      new CostCode("X-01","DRIVE BEAMS"),
+      new CostCode("T-11","SLEEVES"),
+      new CostCode("S-04","LAGGING"),
+    ];
+    
+  }
+
+  getHRTypeList(){
+    return this.HRTypes;
   }
 
   

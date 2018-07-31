@@ -20,7 +20,7 @@ export class DailyCrewTimeComponent implements OnInit {
     this.UpdateCrewDailyTotals_Area();
   }
 
-  HRTypes=[];
+  @Input() HRTypes=[];
 
   editing = {};
   CrewTimeEntries_WithoutFilter=[];
@@ -31,16 +31,7 @@ export class DailyCrewTimeComponent implements OnInit {
 
   
   constructor() { 
-
-    this.HRTypes=[
-      new HrType("","Select"),
-      new HrType("HOL","HOL"),
-      new HrType("VAC","VAC"),
-    ];
-
-    // this.fetch((data) => {
-    //   this.rows = data;
-    // });
+    
     this.CrewTimeEntries_WithoutFilter=[];
     this.CrewTimeEntries=[];
     this.CrewMembers=[];

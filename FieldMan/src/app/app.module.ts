@@ -18,6 +18,7 @@ import { CrewConfigComponent } from './crew-config/crew-config.component';
 import { ManageCrewComponent } from './manage-crew/manage-crew.component';
 import { FieldTimeComponent } from './field-time/field-time.component';
 import { DailyCrewTimeComponent } from './daily-crew-time/daily-crew-time.component';
+import { DailyEmployeeTimeComponent } from './daily-employee-time/daily-employee-time.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { DailyCrewTimeComponent } from './daily-crew-time/daily-crew-time.compon
     CrewConfigComponent,
     ManageCrewComponent,
     FieldTimeComponent,
-    DailyCrewTimeComponent
+    DailyCrewTimeComponent,
+    DailyEmployeeTimeComponent
   ],
   entryComponents: [CrewConfigComponent,ManageCrewComponent],
   imports: [
