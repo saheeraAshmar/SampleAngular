@@ -1,6 +1,6 @@
 
 <div class="row" style="margin: 10px">
-  <div class="col" style="border:1px solid black;">
+  <div class="col" style="border:1px solid black;height: 500px;overflow-y: scroll;min-width: 925px">
     <div style="padding: 15px;text-align: center">
         <ngx-datatable #dailyEmployeeTime class="material" [headerHeight]="50" [footerHeight]="50"
         [rowHeight]="40" [rows]="EmployeeTimeEntries" >
@@ -76,28 +76,27 @@
 
           <ngx-datatable-column name="Work Date" headerClass="style-header" cellClass ="style-cell" [width]="150">
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-              <span title="Double click to edit" (dblclick)="editing[rowIndex + '-workDate'] = true" *ngIf="!editing[rowIndex + '-workDate']">
+              <span>
                 {{value}}
-              </span>
-              <div class="input-group" *ngIf="editing[rowIndex+ '-workDate']">
-                  <input style="width: 82px;" placeholder="yyyy-mm-dd" [value]="value"
-                  name="dp" ngbDatepicker #d="ngbDatepicker" >
-                  <button class="input-group-addon btn btn-default" type="button" style="height: 26px;width: 38px;" 
-                  (click)="d.toggle();">
-                      <i class="fa fa-calendar" aria-hidden="true"></i>
-                  </button>
-              </div>
+              </span>              
             </ng-template>
           </ngx-datatable-column>        
      
         <ngx-datatable-column name="" headerClass="style-header" cellClass ="style-cell" [width]="100">
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
-              <input type="button" value="+" style="margin: 1px" >              
+              <input type="button"  value="+" style="margin: 1px" (click)="AddNewTimeEntry($event,rowIndex)" >              
               <input type="button" value="X" style="margin: 1px" (click)="DeleteEmployeeTimeEntry($event, rowIndex)" >
-              <input type="button" value="N" style="margin: 1px">
+              <input type="button"  value="N" style="margin: 1px" (click)="AddTimeNote($event,rowIndex)">
             </ng-template>
-          </ngx-datatable-column> -->
+          </ngx-datatable-column> 
       </ngx-datatable>
     </div>
+  </div>
+  <div class="col">
+      <input type="Button" style="margin: 2px" class="btn btn-primary" value="Daily Time Report">
+      <input type="Button" style="margin: 2px" class="btn btn-primary" value="Weekly Time Report">
+      <input type="Button" style="margin: 2px" class="btn btn-primary" value="Field Time Lookup">
+      <input type="Button" style="margin: 2px" class="btn btn-primary" value="Crew Time Review">
+      <input type="button"  value="+" style="margin: 4px" (click)="AddNewTimeEntry($event)" > Add New Time Entry              
   </div>
 </div>

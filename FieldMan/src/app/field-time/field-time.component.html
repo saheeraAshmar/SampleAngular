@@ -78,15 +78,15 @@
   <div class="row">
         <div class="col col-md-2"></div>
         <div class="col col-md-4" style="text-align: center;">
-            <input type="button" style="width: 250px;" value="Clear Selection" (click)="ClearSelection()">
+            <input type="button" class="btn btn-primary" style="width: 250px;" value="Clear Selection" (click)="ClearSelection()">
         </div>
         <div class="col col-md-2"></div>
         <div class="col col-md-2">
-            <input type="button" value="<" style="width: 65px;" (click)="PrevDate()">      
-            <input type="button" value=">" style="float: right; width: 65px;" (click)="nextDate()">
+            <input type="button" class="btn btn-primary" value="<" style="width: 65px;" (click)="PrevDate()">      
+            <input type="button" class="btn btn-primary" value=">" style="float: right; width: 65px;" (click)="nextDate()">
         </div>
         <div class="col col-md-2" style="text-align: center;">
-            <input type="button" value="Configure Crew" (click)="OpenCrewConfig()">
+            <input type="button" class="btn btn-primary" value="Configure Crew" (click)="OpenCrewConfig()">
         </div>
     </div>
 </div>
@@ -100,7 +100,7 @@
             </ngb-tab> 
             <ngb-tab title="Daily Employee Time">
                     <ng-template ngbTabContent>
-                        <app-daily-employee-time [Areas]="getAreaList()" [CostCodes]="getCostCodeList()" [HRTypes]="getHRTypeList()"></app-daily-employee-time>
+                        <app-daily-employee-time [JobId]="getCurrentJobId()" [Areas]="getAreaList()" [CostCodes]="getCostCodeList()" [HRTypes]="getHRTypeList()" [Crews]="getCrewList()"></app-daily-employee-time>
                     </ng-template>
             </ngb-tab>  
             

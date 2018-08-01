@@ -14,8 +14,8 @@ export class DailyCrewTimeComponent implements OnInit {
   private _area:string
   @Input() 
   set area(area: string) {
-    console.log('prev value: ', this._area);
-    console.log('got name: ', area);
+    // console.log('prev value: ', this._area);
+    // console.log('got name: ', area);
     this._area = area;
     this.UpdateCrewDailyTotals_Area();
   }

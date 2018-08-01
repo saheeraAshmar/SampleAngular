@@ -19,6 +19,8 @@ import { ManageCrewComponent } from './manage-crew/manage-crew.component';
 import { FieldTimeComponent } from './field-time/field-time.component';
 import { DailyCrewTimeComponent } from './daily-crew-time/daily-crew-time.component';
 import { DailyEmployeeTimeComponent } from './daily-employee-time/daily-employee-time.component';
+import { NewTimeEntryComponent } from './new-time-entry/new-time-entry.component';
+import { TimeNoteComponent } from './time-note/time-note.component';
 
 
 @NgModule({
@@ -32,9 +34,11 @@ import { DailyEmployeeTimeComponent } from './daily-employee-time/daily-employee
     ManageCrewComponent,
     FieldTimeComponent,
     DailyCrewTimeComponent,
-    DailyEmployeeTimeComponent
+    DailyEmployeeTimeComponent,
+    NewTimeEntryComponent,
+    TimeNoteComponent
   ],
-  entryComponents: [CrewConfigComponent,ManageCrewComponent],
+  entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent],
   imports: [
     BrowserModule,
     RouterModule,

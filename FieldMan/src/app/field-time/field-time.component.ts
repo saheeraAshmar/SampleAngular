@@ -138,6 +138,10 @@ export class FieldTimeComponent implements OnInit {
     return this.HRTypes;
   }
 
+  getCrewList(){
+    return this.Crews
+  }
+
   
 
 }
