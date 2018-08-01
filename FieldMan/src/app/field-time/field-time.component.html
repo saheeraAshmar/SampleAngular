@@ -3,19 +3,19 @@
   <div>
   <div class="row">
     <div class="col col-md-2">
-        <div style="text-align: center;background-color: #9e9898">
+        <div class="div-header">
             Job
         </div>
         <div>
-          <input type="text" [(ngModel)]="CurrentJob.jobId" disabled="true" class="form-control" style="text-align: center" >
+          <input type="text" [(ngModel)]="CurrentJob.jobId" disabled="true" class="form-control div-append-input" >
         </div>
     </div>
     <div class="col col-md-2">
-        <div style="text-align: center;background-color: #9e9898">
+        <div class="div-header">
             Extra / Area
         </div>
         <div>
-            <select class="form-control" [(ngModel)]="area" (ngModelChange)="onAreaChange($event)">
+            <select class="form-control div-append-input" [(ngModel)]="area" (ngModelChange)="onAreaChange($event)">
                 <option *ngFor="let ar of Areas" value= {{ar.Area}}>
                    {{ ar.AreaDescription}}
                 </option>
@@ -23,11 +23,11 @@
         </div>
     </div>
     <div class="col col-md-2">
-        <div style="text-align: center;background-color: #9e9898">
+        <div class="div-header">
             Division
         </div>
         <div>
-            <select class="form-control" [(ngModel)]="division">
+            <select class="form-control div-append-input" [(ngModel)]="division">
                 <option *ngFor="let dv of Divisions" value= {{dv.CostCode}}>
                    {{ dv.CostCodeDescription}}
                 </option>
@@ -35,11 +35,11 @@
         </div>
     </div>
     <div class="col col-md-2">
-        <div style="text-align: center;background-color: #9e9898">
+        <div class="div-header">
             Entry Type
         </div>
         <div>
-            <select class="form-control">
+            <select class="form-control div-append-input">
                 <option value="L">L</option>
                 <option value="Temporary Labor">Temporary Labor</option>
                 <option value="Equipment">Equipment</option>
@@ -47,14 +47,14 @@
         </div>
     </div>
     <div class="col col-md-2">
-        <div style="text-align: center;background-color: #9e9898">
+        <div class="div-header">
             Date
         </div>
         <div>
             <div class="input-group">
-                <input class="form-control" style="width: 122px;" placeholder="yyyy-mm-dd" 
+                <input class="form-control div-append-input" style="width: 122px;border-right: unset!important" placeholder="yyyy-mm-dd" 
                 name="dp" [(ngModel)]="SelectedDate" ngbDatepicker #d="ngbDatepicker" >
-                <button class="input-group-addon btn btn-default" type="button" style="height: 34px;width: 38px;" 
+                <button class="input-group-addon div-append-input btn btn-default" type="button" style="height: 34px;width: 38px;border-left: unset!important" 
                 (click)="d.toggle();">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                 </button>
@@ -62,11 +62,11 @@
         </div>
     </div>
     <div class="col col-md-2">
-        <div style="text-align: center;background-color: #9e9898">
+        <div class="div-header">
             Crew
         </div>
         <div>
-            <select class="form-control" [(ngModel)]='crew' (ngModelChange)="onCrewChange($event)">
+            <select class="form-control div-append-input" [(ngModel)]='crew' (ngModelChange)="onCrewChange($event)">
                 <option *ngFor="let c of Crews" value={{c.CrewId}}>
                     {{c.CrewId}} : {{c.CrewDescription}}
                 </option>
@@ -100,13 +100,13 @@
             </ngb-tab> 
             <ngb-tab title="Daily Employee Time">
                     <ng-template ngbTabContent>
-                        <app-daily-employee-time [JobId]="getCurrentJobId()" [Areas]="getAreaList()" [CostCodes]="getCostCodeList()" [HRTypes]="getHRTypeList()" [Crews]="getCrewList()"></app-daily-employee-time>
+                        <app-daily-employee-time [JobId]="getCurrentJobId()" [Areas]="getAreaList()" [CostCodes]="getCostCodeList()" [HRTypes]="getHRTypeList()" [Crews]="getCrewList()" [WorkDate]="getWorkDate()"></app-daily-employee-time>
                     </ng-template>
             </ngb-tab>  
             
             <ngb-tab title="Reimbursables">
                 <ng-template ngbTabContent>
-                        
+                        <app-reimbursables [Areas]="getAreaList()"></app-reimbursables>
                 </ng-template>
             </ngb-tab>                
         </ngb-tabset>

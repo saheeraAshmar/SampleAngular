@@ -142,6 +142,10 @@ export class FieldTimeComponent implements OnInit {
     return this.Crews
   }
 
+  getWorkDate(){
+    var wDate=new Date(this.SelectedDate.year,this.SelectedDate.month-1,this.SelectedDate.day);
+    return (wDate.getMonth() + 1)  + '/' + wDate.getDate() + '/' +  wDate.getFullYear()
+  }
   
 
 }

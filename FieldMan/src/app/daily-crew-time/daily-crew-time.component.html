@@ -4,9 +4,9 @@
 <div class="row">
 <div class="col" style="border:1px solid black;height: 500px;overflow-y: scroll;min-width: 810px" >
   <div style="padding: 15px;text-align: center">
-<ngx-datatable #dailyCrewTime class="material" [headerHeight]="50" [footerHeight]="50"
-        [rowHeight]="40" [rows]="CrewTimeEntries" [rowClass]="getRowClass">
-  
+<ngx-datatable #dailyCrewTime class="material datatable-CrewTimeEntry" [headerHeight]="50" [footerHeight]="40"
+        [rowHeight]="37" [rows]="CrewTimeEntries" [scrollbarV]="true" >
+        
   <ngx-datatable-column name="Crew" headerClass="style-header" cellClass ="style-cell" [width]="103">
     <ng-template ngx-datatable-cell-template let-value="value">
       {{value}}
@@ -69,7 +69,7 @@
 
   <ngx-datatable-column name="Other Type" headerClass="style-header" cellClass ="style-cell" [width]="73"  >
     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
-      <span title="Double click to edit" (dblclick)="editing[rowIndex + '-otherType'] = true" *ngIf="!editing[rowIndex + '-otherType']">
+      <span title="Double click to edit" (dblclick)="editing[rowIndex + '-otherType'] = true" *ngIf="!editing[rowIndex + '-otherType']" style="display: inline-block;width:50px;height:100px;">
         {{value}}
       </span>
       <select *ngIf="editing[rowIndex + '-otherType']" (blur)="editing[rowIndex + '-otherType'] = false"

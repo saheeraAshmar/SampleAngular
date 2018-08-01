@@ -6,49 +6,49 @@
 <div class="modal-body">
     <div class="row">
         <div class="col col-md-4">
-            <div style="text-align: center;background-color: #9e9898">
+            <div class="div-header">
                 Employee
             </div>
             <div>
-              <input type="text" [(ngModel)]="Employee" disabled="true" class="form-control" style="text-align: center" >
+              <input type="text" [(ngModel)]="Employee" disabled="true" class="form-control div-append-input" >
             </div>
         </div>
 
         <div class="col col-md-2">
-            <div style="text-align: center;background-color: #9e9898">
+            <div class="div-header">
                 Job
             </div>
             <div>
-              <input type="text" [(ngModel)]="Job" disabled="true" class="form-control" style="text-align: center" >
+              <input type="text" [(ngModel)]="Job" disabled="true" class="form-control div-append-input" >
             </div>
         </div>
 
         <div class="col col-md-2">
-            <div style="text-align: center;background-color: #9e9898">
+            <div class="div-header">
                 Phase/Area
             </div>
             <div>
-              <input type="text" [(ngModel)]="Area" disabled="true" class="form-control" style="text-align: center" >
+              <input type="text" [(ngModel)]="Area" disabled="true" class="form-control div-append-input" >
             </div>
         </div>
 
         <div class="col col-md-2">
-            <div style="text-align: center;background-color: #9e9898">
+            <div class="div-header">
                 Cost Code
             </div>
             <div>
-              <input type="text" [(ngModel)]="CostCode" disabled="true" class="form-control" style="text-align: center" >
+              <input type="text" [(ngModel)]="CostCode" disabled="true" class="form-control div-append-input" >
             </div>
         </div>        
 
     </div>
-    <div class="row" style="margin: 2px;border: 1px solid black">
-      <textarea rows="5" [(ngModel)]="TimeNote" class="form-control"></textarea>
+    <div class="row" style="margin-top: 5px;margin-left: 0px;margin-right: 0px;border: 1px solid black">
+      <textarea rows="5" [(ngModel)]="TimeNote" class="form-control" style="border-radius:unset!important;"></textarea>
     </div>
   </div>
 
 <div class="modal-footer">
-  <button type="button" class="btn btn-danger">X - Delete Note</button>
-  <button type="button" class="btn btn-primary">Save Note</button>
+  <button type="button" class="btn btn-danger" (click)="DeleteNote()">X - Delete Note</button>
+  <button type="button" class="btn btn-primary" (click)="SaveNotes()">Save Note</button>
   <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')" >Cancel</button>
 </div>

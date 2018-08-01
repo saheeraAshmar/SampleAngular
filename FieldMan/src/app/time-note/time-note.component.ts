@@ -20,4 +20,11 @@ export class TimeNoteComponent implements OnInit {
   ngOnInit() {
   }
 
+  SaveNotes(){
+    this.activeModal.dismiss('');
+  }
+  DeleteNote(){
+    this.activeModal.dismiss('');
+  }
+
 }

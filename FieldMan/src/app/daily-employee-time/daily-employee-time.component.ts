@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDateStruct, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { NewTimeEntryComponent } from '../new-time-entry/new-time-entry.component';
@@ -20,12 +20,186 @@ export class DailyEmployeeTimeComponent implements OnInit {
   @Input() HRTypes;
   @Input() Crews;
   @Input() JobId:string;
+  @Input() WorkDate
+
+  private modalRef: NgbModalRef;
 
   editing = {};
 
   constructor(private modalService: NgbModal) { 
     this.EmployeeTimeEntries=[
       {
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
+        "crew":"01-1000.001",
+        "employee":"Abc PQR",
+        "area":"",
+        "costCode":"B-01",
+        "category":"OC",
+        "hours":5,
+        "hrsType":"OT",
+        "workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002",
+        "employee":"Mnp wys",
+        "area":"P2",
+        "costCode":"G-07",
+        "category":"L",
+        "hours":8,
+        "hrsType":"REG",
+        "workDate":"7/31/2018"
+      },{
         "crew":"01-1000.001",
         "employee":"Abc PQR",
         "area":"",
@@ -67,40 +241,40 @@ export class DailyEmployeeTimeComponent implements OnInit {
   AddNewTimeEntry(event,rowIndex){
     //alert(rowIndex);
     let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
-    const modalRef = this.modalService.open(NewTimeEntryComponent,options);
+    this.modalRef = this.modalService.open(NewTimeEntryComponent,options);
     console.log(this.EmployeeTimeEntries[rowIndex])
-
+//alert(this.WorkDate)
     if(rowIndex===undefined){
-        modalRef.componentInstance.NewTimeEntry=[{
-          "employee":"Select",
+      this.modalRef.componentInstance.NewTimeEntry=[{
+          "employee":"",
             "job":this.JobId,
-            "crew":"Select",
-            "area":"Select",
-            "costCode":"Select",
+            "crew":"",
+            "area":"",
+            "costCode":"",
             "category":"L",
             "hrsType":"REG",
-            "hours":0,
-            "workDate":""
+            "hours":"",
+            "workDate":this.WorkDate
           }]
       }
     else{
-        modalRef.componentInstance.NewTimeEntry=[{
+      this.modalRef.componentInstance.NewTimeEntry=[{
           "employee":this.EmployeeTimeEntries[rowIndex]["employee"],
             "job":this.JobId,
-            "crew":"Select",
+            "crew":"",
             "area":this.EmployeeTimeEntries[rowIndex]["area"],
-            "costCode":"Select",
+            "costCode":"",
             "category":"L",
             "hrsType":"REG",
             "hours":0,
             "workDate":this.EmployeeTimeEntries[rowIndex]["workDate"]
         }]
       }
-    modalRef.componentInstance.Crews= this.Crews 
-    modalRef.componentInstance.Areas= this.Areas   
-    modalRef.componentInstance.CostCodes=this.CostCodes
-    modalRef.componentInstance.HRTypes=this.HRTypes 
-    modalRef.componentInstance.NewTimeEntryAdded.subscribe(($e) => {
+      this.modalRef.componentInstance.Crews= this.Crews 
+      this.modalRef.componentInstance.Areas= this.Areas   
+      this.modalRef.componentInstance.CostCodes=this.CostCodes
+      this.modalRef.componentInstance.HRTypes=this.HRTypes 
+      this.modalRef.componentInstance.NewTimeEntryAdded.subscribe(($e) => {
       this.SaveNewTimeEntry($e);
     })
   }
@@ -110,16 +284,21 @@ export class DailyEmployeeTimeComponent implements OnInit {
     console.log(newTimeEntry);
     this.EmployeeTimeEntries.push(newTimeEntry);
     this.EmployeeTimeEntries = [...this.EmployeeTimeEntries]; 
+    this.modalRef.close();
   }
 
   AddTimeNote(event,rowIndex){
     let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
-    const modalRef = this.modalService.open(TimeNoteComponent,options);
+    this.modalRef = this.modalService.open(TimeNoteComponent,options);
     
-    modalRef.componentInstance.Employee= this.EmployeeTimeEntries[rowIndex]["employee"]
-    modalRef.componentInstance.Job= this.JobId   
-    modalRef.componentInstance.Area=this.EmployeeTimeEntries[rowIndex]["area"]
-    modalRef.componentInstance.CostCode=this.EmployeeTimeEntries[rowIndex]["costCode"]
+    this.modalRef.componentInstance.Employee= this.EmployeeTimeEntries[rowIndex]["employee"]
+    this.modalRef.componentInstance.Job= this.JobId   
+    this.modalRef.componentInstance.Area=this.EmployeeTimeEntries[rowIndex]["area"]
+    this.modalRef.componentInstance.CostCode=this.EmployeeTimeEntries[rowIndex]["costCode"]
+  }
+
+  AlertClicks(event){
+    alert("clicked");
   }
 
   ngOnInit() {

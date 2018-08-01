@@ -110,7 +110,7 @@ export class DailyCrewTimeComponent implements OnInit {
         "ot":0,
         "dt":0,
         "other":0,
-        "otherType":"Select"
+        "otherType":""
     },
     {
         "name": "Claudine Neal",
@@ -125,7 +125,7 @@ export class DailyCrewTimeComponent implements OnInit {
         "ot":0,
         "dt":0,
         "other":0,
-        "otherType":"Select"
+        "otherType":""
     },{
       "name": "Ethel Price",
       "gender": "female",
@@ -139,7 +139,7 @@ export class DailyCrewTimeComponent implements OnInit {
       "ot":0,
       "dt":0,
       "other":0,
-      "otherType":"Select"
+      "otherType":""
   },
   {
       "name": "Claudine Neal",
@@ -154,7 +154,7 @@ export class DailyCrewTimeComponent implements OnInit {
       "ot":0,
       "dt":0,
       "other":0,
-      "otherType":"Select"
+      "otherType":""
   },{
     "name": "Ethel Price",
     "gender": "female",
@@ -168,7 +168,7 @@ export class DailyCrewTimeComponent implements OnInit {
     "ot":0,
     "dt":0,
     "other":0,
-    "otherType":"Select"
+    "otherType":""
 },
 {
     "name": "Claudine Neal",
@@ -183,7 +183,7 @@ export class DailyCrewTimeComponent implements OnInit {
     "ot":0,
     "dt":0,
     "other":0,
-    "otherType":"Select"
+    "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -197,7 +197,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -212,7 +212,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -226,7 +226,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -241,7 +241,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -255,7 +255,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -270,7 +270,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -284,7 +284,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -299,7 +299,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -313,7 +313,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -328,7 +328,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -342,7 +342,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -357,7 +357,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -371,7 +371,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -386,7 +386,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -400,7 +400,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -415,7 +415,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -429,7 +429,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -444,7 +444,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },{
   "name": "Ethel Price",
   "gender": "female",
@@ -458,7 +458,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 },
 {
   "name": "Claudine Neal",
@@ -473,7 +473,7 @@ export class DailyCrewTimeComponent implements OnInit {
   "ot":0,
   "dt":0,
   "other":0,
-  "otherType":"Select"
+  "otherType":""
 }
     ];
 
