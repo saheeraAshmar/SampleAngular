@@ -1,0 +1,120 @@
+<div class="modal-header">
+    <h4 class="modal-title">Add New Time Entry</h4>
+   <button type="button" class="close" (click)="activeModal.dismiss('Cross click')" >&times;</button>   
+ </div>
+ <div class="modal-body">
+    <div class="row">
+      <div class="col col-md-12">
+
+      
+        <ngx-datatable #dailyEmployeeTime class="material" [headerHeight]="50" [footerHeight]="50"
+        [rowHeight]="40" [rows]="NewTimeEntry" >
+
+        <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="73"  >
+            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+              <span title="Double click to edit" (dblclick)="editing[rowIndex + '-employee'] = true" *ngIf="!editing[rowIndex + '-employee']">
+                {{value}}
+              </span>
+              <select *ngIf="editing[rowIndex + '-employee']" (blur)="editing[rowIndex + '-employee'] = false"
+                (change)="UpdateNewTimeEntry($event, 'employee', rowIndex)" [value]="value" style="width:61px">
+                <option *ngFor="let e of Employees" value= {{e.employeeName}}>
+                  {{e.employeeName }}
+                </option>
+              </select> 
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Job" headerClass="style-header" cellClass ="style-cell" [width]="103" >
+              <ng-template ngx-datatable-cell-template let-value="value">
+                {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          
+          <ngx-datatable-column name="Crew (Optional)" prop="crew" headerClass="style-header" cellClass ="style-cell" [width]="95"  >
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                <span title="Double click to edit" (dblclick)="editing[rowIndex + '-crew'] = true" *ngIf="!editing[rowIndex + '-crew']">
+                  {{value}}
+                </span>
+                <select *ngIf="editing[rowIndex + '-crew']" (blur)="editing[rowIndex + '-crew'] = false"
+                  (change)="UpdateNewTimeEntry($event, 'crew', rowIndex)" [value]="value" style="width:61px">
+                  <option *ngFor="let c of Crews" value= {{c.CrewId}}>
+                      {{c.CrewId}} : {{c.CrewDescription }}
+                  </option>
+                </select> 
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name="Area" headerClass="style-header" cellClass ="style-cell" [width]="73"  >
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                  <span title="Double click to edit" (dblclick)="editing[rowIndex + '-area'] = true" *ngIf="!editing[rowIndex + '-area']">
+                    {{value}}
+                  </span>
+                  <select *ngIf="editing[rowIndex + '-area']" (blur)="editing[rowIndex + '-area'] = false"
+                    (change)="UpdateNewTimeEntry($event, 'area', rowIndex)" [value]="value" style="width:61px">
+                    <option *ngFor="let a of Areas" value= {{a.Area}}>
+                      {{a.Area }}
+                    </option>
+                  </select> 
+                </ng-template>
+              </ngx-datatable-column> 
+
+              <ngx-datatable-column name="CostCode" headerClass="style-header" cellClass ="style-cell" [width]="75"  >
+                  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                    <span title="Double click to edit" (dblclick)="editing[rowIndex + '-costCode'] = true" *ngIf="!editing[rowIndex + '-costCode']">
+                      {{value}}
+                    </span>
+                    <select *ngIf="editing[rowIndex + '-costCode']" (blur)="editing[rowIndex + '-costCode'] = false"
+                      (change)="UpdateNewTimeEntry($event, 'costCode', rowIndex)" [value]="value" style="width:61px">
+                      <option *ngFor="let c of CostCodes" value= {{c.CostCode}}>
+                        {{c.CostCode }}
+                      </option>
+                    </select> 
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Cat" prop="category"  headerClass="style-header" cellClass ="style-cell"  [width]="62">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Hours Type" prop="hrsType" headerClass="style-header" cellClass ="style-cell" [width]="73"  >
+                      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                        <span title="Double click to edit" (dblclick)="editing[rowIndex + '-hrsType'] = true" *ngIf="!editing[rowIndex + '-hrsType']">
+                          {{value}}
+                        </span>
+                        <select *ngIf="editing[rowIndex + '-hrsType']" (blur)="editing[rowIndex + '-hrsType'] = false"
+                          (change)="UpdateNewTimeEntry($event, 'hrsType', rowIndex)" [value]="value" style="width:61px">
+                          <option *ngFor="let hr of HRTypes" value= {{hr.HrTypeId}}>
+                            {{hr.HrType }}
+                          </option>
+                        </select>
+                      </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="Hours" headerClass="style-header" cellClass ="style-cell" [width]="50">
+                        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                          <span title="Double click to edit" (dblclick)="editing[rowIndex + '-hours'] = true" *ngIf="!editing[rowIndex + '-hours']">
+                            {{value}}
+                          </span>
+                          <input autofocus (blur)="UpdateNewTimeEntry($event, 'hours', rowIndex)" *ngIf="editing[rowIndex+ '-hours']" type="number" [value]="value" style="width:35px;text-align: center"/>
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Work Date" headerClass="style-header" cellClass ="style-cell" [width]="150">
+                          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                            <span>
+                              {{value}}
+                            </span>              
+                          </ng-template>
+                        </ngx-datatable-column> 
+
+      </ngx-datatable>
+    </div>
+    </div>
+ </div>
+ <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="SaveNewTimeEntry();" >Save</button>
+    <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')" >Cancel</button>
+  </div>
