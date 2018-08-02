@@ -4,7 +4,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { NewTimeEntryComponent } from '../new-time-entry/new-time-entry.component';
 import { TimeNoteComponent } from '../time-note/time-note.component';
-import { query } from '../../../node_modules/@angular/core/src/render3/query';
 
 @Component({
   selector: 'app-daily-employee-time',
@@ -223,14 +222,12 @@ export class DailyEmployeeTimeComponent implements OnInit {
   }
 
   UpdateEmployeeTime(event, cell, rowIndex){
-    console.log('inline editing rowIndex', rowIndex)
-    this.editing[rowIndex + '-' + cell] = false;
+   this.editing[rowIndex + '-' + cell] = false;
     if(cell=="hours")
       this.EmployeeTimeEntries[rowIndex][cell] = +event.target.value;
     else
       this.EmployeeTimeEntries[rowIndex][cell] = event.target.value;
-    this.EmployeeTimeEntries = [...this.EmployeeTimeEntries];
-    console.log('UPDATED!', this.EmployeeTimeEntries[rowIndex][cell]);    
+    this.EmployeeTimeEntries = [...this.EmployeeTimeEntries];  
   }
 
   DeleteEmployeeTimeEntry(event,rowIndex){
@@ -238,12 +235,10 @@ export class DailyEmployeeTimeComponent implements OnInit {
     this.EmployeeTimeEntries = [...this.EmployeeTimeEntries];       
   }
 
-  AddNewTimeEntry(event,rowIndex){
-    //alert(rowIndex);
+  AddNewTimeEntry(event,rowIndex){    
     let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
     this.modalRef = this.modalService.open(NewTimeEntryComponent,options);
     console.log(this.EmployeeTimeEntries[rowIndex])
-//alert(this.WorkDate)
     if(rowIndex===undefined){
       this.modalRef.componentInstance.NewTimeEntry=[{
           "employee":"",
@@ -279,9 +274,7 @@ export class DailyEmployeeTimeComponent implements OnInit {
     })
   }
 
-  SaveNewTimeEntry(newTimeEntry){
-    console.log(this.EmployeeTimeEntries[0]);
-    console.log(newTimeEntry);
+  SaveNewTimeEntry(newTimeEntry){    
     this.EmployeeTimeEntries.push(newTimeEntry);
     this.EmployeeTimeEntries = [...this.EmployeeTimeEntries]; 
     this.modalRef.close();
@@ -293,14 +286,11 @@ export class DailyEmployeeTimeComponent implements OnInit {
     
     this.modalRef.componentInstance.Employee= this.EmployeeTimeEntries[rowIndex]["employee"]
     this.modalRef.componentInstance.Job= this.JobId   
+    this.modalRef.componentInstance.title= "Time Card Entry Note"  
     this.modalRef.componentInstance.Area=this.EmployeeTimeEntries[rowIndex]["area"]
     this.modalRef.componentInstance.CostCode=this.EmployeeTimeEntries[rowIndex]["costCode"]
   }
-
-  AlertClicks(event){
-    alert("clicked");
-  }
-
+  
   ngOnInit() {
   }
 

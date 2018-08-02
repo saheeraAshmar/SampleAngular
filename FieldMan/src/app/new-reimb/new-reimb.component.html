@@ -1,0 +1,111 @@
+<div class="modal-header">
+    <h4 class="modal-title">Reimbursement Entry</h4>
+   <button type="button" class="close" (click)="activeModal.dismiss('Cross click')" >&times;</button>
+ </div>
+ <div class="modal-body">
+    <div class="row">
+      <div class="col col-md-12">
+      <ngx-datatable #newReimbEntry class="material" [headerHeight]="50" [footerHeight]="0"
+        [rowHeight]="40" [rows]="NewReimbEntry" >
+
+      <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="166"  >
+            <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+              <span title="Double click to edit" (dblclick)="editing[rowIndex + '-employee'] = true" *ngIf="!editing[rowIndex + '-employee']" style="display: inline-block;width:50px;height:100px;">
+                {{value}}
+              </span>
+              <select *ngIf="editing[rowIndex + '-employee']" (blur)="editing[rowIndex + '-employee'] = false"
+                (change)="UpdateNewReimbEntry($event, 'employee', rowIndex)" [value]="value" style="width:150px">
+                <option *ngFor="let e of Employees" value= {{e.employeeName}}>
+                  {{e.employeeName }}
+                </option>
+              </select>
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Job" headerClass="style-header" cellClass ="style-cell" [width]="65" >
+              <ng-template ngx-datatable-cell-template let-value="value">
+                {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Area" headerClass="style-header" cellClass ="style-cell" [width]="73"  >
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                <span title="Double click to edit" (dblclick)="editing[rowIndex + '-area'] = true" *ngIf="!editing[rowIndex + '-area']" style="display: inline-block;width:50px;height:100px;">
+                  {{value}}
+                </span>
+                <select *ngIf="editing[rowIndex + '-area']" (blur)="editing[rowIndex + '-area'] = false"
+                  (change)="UpdateNewReimbEntry($event, 'area', rowIndex)" [value]="value" style="width:61px">
+                  <option *ngFor="let a of Areas" value= {{a.Area}}>
+                    {{a.Area }}
+                  </option>
+                </select>
+              </ng-template>
+            </ngx-datatable-column>
+
+
+          <ngx-datatable-column name="Reimbursables" prop="reimbursementItem" headerClass="style-header" cellClass ="style-cell" [width]="130"  >
+              <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                <span title="Double click to edit" (dblclick)="editing[rowIndex + '-reimbursementItem'] = true" *ngIf="!editing[rowIndex + '-reimbursementItem']" style="display: inline-block;width:81px;height:100px;">
+                  {{value}}
+                </span>
+                <select *ngIf="editing[rowIndex + '-reimbursementItem']" (blur)="editing[rowIndex + '-reimbursementItem'] = false"
+                  (change)="UpdateNewReimbEntry($event, 'reimbursementItem', rowIndex)" [value]="value" style="width:115px">
+                  <option *ngFor="let r of Reimbursables" value= {{r.Reimbursement}}>
+                      {{r.Reimbursement}}
+                  </option>
+                </select>
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name="Cat" prop="category"  headerClass="style-header" cellClass ="style-cell"  [width]="38">
+                <ng-template ngx-datatable-cell-template let-value="value">
+                  {{value}}
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Type" prop="type"  headerClass="style-header" cellClass ="style-cell"  [width]="45">
+                  <ng-template ngx-datatable-cell-template let-value="value">
+                    {{value}}
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Units/LS" prop="units"  headerClass="style-header" cellClass ="style-cell" [width]="65">
+                    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                      <span title="Double click to edit" (dblclick)="editing[rowIndex + '-units'] = true" *ngIf="!editing[rowIndex + '-units']" style="display: inline-block;width:50px;height:100px;">
+                        {{value}}
+                      </span>
+                      <input autofocus (blur)="UpdateNewReimbEntry($event, 'units', rowIndex)" *ngIf="editing[rowIndex+ '-units']" type="number" [value]="value" style="width:35px;text-align: center"/>
+                    </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="UM" prop="um"  headerClass="style-header" cellClass ="style-cell"  [width]="40">
+                      <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                      </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="Unit Rate" prop="unitRate"  headerClass="style-header" cellClass ="style-cell" [width]="60">
+                      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                        <span title="Double click to edit" (dblclick)="editing[rowIndex + '-unitRate'] = true" *ngIf="!editing[rowIndex + '-unitRate']" style="display: inline-block;width:50px;height:100px;">
+                          {{value}}
+                        </span>
+                        <input autofocus (blur)="UpdateNewReimbEntry($event, 'unitRate', rowIndex)" *ngIf="editing[rowIndex+ '-unitRate']" type="number" [value]="value" style="width:35px;text-align: center"/>
+                      </ng-template>
+                    </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Trx Date" prop="trxDate" headerClass="style-header" cellClass ="style-cell" [width]="100">
+                          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                            <span>
+                              {{value}}
+                            </span>
+                          </ng-template>
+                        </ngx-datatable-column>  
+
+      </ngx-datatable>
+    </div>
+    </div>
+ </div>
+ <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="SaveNewReimbEntry();" >Save</button>
+    <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')" >Cancel</button>
+  </div>

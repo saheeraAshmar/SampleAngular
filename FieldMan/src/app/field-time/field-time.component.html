@@ -106,7 +106,7 @@
             
             <ngb-tab title="Reimbursables">
                 <ng-template ngbTabContent>
-                        <app-reimbursables [Areas]="getAreaList()"></app-reimbursables>
+                        <app-reimbursables [JobId]="getCurrentJobId()" [Areas]="getAreaList()" [WorkDate]="getWorkDate()"></app-reimbursables>
                 </ng-template>
             </ngb-tab>                
         </ngb-tabset>

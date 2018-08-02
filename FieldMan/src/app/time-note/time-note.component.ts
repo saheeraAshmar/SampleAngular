@@ -13,6 +13,7 @@ export class TimeNoteComponent implements OnInit {
   Job:String;
   Area:String
   CostCode:String
+  title:String
 
 
   constructor(public activeModal: NgbActiveModal,private modalService: NgbModal) { }

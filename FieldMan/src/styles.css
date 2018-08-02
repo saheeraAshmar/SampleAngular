@@ -43,3 +43,7 @@
 .datatable-EmployeeTimeEntry .datatable-body{
     height: 377px !important;
 }
+
+.datatable-Reimbursables .datatable-body{
+    height: 377px !important;
+}

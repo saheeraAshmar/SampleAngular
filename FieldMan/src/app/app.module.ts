@@ -22,6 +22,7 @@ import { DailyEmployeeTimeComponent } from './daily-employee-time/daily-employee
 import { NewTimeEntryComponent } from './new-time-entry/new-time-entry.component';
 import { TimeNoteComponent } from './time-note/time-note.component';
 import { ReimbursablesComponent } from './reimbursables/reimbursables.component';
+import { NewReimbComponent } from './new-reimb/new-reimb.component';
 
 
 @NgModule({
@@ -38,9 +39,10 @@ import { ReimbursablesComponent } from './reimbursables/reimbursables.component'
     DailyEmployeeTimeComponent,
     NewTimeEntryComponent,
     TimeNoteComponent,
-    ReimbursablesComponent
+    ReimbursablesComponent,
+    NewReimbComponent
   ],
-  entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent],
+  entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent],
   imports: [
     BrowserModule,
     RouterModule,

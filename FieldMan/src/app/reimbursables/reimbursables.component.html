@@ -1,16 +1,16 @@
 <div class="row" style="margin: 10px">
   <div class="col" style="border:1px solid black;height: 500px;overflow-y: scroll;min-width: 940px">
     <div style="padding: 15px;">
-        <ngx-datatable #dailyEmployeeTime class="material" [headerHeight]="50" [footerHeight]="50"
-            [rowHeight]="40" [rows]="EmployeeReimbursables">
+        <ngx-datatable #EmployeeReimbursable class="material datatable-Reimbursables" [headerHeight]="50" 
+        [footerHeight]="40" [rowHeight]="37" [rows]="EmployeeReimbursables" [scrollbarV]="true">
             
-            <ngx-datatable-column name="Reimbursement" prop="reimbursementItem" headerClass="style-header" cellClass ="style-cell" [width]="100">
+            <ngx-datatable-column name="Reimbursement" prop="reimbursementItem" headerClass="style-header" cellClass ="style-cell" [width]="97">
               <ng-template ngx-datatable-cell-template let-value="value">
                  {{value}}
               </ng-template>
             </ngx-datatable-column>
 
-            <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="150" > 
+            <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="145" > 
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
@@ -30,7 +30,7 @@
               </ng-template>
             </ngx-datatable-column> 
 
-            <ngx-datatable-column name="Units" headerClass="style-header" cellClass ="style-cell" [width]="65" > 
+            <ngx-datatable-column name="Units" headerClass="style-header" cellClass ="style-cell" [width]="60" > 
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
@@ -54,7 +54,7 @@
               </ng-template>
             </ngx-datatable-column>
 
-            <ngx-datatable-column name="Hours" prop="Hours" headerClass="style-header" cellClass ="style-cell" [width]="70" > 
+            <ngx-datatable-column name="Hours" prop="Hours" headerClass="style-header" cellClass ="style-cell" [width]="65" > 
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
@@ -68,9 +68,9 @@
 
             <ngx-datatable-column name="" headerClass="style-header" cellClass ="style-cell" [width]="100">
               <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
-                <input type="button"  value="+" style="margin: 1px" (click)="AddNewTimeEntry($event,rowIndex)" >              
-                <input type="button" value="X" style="margin: 1px" (click)="DeleteEmployeeTimeEntry($event, rowIndex)" >
-                <input type="button"  value="N" style="margin: 1px" (click)="AddTimeNote($event,rowIndex)">
+                <input type="button"  value="+" style="margin: 1px;height: 27px;" (click)="AddNewReimbursement($event,rowIndex)" >              
+                <input type="button" value="X" style="margin: 1px;height: 27px;" (click)="DeleteReimbursement($event, rowIndex)" >
+                <input type="button"  value="N" style="margin: 1px;height: 27px;" (click)="AddReimbNote($event,rowIndex)">
               </ng-template>
             </ngx-datatable-column>
         </ngx-datatable>
@@ -79,6 +79,6 @@
 
   <div class="col">
     <input type="Button" style="margin: 2px" class="btn btn-primary" value="Reimb. Report">
-    <input type="button"  value="+" style="margin: 4px" (click)="AddNewTimeEntry($event)" > New Reimb. Entry              
+    <input type="button"  value="+" style="margin: 4px" (click)="AddNewReimbursement($event)" > New Reimb. Entry              
   </div>
 </div>
