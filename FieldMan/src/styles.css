@@ -7,9 +7,8 @@
     opacity: 1 !important;
 }
 
-.modal-Open-Large {
-    max-width: 90%;
-    opacity: 1 !important;
+.modal-dialog{
+    top:190px;
 }
 
 .edit-cell{
@@ -47,3 +46,27 @@
 .datatable-Reimbursables .datatable-body{
     height: 377px !important;
 }
+
+.datatable-EmployeeList .datatable-body{
+    height: 377px !important;
+}
+
+.datatable-CrewMemberList .datatable-body{
+    height: 377px !important;
+}
+
+.datatable-EmployeeList .datatable-body-cell-label{
+    font-size: 9pt
+}
+
+.datatable-CrewMemberList .datatable-body-cell-label{
+    font-size: 9pt
+}
+
+/* .ngx-datatable.material.multi-selection .datatable-body-row.active{
+    background-color:red !important;
+    color: #FFF;
+} */
+
+
+

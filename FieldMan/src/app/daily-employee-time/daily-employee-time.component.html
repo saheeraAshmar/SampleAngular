@@ -5,13 +5,13 @@
         <ngx-datatable #dailyEmployeeTime class="material datatable-EmployeeTimeEntry" [headerHeight]="50" 
         [footerHeight]="40" [rowHeight]="37" [rows]="EmployeeTimeEntries" [scrollbarV]="true">
 
-        <ngx-datatable-column name="Crew" headerClass="style-header" cellClass ="style-cell" [width]="103" >
+        <ngx-datatable-column name="Crew" headerClass="style-header" cellClass ="style-cell" [width]="125" >
           <ng-template ngx-datatable-cell-template let-value="value">
             {{value}}
           </ng-template>
         </ngx-datatable-column>
         
-        <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="150" > 
+        <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="180" > 
           <ng-template ngx-datatable-cell-template let-value="value">
             {{value}}
           </ng-template>

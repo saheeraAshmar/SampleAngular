@@ -23,7 +23,7 @@
             Crew HRS / DAY :
             <input type="text" class="form-control" [(ngModel)]="Crew.ShiftLength" >
         </div>
-        <div class="col col-md-4 checkbox" *ngIf="IsUpdate" >
+        <div class="col col-md-4 checkbox" *ngIf="IsUpdate" style="margin-top: 27px;text-align: -webkit-center">
           <label><input type="checkbox" [(ngModel)] = "!Crew.IsActive" >Mark this Crew As INACTIVE</label>         
         </div>
      </div>
@@ -31,7 +31,6 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-danger mr-auto" *ngIf="IsUpdate" >Delete This Crew</button>
+        <button type="button" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')"  >Cancel</button>
     </div>
-  <!-- </div>
-</div> -->
