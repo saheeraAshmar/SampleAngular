@@ -1,13 +1,11 @@
-
  
-<div style="height: 15px;"></div>
-<div class="row">
-<div class="col" style="border:1px solid black;height: 500px;overflow-y: scroll;min-width: 810px" >
-  <div style="padding: 15px;text-align: center">
-<ngx-datatable #dailyCrewTime class="material datatable-CrewTimeEntry" [headerHeight]="50" [footerHeight]="40"
+
+<div class="row" style="margin-top: 15px">
+  <div class="col"  style="min-width: 820px;width: 835px;">
+    <ngx-datatable #dailyCrewTime class="material datatable-CrewTimeEntry" [headerHeight]="50" [footerHeight]="40"
         [rowHeight]="37" [rows]="CrewTimeEntries" [scrollbarV]="true" >
         
-  <ngx-datatable-column name="Crew" headerClass="style-header" cellClass ="style-cell" [width]="103">
+  <ngx-datatable-column name="Crew" headerClass="style-header" cellClass ="style-cell" [width]="105">
     <ng-template ngx-datatable-cell-template let-value="value">
       {{value}}
     </ng-template>
@@ -19,19 +17,19 @@
     </ng-template>
   </ngx-datatable-column>
 
-  <ngx-datatable-column prop="costCodeDescription" name ="" headerClass="style-header">
+  <ngx-datatable-column prop="costCodeDescription" name ="" headerClass="style-header" [width]="150">
     <ng-template ngx-datatable-cell-template let-value="value">
       {{value}}
     </ng-template>
   </ngx-datatable-column>
   
-  <ngx-datatable-column name="Area" headerClass="style-header" cellClass ="style-cell" [width]="54">
+  <ngx-datatable-column name="Area" headerClass="style-header" cellClass ="style-cell" [width]="60">
     <ng-template ngx-datatable-cell-template let-value="value">
       {{value}}
     </ng-template>
   </ngx-datatable-column>
 
-  <ngx-datatable-column name="Reg" headerClass="style-header" cellClass ="style-cell" [width]="54">
+  <ngx-datatable-column name="Reg" headerClass="style-header" cellClass ="style-cell" [width]="60">
     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
       <span title="Double click to edit"  (dblclick)="editing[rowIndex + '-reg'] = true" *ngIf="!editing[rowIndex + '-reg']">
         {{value}}
@@ -40,7 +38,7 @@
     </ng-template>
   </ngx-datatable-column>
 
-  <ngx-datatable-column name="OT" headerClass="style-header" cellClass ="style-cell" [width]="54">
+  <ngx-datatable-column name="OT" headerClass="style-header" cellClass ="style-cell" [width]="60">
     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
       <span title="Double click to edit" (dblclick)="editing[rowIndex + '-ot'] = true" *ngIf="!editing[rowIndex + '-ot']">
         {{value}}
@@ -49,7 +47,7 @@
     </ng-template>
   </ngx-datatable-column>
     
-  <ngx-datatable-column name="DT" headerClass="style-header" cellClass ="style-cell" [width]="54">
+  <ngx-datatable-column name="DT" headerClass="style-header" cellClass ="style-cell" [width]="60">
     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
       <span title="Double click to edit" (dblclick)="editing[rowIndex + '-dt'] = true" *ngIf="!editing[rowIndex + '-dt']">
         {{value}}
@@ -58,7 +56,7 @@
     </ng-template>
   </ngx-datatable-column>
 
-  <ngx-datatable-column name="Other" headerClass="style-header" cellClass ="style-cell" [width]="54">
+  <ngx-datatable-column name="Other" headerClass="style-header" cellClass ="style-cell" [width]="60">
     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
       <span title="Double click to edit" (dblclick)="editing[rowIndex + '-other'] = true" *ngIf="!editing[rowIndex + '-other']">
         {{value}}
@@ -67,7 +65,7 @@
     </ng-template>
   </ngx-datatable-column>
 
-  <ngx-datatable-column name="Other Type" headerClass="style-header" cellClass ="style-cell" [width]="73"  >
+  <ngx-datatable-column name="Other Type" headerClass="style-header" cellClass ="style-cell" [width]="87"  >
     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
       <span title="Double click to edit" (dblclick)="editing[rowIndex + '-otherType'] = true" *ngIf="!editing[rowIndex + '-otherType']" style="display: inline-block;width:50px;height:100px;">
         {{value}}
@@ -81,54 +79,44 @@
     </ng-template>
   </ngx-datatable-column>
 
-  <ngx-datatable-column headerClass="style-header" cellClass ="style-cell" [width]="54">
+  <ngx-datatable-column headerClass="style-header" cellClass ="style-cell" [width]="60">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value" >
         <input type="button" value="X" style="color: red;font-weight: 700;line-height: normal" (click)="DeleteTimeEntry($event, rowIndex)">
       </ng-template>
   </ngx-datatable-column> 
-</ngx-datatable>
-</div>
-</div>
-<div class="col">
-  
-</div>
-  <div class="col">
-    <div class="row" style="border:1px solid black;width:330px;height: 245px;overflow-y: scroll;min-width: 330px" >
-        <div style="padding: 15px;text-align: center">
-        <ngx-datatable #crewMembers class="material" [headerHeight]="0" [footerHeight]="0"
-          [rowHeight]="'auto'" [rows]="CrewMembers" [rowClass]="getRowClass">
-          <ngx-datatable-column name="Employee Name" headerClass="style-header" >
+    </ngx-datatable>
+  </div>
+  <div class="col" style="margin-left:2px ">
+    <div class="row" style="width:330px;" >
+      <ngx-datatable #crewMembers class="material datatable-crewMembers" [headerHeight]="0" [footerHeight]="0"
+          [rowHeight]="37" [rows]="CrewMembers" [scrollbarV]="true">
+          <ngx-datatable-column name="Employee Name" headerClass="style-header" [width]="180" >
               <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value" >
                     <span>
                       {{value}}
                     </span>
               </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="Role" headerClass="style-header"   [width]="130" >
+          <ngx-datatable-column name="Role" headerClass="style-header"   [width]="135" >
               <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value" >
                     <span>
                       {{value}}
                     </span>
               </ng-template>
           </ngx-datatable-column> 
-        </ngx-datatable>
-      </div>
-    </div>
-    <div style="height: 15px;"></div>
-    <div class="row">
-        <div style="border:1px solid black;min-width: 330px;height: 207px;">
-          
+      </ngx-datatable>      
+    </div>    
+    <div class="row" style="margin-top: 8px">
+        <div style="border:1px solid black;min-width: 330px;height: 198px;">          
             <div style="text-align: center;background-color: #9e9898;border-bottom:1px solid black">
                 Crew Daily Totals
-            </div>
-            <div style="padding: 10px">
+            </div>            
             
-            <div>
-              <div style="text-align: center">
+              <div style="text-align: center;margin-top: 5px">
                 Crew Totals - This Area
               </div>
-              <div>
-                <ngx-datatable #dailyCrewTime class="material" [headerHeight]="25" [footerHeight]="0"
+              <div style="margin:3px">
+                <ngx-datatable #dailyCrewTime class="material datatable-CrewDailyTotal" [headerHeight]="25" [footerHeight]="0"
                   [rowHeight]="25" [rows]="CrewDailyTotal_Area" [rowClass]="getRowClass">
                   <ngx-datatable-column name="REG" headerClass="style-header" cellClass ="style-cell" [width]="75">
                     <ng-template ngx-datatable-cell-template let-value="value">
@@ -154,15 +142,13 @@
                           </ng-template>
                         </ngx-datatable-column>
                 </ngx-datatable>
-              </div>
-            </div>
-            <div style="height: 10px;"></div>
-            <div>
-              <div style="text-align: center">
+              </div>                       
+            
+              <div style="text-align: center;margin-top: 5px">
                 Crew Totals - All Areas
               </div>
-              <div>
-                  <ngx-datatable #dailyCrewTime class="material" [headerHeight]="25" [footerHeight]="0"
+              <div style="margin:3px">
+                <ngx-datatable #dailyCrewTime class="material datatable-CrewDailyTotal" [headerHeight]="25" [footerHeight]="0"
                   [rowHeight]="25" [rows]="CrewDailyTotal" [rowClass]="getRowClass">
                   <ngx-datatable-column name="REG" headerClass="style-header" cellClass ="style-cell" [width]="75">
                     <ng-template ngx-datatable-cell-template let-value="value">
@@ -189,12 +175,10 @@
                         </ngx-datatable-column>
                 </ngx-datatable>
               </div>
-            </div>
-          </div>
+          
         </div>
     </div>
-    <div style="height: 7px;"></div>
-    <div class="row">
+    <div class="row" style="margin-top: 10px">
       <input type="Button" class="btn btn-primary" value="Crew Time Review">
     </div>
   </div>

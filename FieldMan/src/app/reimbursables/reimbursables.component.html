@@ -1,22 +1,21 @@
-<div class="row" style="margin: 10px">
-  <div class="col" style="border:1px solid black;height: 500px;overflow-y: scroll;min-width: 940px">
-    <div style="padding: 15px;">
-        <ngx-datatable #EmployeeReimbursable class="material datatable-Reimbursables" [headerHeight]="50" 
+<div class="row" style="margin-top: 15px">
+  <div class="col" style="min-width: 991px">
+    <ngx-datatable #EmployeeReimbursable class="material datatable-Reimbursables" [headerHeight]="50" 
         [footerHeight]="40" [rowHeight]="37" [rows]="EmployeeReimbursables" [scrollbarV]="true">
             
-            <ngx-datatable-column name="Reimbursement" prop="reimbursementItem" headerClass="style-header" cellClass ="style-cell" [width]="97">
+            <ngx-datatable-column name="Reimbursement" prop="reimbursementItem" headerClass="style-header" cellClass ="style-cell" [width]="125">
               <ng-template ngx-datatable-cell-template let-value="value">
                  {{value}}
               </ng-template>
             </ngx-datatable-column>
 
-            <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="145" > 
+            <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="180" > 
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
             </ngx-datatable-column>
               
-            <ngx-datatable-column name="Area" headerClass="style-header"  cellClass ="style-cell" [width]="73"  >
+            <ngx-datatable-column name="Area" headerClass="style-header"  cellClass ="style-cell" [width]="75"  >
               <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
                 <span title="Double click to edit" (dblclick)="editing[rowIndex + '-area'] = true"  *ngIf="!editing[rowIndex + '-area']" style="display: inline-block;width:50px;height:100px;">
                   {{value}}            
@@ -30,19 +29,19 @@
               </ng-template>
             </ngx-datatable-column> 
 
-            <ngx-datatable-column name="Units" headerClass="style-header" cellClass ="style-cell" [width]="60" > 
+            <ngx-datatable-column name="Units" headerClass="style-header" cellClass ="style-cell" [width]="70" > 
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
             </ngx-datatable-column>
 
-            <ngx-datatable-column name="UM" headerClass="style-header" cellClass ="style-cell" [width]="70" > 
+            <ngx-datatable-column name="UM" headerClass="style-header" cellClass ="style-cell" [width]="90" > 
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
             </ngx-datatable-column>
 
-            <ngx-datatable-column name="CostCode" headerClass="style-header" cellClass ="style-cell" [width]="75" > 
+            <ngx-datatable-column name="CostCode" headerClass="style-header" cellClass ="style-cell" [width]="80" > 
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
@@ -73,8 +72,7 @@
                 <input type="button"  value="N" style="margin: 1px;height: 27px;" (click)="AddReimbNote($event,rowIndex)">
               </ng-template>
             </ngx-datatable-column>
-        </ngx-datatable>
-    </div>
+    </ngx-datatable> 
   </div>
 
   <div class="col">

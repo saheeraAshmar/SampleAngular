@@ -1,0 +1,139 @@
+<div class="container">
+  <div class="row" style="margin-top: 25px">
+    <div class="col col-md-9 center-align">
+      <button class="btn btn-primary" style="width:500px">Claim Quantites</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-md-9" style="min-width: 945px;margin-top: 20px">    
+      <ngx-datatable #quantityTracking class="material datatable-QuantityTracking" [headerHeight]="50" 
+          [footerHeight]="40" [rowHeight]="37" [rows]="Qunatities" [scrollbarV]="true">
+          
+          <ngx-datatable-column name="Cost Code" prop="CostCode" headerClass="style-header" cellClass ="style-cell" [width]="97">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Cost Code Description" prop="CostCodeDesc" headerClass="style-header" cellClass ="style-cell" [width]="97">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Area" prop="Area" headerClass="style-header" cellClass ="style-cell" [width]="75">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Area Description" prop="AreaDesc" headerClass="style-header" cellClass ="style-cell" [width]="115">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Qty Budget" prop="QtyBudget" headerClass="style-header" cellClass ="style-cell" [width]="75">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="WTD Qty" prop="WTDQty" headerClass="style-header" cellClass ="style-cell" [width]="62">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="JTD Qty" prop="JTDQty" headerClass="style-header" cellClass ="style-cell" [width]="62">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="% Completed" prop="CompletedPerc" headerClass="style-header" cellClass ="style-cell" [width]="88">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="LF Budget" prop="LFBudget" headerClass="style-header" cellClass ="style-cell" [width]="70">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="WTD LF" prop="WTDLF" headerClass="style-header" cellClass ="style-cell" [width]="57">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="JTD LF" prop="JTDLF" headerClass="style-header" cellClass ="style-cell" [width]="52">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="% Comp LF" prop="CompletedLFPerc" headerClass="style-header" cellClass ="style-cell" [width]="73">
+              <ng-template ngx-datatable-cell-template let-value="value">
+                 {{value}}
+              </ng-template>
+          </ngx-datatable-column>
+
+      </ngx-datatable>
+    </div>
+    <div class="col col-md-2" style="margin-left: 5px;margin-top: 65px" >
+      <div class="row center-align">
+        Qty Week Ending Date 
+      </div>
+      <div class="row">
+        <select [(ngModel)]='QtyWeekEndDate'  class="form-control" style="width:240px">
+              <option *ngFor="let wk of QtyWeekEndDates" value= {{wk.SIPID}}>
+                 {{wk.SIPWeekEndDate }}
+              </option>
+        </select>        
+      </div>
+
+    <div class="row center-align" style="margin-top: 20px;">
+        Division
+      </div>
+      <div class="row">
+        <select [(ngModel)]='Division'  class="form-control" style="width:240px">
+            <option *ngFor="let d of Divisions" value= {{c.Id}}>
+               {{c.Desc }}
+            </option>
+        </select>
+      </div>
+
+      <div class="row center-align" style="margin-top: 20px;">
+          Cost Code
+      </div>
+      <div class="row">
+          <select [(ngModel)]='CostCode'  class="form-control" style="width:240px">
+              <option *ngFor="let c of CostCodes" value= {{c.CostCode}}>
+                 {{c.CostCode}}
+              </option>
+          </select>
+      </div>
+
+      <div class="row center-align" style="margin-top: 20px;">
+         Area
+      </div>
+      <div class="row">
+          <select [(ngModel)]='Area'  class="form-control" style="width:240px">
+              <option *ngFor="let a of Areas" value= {{a.area}}>
+                 {{a.area}}
+              </option>
+          </select>
+      </div>
+
+      <div class="row center-align" style="margin-top: 20px;">
+          <button class="btn btn-primary">Clear Search Selections</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

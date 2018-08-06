@@ -23,6 +23,7 @@ import { NewTimeEntryComponent } from './new-time-entry/new-time-entry.component
 import { TimeNoteComponent } from './time-note/time-note.component';
 import { ReimbursablesComponent } from './reimbursables/reimbursables.component';
 import { NewReimbComponent } from './new-reimb/new-reimb.component';
+import { QuantityTrackingComponent } from './quantity-tracking/quantity-tracking.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NewReimbComponent } from './new-reimb/new-reimb.component';
     NewTimeEntryComponent,
     TimeNoteComponent,
     ReimbursablesComponent,
-    NewReimbComponent
+    NewReimbComponent,
+    QuantityTrackingComponent
   ],
   entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent],
   imports: [

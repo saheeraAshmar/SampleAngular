@@ -70,6 +70,13 @@ export class CrewConfigComponent implements OnInit{
         "Name":"AGUILAR;  WILSON JIMENEZ",
         "CurrentCrew":"",
         "CurrentJob":""
+      },
+      {
+        "Role":"EMPLOYEE",
+        "EmployeeId":3333,
+        "Name":"ABC;  PQR",
+        "CurrentCrew":"",
+        "CurrentJob":""
       }
     ];
     
@@ -142,7 +149,11 @@ onActivateEmployee(event) {
     }
     else{
       var l=this.selectedEmployees.length;
-      for(var i=0;i<l;i++){        
+      console.log(this.selectedEmployees)
+      
+      for(var i=0;i<l;i++){   
+        console.log("l is "+l+" and i is "+i);
+
         var NewMember={
           "CrewLead":false,
           "Crew":this.SelectedCrew,
@@ -150,8 +161,7 @@ onActivateEmployee(event) {
           "Name":this.selectedEmployees[i].Name,
           "Role":this.selectedEmployees[i].Role
         }
-        this.CrewMemberList.push(NewMember);     
-
+        this.CrewMemberList.push(NewMember);       
         
         for(var j= 0; j< this.EmployeeList.length;j++) {
           if (this.selectedEmployees[i].EmployeeId === this.EmployeeList[j].EmployeeId) {
@@ -164,13 +174,12 @@ onActivateEmployee(event) {
             break;
          }
         
-      }
-      this.EmployeeList = [...this.EmployeeList];
-      this.CrewMemberList = [...this.CrewMemberList];
-      this.selectedEmployees = [];
-     
+        }         
 
     }
+    this.EmployeeList = [...this.EmployeeList];
+      this.CrewMemberList = [...this.CrewMemberList];
+      this.selectedEmployees = [];
   }
 }
 
@@ -199,12 +208,12 @@ RemoveCrewMembers(){
           break;
        }
       
-    }
-    this.EmployeeList = [...this.EmployeeList];
-    this.CrewMemberList = [...this.CrewMemberList];
-    this.selectedCrewMembers = [];  
+    }     
 
   }
+  this.EmployeeList = [...this.EmployeeList];
+    this.CrewMemberList = [...this.CrewMemberList];
+    this.selectedCrewMembers = []; 
 }
 }
 

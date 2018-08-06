@@ -39,6 +39,11 @@
     height: 377px !important;
 }
 
+.datatable-crewMembers .datatable-body{
+    height: 218px !important;
+    width:330px !important;
+}
+
 .datatable-EmployeeTimeEntry .datatable-body{
     height: 377px !important;
 }
@@ -61,6 +66,47 @@
 
 .datatable-CrewMemberList .datatable-body-cell-label{
     font-size: 9pt
+}
+
+.datatable-CrewDailyTotal .datatable-body-row {
+    border-bottom: none ;
+}
+
+
+.datatable-QuantityTracking .datatable-body{
+    height: 377px !important;
+}
+
+.ngx-datatable.material{
+    box-shadow: unset;
+    border: 1px solid black;
+}
+
+.center-align{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.btn{
+    box-shadow: 0.2em 0.2em 0.7em black;
+}
+
+/*DATA TABLE*/
+
+.datatable-body-row{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.datatable-header {
+    border-bottom: 1px solid rgb(0, 0, 0) !important
+}
+.datatable-header-cell{
+    white-space: pre-wrap !important
+}
+.datatable-footer {
+    border-top: 1px solid black !important
 }
 
 /* .ngx-datatable.material.multi-selection .datatable-body-row.active{

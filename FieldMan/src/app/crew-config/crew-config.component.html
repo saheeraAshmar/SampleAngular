@@ -147,8 +147,8 @@
               [selected]="selectedCrewMembers"
               [selectionType]="'multi'"
               (activate)="onActivateCrewMember($event)"
-              (select)='onSelectCrewMember($event)'
-              (selectCheck)="selectCheck($event, $row)">
+              (select)='onSelectCrewMember($event)'>
+              <!-- (selectCheck)="selectCheck($event, $row)" -->
 
               <ngx-datatable-column name="Crew Lead" prop="CrewLead" headerClass="style-header" cellClass ="style-cell" [width]="50" >
                   <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">

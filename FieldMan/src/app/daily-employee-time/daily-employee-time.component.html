@@ -1,8 +1,7 @@
 
-<div class="row" style="margin: 10px">
-  <div class="col" style="border:1px solid black;height: 500px;overflow-y: scroll;min-width: 925px">
-    <div style="padding: 15px;">
-        <ngx-datatable #dailyEmployeeTime class="material datatable-EmployeeTimeEntry" [headerHeight]="50" 
+<div class="row" style="margin-top: 15px">
+  <div class="col" style="min-width: 975px">
+    <ngx-datatable #dailyEmployeeTime class="material datatable-EmployeeTimeEntry" [headerHeight]="50" 
         [footerHeight]="40" [rowHeight]="37" [rows]="EmployeeTimeEntries" [scrollbarV]="true">
 
         <ngx-datatable-column name="Crew" headerClass="style-header" cellClass ="style-cell" [width]="125" >
@@ -11,13 +10,13 @@
           </ng-template>
         </ngx-datatable-column>
         
-        <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="180" > 
+        <ngx-datatable-column name="Employee" headerClass="style-header" cellClass ="style-cell" [width]="200" > 
           <ng-template ngx-datatable-cell-template let-value="value">
             {{value}}
           </ng-template>
         </ngx-datatable-column> 
 
-        <ngx-datatable-column name="Area" headerClass="style-header"  cellClass ="style-cell" [width]="73"  >
+        <ngx-datatable-column name="Area" headerClass="style-header"  cellClass ="style-cell" [width]="78"  >
           <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
           <span title="Double click to edit" (dblclick)="editing[rowIndex + '-area'] = true"  *ngIf="!editing[rowIndex + '-area']" style="display: inline-block;width:50px;height:100px;">
               {{value}}            
@@ -32,7 +31,7 @@
           </ng-template>
         </ngx-datatable-column> 
           
-        <ngx-datatable-column name="CostCode" headerClass="style-header" cellClass ="style-cell" [width]="75"  >
+        <ngx-datatable-column name="CostCode" headerClass="style-header" cellClass ="style-cell" [width]="80"  >
           <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
             <span title="Double click to edit" (dblclick)="editing[rowIndex + '-costCode'] = true" *ngIf="!editing[rowIndex + '-costCode']">
               {{value}}
@@ -46,13 +45,13 @@
           </ng-template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="Category" headerClass="style-header" cellClass ="style-cell"  [width]="62">
+        <ngx-datatable-column name="Category" headerClass="style-header" cellClass ="style-cell"  [width]="70">
           <ng-template ngx-datatable-cell-template let-value="value">
             {{value}}
           </ng-template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="Hours" headerClass="style-header" cellClass ="style-cell" [width]="50">
+        <ngx-datatable-column name="Hours" headerClass="style-header" cellClass ="style-cell" [width]="60">
           <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
             <span title="Double click to edit" (dblclick)="editing[rowIndex + '-hours'] = true" *ngIf="!editing[rowIndex + '-hours']">
               {{value}}
@@ -61,7 +60,7 @@
           </ng-template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="HRS Type" headerClass="style-header" cellClass ="style-cell" [width]="73"  >
+        <ngx-datatable-column name="HRS Type" headerClass="style-header" cellClass ="style-cell" [width]="80"  >
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
               <span title="Double click to edit" (dblclick)="editing[rowIndex + '-hrsType'] = true" *ngIf="!editing[rowIndex + '-hrsType']">
                 {{value}}
@@ -75,7 +74,7 @@
             </ng-template>
           </ngx-datatable-column>
 
-          <ngx-datatable-column name="Work Date" headerClass="style-header" cellClass ="style-cell" [width]="100">
+          <ngx-datatable-column name="Work Date" headerClass="style-header" cellClass ="style-cell" [width]="115">
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
               <span>
                 {{value}}
@@ -83,15 +82,15 @@
             </ng-template>
           </ngx-datatable-column>        
      
-        <ngx-datatable-column name="" headerClass="style-header" cellClass ="style-cell" [width]="100">
+        <ngx-datatable-column name="" headerClass="style-header" cellClass ="style-cell" [width]="120">
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
               <input type="button"  value="+" style="margin: 1px;height: 27px;" (click)="AddNewTimeEntry($event,rowIndex)" >              
               <input type="button" value="X" style="margin: 1px;height: 27px" (click)="DeleteEmployeeTimeEntry($event, rowIndex)" >
               <input type="button"  value="N" style="margin: 1px;height: 27px" (click)="AddTimeNote($event,rowIndex)">
             </ng-template>
           </ngx-datatable-column> 
-      </ngx-datatable>
-    </div>
+    </ngx-datatable>
+ 
   </div>
   <div class="col">
       <input type="Button" style="margin: 2px" class="btn btn-primary" value="Daily Time Report">
