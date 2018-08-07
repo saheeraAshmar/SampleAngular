@@ -90,39 +90,44 @@
           </div>
        </div>
        <div class="row" style="margin: 10px">
-          <div class="col col-md-5"  style="min-width: 533px;">
-            <ngx-datatable #dataTableEmployeeList class="material datatable-EmployeeList" [headerHeight]="50" 
+          <div class="col col-md-5" style="width: 533px;">
+              
+              <ngx-datatable #dataTableEmployeeList class="material datatable-EmployeeList" [headerHeight]="50" 
               [footerHeight]="40" [rowHeight]="35" [rows]="EmployeeList" [scrollbarV]="true"
               (activate)="onActivateEmployee($event)" 
               [selected]="selectedEmployees"
               [selectionType]="'multi'"              
               (select)='onSelectEmployee($event)'>
 
-              <ngx-datatable-column name="Role" prop="Role" headerClass="style-header" [width]="125" >
-                <ng-template ngx-datatable-cell-template let-value="value">
-                  {{value}}
-                </ng-template>
-              </ngx-datatable-column> 
+              <ngx-datatable-column name="Role" prop="Role" headerClass="style-header" cellClass ="style-cell" [width]="125" >
+                  <ng-template ngx-datatable-cell-template let-value="value">
+                    {{value}}
+                  </ng-template>
+                </ngx-datatable-column> 
 
-             <ngx-datatable-column name="Name" prop="Name" headerClass="style-header"  [width]="180" >
+                <ngx-datatable-column name="Employee Name" prop="Name" headerClass="style-header" cellClass ="style-cell" [width]="180" >
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                      {{value}}
+                    </ng-template>
+                  </ngx-datatable-column>
+
+              <ngx-datatable-column name="Current Crew" prop="CurrentCrew" headerClass="style-header" cellClass ="style-cell" [width]="96" >
+                  <ng-template ngx-datatable-cell-template let-value="value">
+                    {{value}}
+                  </ng-template>
+                </ngx-datatable-column>
+
+              <ngx-datatable-column name="Current Job" prop="CurrentJob" headerClass="style-header" cellClass ="style-cell"  >
                 <ng-template ngx-datatable-cell-template let-value="value">
                   {{value}}
                 </ng-template>
               </ngx-datatable-column>
+             
 
-              <ngx-datatable-column name="Current Crew" prop="CurrentCrew" headerClass="style-header" cellClass ="style-cell" [width]="103" >
-                <ng-template ngx-datatable-cell-template let-value="value">
-                  {{value}}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Current Job" prop="CurrentJob" headerClass="style-header" cellClass ="style-cell" [width]="103" >
-                <ng-template ngx-datatable-cell-template let-value="value">
-                  {{value}}
-                </ng-template>
-              </ngx-datatable-column>
-
+             
             </ngx-datatable>
+
+           
           </div> 
           <div class="col col-md-1"> 
             <div class="row">
@@ -141,14 +146,13 @@
             </div>
             
           </div> 
-          <div class="col col-md-6" style="max-width: 594px">
+         <div class="col col-md-6" style="max-width: 594px">
               <ngx-datatable #dataTableCrewMemberList class="material datatable-CrewMemberList" [headerHeight]="50" 
               [footerHeight]="40" [rowHeight]="35" [rows]="CrewMemberList" [scrollbarV]="true"
               [selected]="selectedCrewMembers"
               [selectionType]="'multi'"
               (activate)="onActivateCrewMember($event)"
               (select)='onSelectCrewMember($event)'>
-              <!-- (selectCheck)="selectCheck($event, $row)" -->
 
               <ngx-datatable-column name="Crew Lead" prop="CrewLead" headerClass="style-header" cellClass ="style-cell" [width]="50" >
                   <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
@@ -181,8 +185,8 @@
                 </ng-template>
               </ngx-datatable-column> 
             </ngx-datatable>
-          </div>
-       </div>
+          </div> 
+       </div> 
        
      </div>     
      <div class="modal-footer">

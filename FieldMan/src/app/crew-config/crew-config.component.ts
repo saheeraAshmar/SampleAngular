@@ -10,8 +10,8 @@ import {NgbModal, NgbActiveModal, NgbModalOptions} from '@ng-bootstrap/ng-bootst
   styles: [`
     @media screen {
         .modal-adaptive .modal-lg {
-            width: 95% !important;
-            max-width: calc(95%);
+            width: 70% !important;
+            max-width: calc(75%);
         }
         `]
 })

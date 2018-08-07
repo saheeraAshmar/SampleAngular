@@ -21,6 +21,9 @@
 .style-cell{
     text-align: center!important;
 }
+.style-button-cell{
+    position: relative;
+}
 
 .div-header{
     text-align: center;
@@ -37,6 +40,10 @@
 
 .datatable-CrewTimeEntry .datatable-body{
     height: 377px !important;
+}
+
+.datatable-CrewDailyTotal .datatable-body-cell{
+    border: none;
 }
 
 .datatable-crewMembers .datatable-body{
@@ -63,6 +70,18 @@
     height: 300px !important;
 }
 
+.datatable-DailyquantityEntry .datatable-body{
+    height: 26px !important
+}
+
+.datatable-DailyquantityEntry .datatable-body-row{
+    border-bottom: none;
+    border-right: 1px solid black !important
+}
+
+.space-header{
+    background-color: unset !important
+}
 .datatable-quantityEntry .datatable-body-cell-label{
     font-size: 9pt
 }
@@ -105,6 +124,20 @@
     box-shadow: 0.2em 0.2em 0.7em black;
 }
 
+.column-group{
+    border: 1px solid black;
+    display: table;
+    text-align: center;
+    background-color: #808080b0;height: 45px;
+    border-bottom: unset;
+    border-left: unset
+}
+.column-group span{
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+}
+
 @media screen {
     .quantityEntry {
         width: 100%;
@@ -118,22 +151,21 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+.datatable-body-cell{
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
 .datatable-header {
     border-bottom: 1px solid rgb(0, 0, 0) !important
 }
 .datatable-header-cell{
-    white-space: pre-wrap !important
+    white-space: pre-wrap !important;
+    border-right: 1px solid rgb(0, 0, 0) !important;
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
 }
 .datatable-footer {
     border-top: 1px solid black !important
 }
-
-
-
-/* .ngx-datatable.material.multi-selection .datatable-body-row.active{
-    background-color:red !important;
-    color: #FFF;
-} */
-
-
 

@@ -1,0 +1,181 @@
+<div class="modal-header">
+  <h4 class="modal-title">Daily Production Quantity Entry</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss('Cross click')">&times;</button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col col-md-2">
+      <div class="div-header">
+        Area
+      </div>
+      <div>
+        <input type="text" class="form-control div-append-input">
+      </div>
+    </div>
+    <div class="col col-md-2">
+      <div class="div-header">
+        Cost Code
+      </div>
+      <div>
+        <input type="text" class="form-control div-append-input">
+      </div>
+    </div>
+
+    <div class="col col-md-2">
+      <div class="div-header">
+        Description
+      </div>
+      <div>
+        <input type="text" class="form-control div-append-input">
+      </div>
+    </div>
+
+    <div class="col col-md-2">
+      <div class="div-header">
+        Qty Budget
+      </div>
+      <div>
+        <input type="text" class="form-control div-append-input">
+      </div>
+    </div>
+
+    <div class="col col-md-2">
+      <div class="div-header">
+        Qty Budget (LF)
+      </div>
+      <div>
+        <input type="text" class="form-control div-append-input">
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <div class="row" style="margin: 5px 5px 0px 5px">
+    <div class="col col-md-1">
+
+      <ngx-datatable #DailyquantityEntry class="material datatable-DailyquantityEntry" [headerHeight]="25" [footerHeight]="0" [rowHeight]="25"
+        [rows]="DailyQuantity">
+
+        <ngx-datatable-column name="Unit" prop="Unit" [sortable]="false" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+
+      </ngx-datatable>
+    </div>
+    <div class="col col-md-7">
+
+      <ngx-datatable #DailyquantityEntry class="material datatable-DailyquantityEntry" [headerHeight]="25" [footerHeight]="0" [rowHeight]="25"
+        [rows]="DailyQuantity">
+
+        <ngx-datatable-column name="Monday" prop="Monday" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-Monday'] = true" *ngIf="!editing[rowIndex + '-Monday']">
+              {{value}}
+            </span>
+            <input autofocus (blur)="UpdateDailyQuantity($event, 'Monday', rowIndex)" *ngIf="editing[rowIndex+ '-Monday']" type="number" [value]="value"
+              style="width:35px;text-align: center;height: 25px;" />
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Tuesday" prop="Tuesday" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-Tuesday'] = true" *ngIf="!editing[rowIndex + '-Tuesday']">
+              {{value}}
+            </span>
+            <input autofocus (blur)="UpdateDailyQuantity($event, 'Tuesday', rowIndex)" *ngIf="editing[rowIndex+ '-Tuesday']" type="number" [value]="value"
+              style="width:35px;text-align: center;height: 25px;" />
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Wednesday" prop="Wednesday" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-Wednesday'] = true" *ngIf="!editing[rowIndex + '-Wednesday']">
+              {{value}}
+            </span>
+            <input autofocus (blur)="UpdateDailyQuantity($event, 'Wednesday', rowIndex)" *ngIf="editing[rowIndex+ '-Wednesday']" type="number" [value]="value"
+              style="width:35px;text-align: center;height: 25px;" />
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Thursday" prop="Thursday" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-Thursday'] = true" *ngIf="!editing[rowIndex + '-Thursday']">
+              {{value}}
+            </span>
+            <input autofocus (blur)="UpdateDailyQuantity($event, 'Thursday', rowIndex)" *ngIf="editing[rowIndex+ '-Thursday']" type="number" [value]="value"
+              style="width:35px;text-align: center;height: 25px;" />
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Friday" prop="Friday" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-Friday'] = true" *ngIf="!editing[rowIndex + '-Friday']">
+              {{value}}
+            </span>
+            <input autofocus (blur)="UpdateDailyQuantity($event, 'Friday', rowIndex)" *ngIf="editing[rowIndex+ '-Friday']" type="number" [value]="value"
+              style="width:35px;text-align: center;height: 25px;" />
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Saturday" prop="Saturday" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-Saturday'] = true" *ngIf="!editing[rowIndex + '-Saturday']">
+              {{value}}
+            </span>
+            <input autofocus (blur)="UpdateDailyQuantity($event, 'Saturday', rowIndex)" *ngIf="editing[rowIndex+ '-Saturday']" type="number" [value]="value"
+              style="width:35px;text-align: center;height: 25px;" />
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Sunday" prop="Sunday" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-Sunday'] = true" *ngIf="!editing[rowIndex + '-Sunday']">
+              {{value}}
+            </span>
+            <input autofocus (blur)="UpdateDailyQuantity($event, 'Sunday', rowIndex)" *ngIf="editing[rowIndex+ '-Sunday']" type="number" [value]="value"
+              style="width:35px;text-align: center;height: 25px;" />
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+
+    <div class="col col-md-4">
+
+      <ngx-datatable #DailyquantityEntry class="material datatable-DailyquantityEntry" [headerHeight]="25" [footerHeight]="0" [rowHeight]="25"
+        [rows]="DailyQuantity">
+        <ngx-datatable-column name="Previous Total" prop="PreviousTotal" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column name="WTD Total" prop="WTDTotal" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column name="JTD Total" prop="JTD Total" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column name="EPC" prop="EPC" headerClass="style-header" cellClass="style-cell" [width]="97">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+</div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="UpdateProductionQuantity()">Save</button>
+    <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')">Cancel</button>
+  </div>

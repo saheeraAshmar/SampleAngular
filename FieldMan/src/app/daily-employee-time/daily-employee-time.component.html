@@ -82,11 +82,13 @@
             </ng-template>
           </ngx-datatable-column>        
      
-        <ngx-datatable-column name="" headerClass="style-header" cellClass ="style-cell" [width]="120">
+        <ngx-datatable-column name="" headerClass="style-header"  cellClass ="style-button-cell" >
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
-              <input type="button"  value="+" style="margin: 1px;height: 27px;" (click)="AddNewTimeEntry($event,rowIndex)" >              
-              <input type="button" value="X" style="margin: 1px;height: 27px" (click)="DeleteEmployeeTimeEntry($event, rowIndex)" >
-              <input type="button"  value="N" style="margin: 1px;height: 27px" (click)="AddTimeNote($event,rowIndex)">
+              <div style="position:absolute;top: 10%">
+                <input type="button"  value="+" style="margin: 1px;height: 25px;" (click)="AddNewTimeEntry($event,rowIndex)" >              
+                <input type="button" value="X" style="margin: 1px;height: 25px" (click)="DeleteEmployeeTimeEntry($event, rowIndex)" >
+                <input type="button"  value="N" style="margin: 1px;height: 25px" (click)="AddTimeNote($event,rowIndex)">
+            </div>
             </ng-template>
           </ngx-datatable-column> 
     </ngx-datatable>

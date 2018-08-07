@@ -20,8 +20,6 @@ export class ProductionTrackingComponent implements OnInit {
   ngOnInit() {
   }
 
-  getQuantities(){
-    return 
-  }
+  
 
 }

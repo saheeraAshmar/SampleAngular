@@ -26,6 +26,7 @@ import { NewReimbComponent } from './new-reimb/new-reimb.component';
 import { QuantityTrackingComponent } from './quantity-tracking/quantity-tracking.component';
 import { ProductionTrackingComponent } from './production-tracking/production-tracking.component';
 import { QuantityEntryComponent } from './quantity-entry/quantity-entry.component';
+import { DailyQuantityEntryComponent } from './daily-quantity-entry/daily-quantity-entry.component';
 
 
 @NgModule({
@@ -46,9 +47,10 @@ import { QuantityEntryComponent } from './quantity-entry/quantity-entry.componen
     NewReimbComponent,
     QuantityTrackingComponent,
     ProductionTrackingComponent,
-    QuantityEntryComponent
+    QuantityEntryComponent,
+    DailyQuantityEntryComponent
   ],
-  entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent,ProductionTrackingComponent],
+  entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent,ProductionTrackingComponent,DailyQuantityEntryComponent],
   imports: [
     BrowserModule,
     RouterModule,
