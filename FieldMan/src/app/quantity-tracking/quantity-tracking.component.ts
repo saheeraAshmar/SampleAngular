@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductionTrackingComponent } from '../production-tracking/production-tracking.component';
+import { NgbModalOptions, NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-quantity-tracking',
@@ -7,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuantityTrackingComponent implements OnInit {
 
-  Qunatities=[];
+  Quantities=[];
   QtyWeekEndDates=[];
   Divisions=[];
   CostCodes=[];
   Areas=[];
+  private modalRef: NgbModalRef;
 
-  constructor() { 
-    this.Qunatities=[
+  constructor(private modalService: NgbModal) { 
+    this.Quantities=[
       {
         "CostCode":"G-02",
         "CostCodeDesc":"TRUCKING",
@@ -49,6 +52,11 @@ export class QuantityTrackingComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+
+  OpenProductionTracking(){
+    let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
+    this.modalRef = this.modalService.open(ProductionTrackingComponent,options);
   }
 
 }

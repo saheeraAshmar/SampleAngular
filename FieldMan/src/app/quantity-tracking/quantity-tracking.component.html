@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row" style="margin-top: 25px">
     <div class="col col-md-9 center-align">
-      <button class="btn btn-primary" style="width:500px">Claim Quantites</button>
+      <button class="btn btn-primary" style="width:500px" (click)="OpenProductionTracking()">Claim Quantites</button>
     </div>
   </div>
 
   <div class="row">
     <div class="col col-md-9" style="min-width: 945px;margin-top: 20px">    
       <ngx-datatable #quantityTracking class="material datatable-QuantityTracking" [headerHeight]="50" 
-          [footerHeight]="40" [rowHeight]="37" [rows]="Qunatities" [scrollbarV]="true">
+          [footerHeight]="40" [rowHeight]="37" [rows]="Quantities" [scrollbarV]="true">
           
           <ngx-datatable-column name="Cost Code" prop="CostCode" headerClass="style-header" cellClass ="style-cell" [width]="97">
               <ng-template ngx-datatable-cell-template let-value="value">

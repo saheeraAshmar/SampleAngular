@@ -1,0 +1,85 @@
+<!-- <div class="container"> -->
+    <div class="row quantityEntry" style="margin: 5px 5px 0px 5px">
+        <div class="col">
+
+            <ngx-datatable #quantityEntry class="material datatable-quantityEntry" [headerHeight]="50" [footerHeight]="40" [rowHeight]="37"
+                [rows]="Quantities" [scrollbarV]="true">
+
+                <ngx-datatable-column name="Cost Code" prop="CostCode" headerClass="style-header" cellClass="style-cell" [width]="97">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Cost Code Description" prop="CostCodeDesc" headerClass="style-header" cellClass="style-cell"
+                    [width]="180">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Area" prop="Area" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Quantity" prop="BudgetQuantity" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="UM" prop="UM" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="% Compl" prop="LW_CompletedPerc" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Quantity" prop="LW_Quantity" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="JTD Qty" prop="LW_JTDQty" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Target" prop="Target" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="%Compl" prop="CompletedPerc" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Quantity" prop="Quantity" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="JTD Qty" prop="JTDQty" headerClass="style-header" cellClass="style-cell" [width]="75">
+                    <ng-template ngx-datatable-cell-template let-value="value">
+                        {{value}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+            </ngx-datatable>
+        </div>
+
+    </div>
+<!-- </div> -->

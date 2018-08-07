@@ -1,0 +1,119 @@
+<div class="modal-header">
+  <h4 class="modal-title">Production Tracking</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss('Cross click')">&times;</button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col col-md-2">
+      <div class="row inline-input" style="margin-top: 50px">
+        <div style="width:78px;text-align: right">
+          Job:
+        </div>
+        <!-- <input type="text" class="form-control" style="width:200px"> -->
+        <span>01-10001</span>
+      </div>
+
+      <div class="row inline-input" style="margin-top: 5px">
+        <div style="width:78px;text-align: right">
+          Constr Mgr:
+        </div>
+        <!-- <input type="text" class="form-control" style="width:200px"> -->
+        <span>ABBDH</span>
+      </div>
+
+      <div class="row inline-input" style="margin-top: 5px">
+        <div style="width:78px;text-align: right">
+          Foreman:
+        </div>
+        <!-- <input type="text" class="form-control" style="width:200px"> -->
+        <span>PSKUNM</span>
+      </div>
+
+    </div>
+
+    <div class="col col-md-6">
+      <div class="row inline-input">
+        Production Week Ending Date:
+        <select class="form-control" style="width:165px">
+        </select>
+      </div>
+      <div class="row inline-input">
+        <button class="btn btn-primary" style="margin:5px 0px 0px 191px">New Production Week</button>
+      </div>
+    </div>
+
+    <div class="col col-md-4" style="position: relative;">
+      <div class="checkbox" style="position:absolute;bottom: 0px">
+        <label>
+          <input type="checkbox" value="">Qunatities Updated</label>
+      </div>
+      <div class="checkbox" style="position:absolute;bottom: 20px">
+        <label>
+          <input type="checkbox" value="">Qty Entry Completed</label>
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <div class="row" style="margin-top: 10px">
+    <div class="col col-md-2">
+      <div class="div-header">
+        Area
+      </div>
+      <div>
+        <select class="form-control div-append-input">
+        </select>
+      </div>
+    </div>
+    <div class="col col-md-2">
+      <div class="div-header">
+        Division
+      </div>
+      <div>
+        <select class="form-control div-append-input">
+        </select>
+      </div>
+    </div>
+    <div class="col col-md-2">
+      <div class="div-header">
+        Cost Code
+      </div>
+      <div>
+        <select class="form-control div-append-input">
+        </select>
+      </div>
+    </div>
+    <div class="col col-md-1">
+      <button class="btn btn-primary" style="margin-top: 10px">Clear</button>
+    </div>
+
+    <div class="col col-md-5 inline-input">
+      Qty Week :
+      <input type="text" class="form-control" style="width:98px">
+      <div style="margin-left: 15px">
+        To : 
+      </div>
+      <input type="text" class="form-control" style="width:98px">
+    </div>
+  </div>
+  <hr>
+  <div class="row" style="margin-top: 10px">
+      <ngb-tabset [destroyOnHide]="false">
+          <ngb-tab title="Qunatity Entry Form">
+               <ng-template ngbTabContent>
+                  <app-quantity-entry></app-quantity-entry>
+               </ng-template>
+           </ngb-tab> 
+           <ngb-tab title="Cost Codes with No QTY Budget">
+                   <ng-template ngbTabContent>
+                      Cost Codes with No QTY Budget
+                   </ng-template>
+           </ngb-tab>           
+       </ngb-tabset>
+
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')">Cancel</button>
+</div>

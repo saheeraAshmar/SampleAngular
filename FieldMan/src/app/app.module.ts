@@ -24,6 +24,8 @@ import { TimeNoteComponent } from './time-note/time-note.component';
 import { ReimbursablesComponent } from './reimbursables/reimbursables.component';
 import { NewReimbComponent } from './new-reimb/new-reimb.component';
 import { QuantityTrackingComponent } from './quantity-tracking/quantity-tracking.component';
+import { ProductionTrackingComponent } from './production-tracking/production-tracking.component';
+import { QuantityEntryComponent } from './quantity-entry/quantity-entry.component';
 
 
 @NgModule({
@@ -42,9 +44,11 @@ import { QuantityTrackingComponent } from './quantity-tracking/quantity-tracking
     TimeNoteComponent,
     ReimbursablesComponent,
     NewReimbComponent,
-    QuantityTrackingComponent
+    QuantityTrackingComponent,
+    ProductionTrackingComponent,
+    QuantityEntryComponent
   ],
-  entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent],
+  entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent,ProductionTrackingComponent],
   imports: [
     BrowserModule,
     RouterModule,
