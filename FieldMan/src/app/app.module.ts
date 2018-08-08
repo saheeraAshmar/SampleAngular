@@ -27,6 +27,7 @@ import { QuantityTrackingComponent } from './quantity-tracking/quantity-tracking
 import { ProductionTrackingComponent } from './production-tracking/production-tracking.component';
 import { QuantityEntryComponent } from './quantity-entry/quantity-entry.component';
 import { DailyQuantityEntryComponent } from './daily-quantity-entry/daily-quantity-entry.component';
+import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
 
 
 @NgModule({
@@ -48,7 +49,9 @@ import { DailyQuantityEntryComponent } from './daily-quantity-entry/daily-quanti
     QuantityTrackingComponent,
     ProductionTrackingComponent,
     QuantityEntryComponent,
-    DailyQuantityEntryComponent
+    DailyQuantityEntryComponent,
+    NoQtyBudgetComponent
+    
   ],
   entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent,ProductionTrackingComponent,DailyQuantityEntryComponent],
   imports: [
