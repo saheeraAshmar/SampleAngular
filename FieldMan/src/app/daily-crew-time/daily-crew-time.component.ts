@@ -35,36 +35,15 @@ export class DailyCrewTimeComponent implements OnInit {
     this.CrewTimeEntries=[];
     this.CrewMembers=[];
     this.CrewDailyTotal_Area=[
-      {
-        "reg":0,
-        "ot":0,
-        "dt":0,
-        "other":0
-      }
+      { "reg":0,"ot":0,"dt":0,"other":0 }
     ];
 
     this.CrewDailyTotal=[
-      {
-        "reg":0,
-        "ot":0,
-        "dt":0,
-        "other":0
-      }
+      {"reg":0,"ot":0,"dt":0,"other":0 }
     ];
    
   }
-  // fetch(cb) {
-  //   const req = new XMLHttpRequest();
-   
-  //   req.open('GET', `./daily-crew-time/company.json`);
-
-  //   req.onload = () => {
-  //     cb(JSON.parse(req.response));
-  //   };
-
-  //   req.send();
-  // }
-
+  
   get area(): string {
     // transform value for display
     return this._area.toUpperCase();
@@ -96,340 +75,89 @@ export class DailyCrewTimeComponent implements OnInit {
 
   UpdateCrewTimeTab(CrewId):void{
     this.CrewTimeEntries_WithoutFilter=[
-      {        
-        "crew":'01-1000.001',
-        "costCode":"B-01",
-        "costCodeDescription":"BR WALES",
-        "area":"",
-        "reg":1,
-        "ot":0,
-        "dt":0,
-        "other":0,
-        "otherType":""
-    },
-    {
-        "crew":'01-1000.001',
-        "costCode":"B-02",
-        "costCodeDescription":"BRACES",
-        "area":"P2",
-        "reg":2,
-        "ot":0,
-        "dt":0,
-        "other":0,
-        "otherType":""
-    },{
-      "crew":'01-1000.001',
-      "costCode":"B-01",
-      "costCodeDescription":"BR WALES",
-      "area":"",
-      "reg":3,
-      "ot":0,
-      "dt":0,
-      "other":0,
-      "otherType":""
-  },
-  {
-      "crew":'01-1000.001',
-      "costCode":"B-02",
-      "costCodeDescription":"BRACES",
-      "area":"P2",
-      "reg":4,
-      "ot":0,
-      "dt":0,
-      "other":0,
-      "otherType":""
-  },{
-    "crew":'01-1000.001',
-    "costCode":"B-01",
-    "costCodeDescription":"BR WALES",
-    "area":"",
-    "reg":5,
-    "ot":0,
-    "dt":0,
-    "other":0,
-    "otherType":""
-},{
-    "crew":'01-1000.001',
-    "costCode":"B-02",
-    "costCodeDescription":"BRACES",
-    "area":"P2",
-    "reg":6,
-    "ot":0,
-    "dt":0,
-    "other":0,
-    "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":7,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":8,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":9,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":10,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":11,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":12,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":13,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":14,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":15,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":16,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":17,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":18,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":19,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":20,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":21,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":22,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":23,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":24,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},{
-  "crew":'01-1000.001',
-  "costCode":"B-01",
-  "costCodeDescription":"BR WALES",
-  "area":"",
-  "reg":25,
-  "ot":0,
-  "dt":0,
-  "other":0,
-  "otherType":""
-},
-{
-  "crew":'01-1000.001',
-  "costCode":"B-02",
-  "costCodeDescription":"BRACES",
-  "area":"P2",
-  "reg":26,
-  "ot":26,
-  "dt":26,
-  "other":26,
-  "otherType":""
-}
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      },
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      },
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      },
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      },
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      },
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      },
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      },
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      },
+      { "crew":'01-1000.001',"costCode":"B-01","costCodeDescription":"BR WALES","area":"",
+        "reg":1,"ot":0,"dt":0,"other":0,"otherType":""
+      },
+      {"crew":'01-1000.001',"costCode":"B-02","costCodeDescription":"BRACES","area":"P2",
+        "reg":2, "ot":0,"dt":0,"other":0,"otherType":""
+      }
     ];
     
     this.CrewTimeEntries=this.CrewTimeEntries_WithoutFilter
 
     this.CrewMembers=[
-      {
-        employeeName:"Abc, Pqr",
-        role:"Carpenter"
-      },
-      {
-        employeeName:"Mnv,petg",
-        role:"Labor"
-      },
-      {
-        employeeName:"ujfdsd,Pdsd",
-        role: "Assistant"
-      },{
-        employeeName:"Abc, Pqr",
-        role:"Carpenter"
-      },
-      {
-        employeeName:"Mnv,petg",
-        role:"Labor"
-      },
-      {
-        employeeName:"ujfdsd,Pdsd",
-        role: "Assistant"
-      },
-      {
-        employeeName:"Abc, Pqr",
-        role:"Carpenter"
-      },
-      {
-        employeeName:"Mnv,petg",
-        role:"Labor"
-      },
-      {
-        employeeName:"ujfdsd,Pdsd",
-        role: "Assistant"
-      },{
-        employeeName:"Abc, Pqr",
-        role:"Carpenter"
-      },
-      {
-        employeeName:"Mnv,petg",
-        role:"Labor"
-      },
-      {
-        employeeName:"ujfdsd,Pdsd",
-        role: "Assistant"
-      },{
-        employeeName:"Abc, Pqr",
-        role:"Carpenter"
-      },
-      {
-        employeeName:"Mnv,petg",
-        role:"Labor"
-      },
-      {
-        employeeName:"ujfdsd,Pdsd",
-        role: "Assistant"
-      }
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Mnv,petg",role:"Labor"},
+      {employeeName:"ujfdsd,Pdsd",role: "Assistant"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Mnv,petg",role:"Labor"},
+      {employeeName:"ujfdsd,Pdsd",role: "Assistant"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Mnv,petg",role:"Labor"},
+      {employeeName:"ujfdsd,Pdsd",role: "Assistant"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Mnv,petg",role:"Labor"},
+      {employeeName:"ujfdsd,Pdsd",role: "Assistant"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Mnv,petg",role:"Labor"},
+      {employeeName:"ujfdsd,Pdsd",role: "Assistant"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
+      {employeeName:"Mnv,petg",role:"Labor"},
+      {employeeName:"ujfdsd,Pdsd",role: "Assistant"},
+      {employeeName:"Abc, Pqr",role:"Carpenter"},
     ];
     
     this.UpdateCrewDailyTotals();

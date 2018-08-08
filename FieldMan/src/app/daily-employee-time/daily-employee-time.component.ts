@@ -29,196 +29,62 @@ export class DailyEmployeeTimeComponent implements OnInit {
   constructor(private modalService: NgbModal) { 
     this.EmployeeTimeEntries=[
       {
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.001","employee":"Abc PQR","area":"","costCode":"B-01",
+        "category":"OC","hours":5,"hrsType":"OT","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.002","employee":"Mnp wys","area":"P2","costCode":"G-07",
+        "category":"L","hours":8,"hrsType":"REG","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.001","employee":"Abc PQR","area":"","costCode":"B-01",
+        "category":"OC","hours":5,"hrsType":"OT","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.002","employee":"Mnp wys","area":"P2","costCode":"G-07",
+        "category":"L","hours":8,"hrsType":"REG","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.001","employee":"Abc PQR","area":"","costCode":"B-01",
+        "category":"OC","hours":5,"hrsType":"OT","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.002","employee":"Mnp wys","area":"P2","costCode":"G-07",
+        "category":"L","hours":8,"hrsType":"REG","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.001","employee":"Abc PQR","area":"","costCode":"B-01",
+        "category":"OC","hours":5,"hrsType":"OT","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.002","employee":"Mnp wys","area":"P2","costCode":"G-07",
+        "category":"L","hours":8,"hrsType":"REG","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.001","employee":"Abc PQR","area":"","costCode":"B-01",
+        "category":"OC","hours":5,"hrsType":"OT","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
-      },{
-        "crew":"01-1000.001",
-        "employee":"Abc PQR",
-        "area":"",
-        "costCode":"B-01",
-        "category":"OC",
-        "hours":5,
-        "hrsType":"OT",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.002","employee":"Mnp wys","area":"P2","costCode":"G-07",
+        "category":"L","hours":8,"hrsType":"REG","workDate":"7/31/2018"
       },
       {
-        "crew":"01-1000.002",
-        "employee":"Mnp wys",
-        "area":"P2",
-        "costCode":"G-07",
-        "category":"L",
-        "hours":8,
-        "hrsType":"REG",
-        "workDate":"7/31/2018"
+        "crew":"01-1000.001","employee":"Abc PQR","area":"","costCode":"B-01",
+        "category":"OC","hours":5,"hrsType":"OT","workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002","employee":"Mnp wys","area":"P2","costCode":"G-07",
+        "category":"L","hours":8,"hrsType":"REG","workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.001","employee":"Abc PQR","area":"","costCode":"B-01",
+        "category":"OC","hours":5,"hrsType":"OT","workDate":"7/31/2018"
+      },
+      {
+        "crew":"01-1000.002","employee":"Mnp wys","area":"P2","costCode":"G-07",
+        "category":"L","hours":8,"hrsType":"REG","workDate":"7/31/2018"
       }
+      
     ];
   }
 

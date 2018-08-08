@@ -27,7 +27,7 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column name="Reg" headerClass="style-header" cellClass="style-cell" [width]="60">
+      <ngx-datatable-column name="Reg" headerClass="style-header" cellClass="editable-cell" [width]="60">
         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
           <span title="Double click to edit" (dblclick)="editing[rowIndex + '-reg'] = true" *ngIf="!editing[rowIndex + '-reg']">
             {{value}}
@@ -37,7 +37,7 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column name="OT" headerClass="style-header" cellClass="style-cell" [width]="60">
+      <ngx-datatable-column name="OT" headerClass="style-header" cellClass="editable-cell" [width]="60">
         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
           <span title="Double click to edit" (dblclick)="editing[rowIndex + '-ot'] = true" *ngIf="!editing[rowIndex + '-ot']">
             {{value}}
@@ -47,7 +47,7 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column name="DT" headerClass="style-header" cellClass="style-cell" [width]="60">
+      <ngx-datatable-column name="DT" headerClass="style-header" cellClass="editable-cell" [width]="60">
         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
           <span title="Double click to edit" (dblclick)="editing[rowIndex + '-dt'] = true" *ngIf="!editing[rowIndex + '-dt']">
             {{value}}
@@ -57,7 +57,7 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column name="Other" headerClass="style-header" cellClass="style-cell" [width]="60">
+      <ngx-datatable-column name="Other" headerClass="style-header" cellClass="editable-cell" [width]="60">
         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
           <span title="Double click to edit" (dblclick)="editing[rowIndex + '-other'] = true" *ngIf="!editing[rowIndex + '-other']">
             {{value}}
@@ -67,7 +67,7 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column name="Other Type" headerClass="style-header" cellClass="style-cell" [width]="87">
+      <ngx-datatable-column name="Other Type" headerClass="style-header" cellClass="editable-cell" [width]="87">
         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
           <span title="Double click to edit" (dblclick)="editing[rowIndex + '-otherType'] = true" *ngIf="!editing[rowIndex + '-otherType']"
             style="display: inline-block;width:50px;height:100px;">

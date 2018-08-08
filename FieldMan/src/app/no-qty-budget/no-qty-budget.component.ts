@@ -7,8 +7,31 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./no-qty-budget.component.css']
 })
 export class NoQtyBudgetComponent implements OnInit {
-
-  constructor() { }
+  NoBudgetCostCodes=[]
+  constructor() {
+    this.NoBudgetCostCodes=[
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+      {"CostCode":"G-02","Area":"P2","CostCodeDesc":"LAGGING"},
+      {"CostCode":"X-05","Area":"P4","CostCodeDesc":"DIGGING"},
+    ]
+   }
 
   ngOnInit() {
   }

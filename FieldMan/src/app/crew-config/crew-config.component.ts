@@ -72,7 +72,97 @@ export class CrewConfigComponent implements OnInit{
         "Name":"ABC;  PQR",
         "CurrentCrew":"",
         "CurrentJob":""
-      }
+      },
+      {
+        "Role":"OPER.ENIGINEERS","EmployeeId":87451, "Name":"ADAM; JOSEPH E", "CurrentCrew":"01-1000.001",
+        "CurrentJob":"01-1000"
+        },
+        {
+          "Role":"CARPENTERS",
+          "EmployeeId":6124,
+          "Name":"AGUILAR;  WILSON JIMENEZ",
+          "CurrentCrew":"",
+          "CurrentJob":""
+        },
+        {
+          "Role":"EMPLOYEE",
+          "EmployeeId":3333,
+          "Name":"ABC;  PQR",
+          "CurrentCrew":"",
+          "CurrentJob":""
+        },
+        {
+          "Role":"OPER.ENIGINEERS","EmployeeId":87451, "Name":"ADAM; JOSEPH E", "CurrentCrew":"01-1000.001",
+          "CurrentJob":"01-1000"
+          },
+          {
+            "Role":"CARPENTERS",
+            "EmployeeId":6124,
+            "Name":"AGUILAR;  WILSON JIMENEZ",
+            "CurrentCrew":"",
+            "CurrentJob":""
+          },
+          {
+            "Role":"EMPLOYEE",
+            "EmployeeId":3333,
+            "Name":"ABC;  PQR",
+            "CurrentCrew":"",
+            "CurrentJob":""
+          },
+          {
+            "Role":"OPER.ENIGINEERS","EmployeeId":87451, "Name":"ADAM; JOSEPH E", "CurrentCrew":"01-1000.001",
+            "CurrentJob":"01-1000"
+            },
+            {
+              "Role":"CARPENTERS",
+              "EmployeeId":6124,
+              "Name":"AGUILAR;  WILSON JIMENEZ",
+              "CurrentCrew":"",
+              "CurrentJob":""
+            },
+            {
+              "Role":"EMPLOYEE",
+              "EmployeeId":3333,
+              "Name":"ABC;  PQR",
+              "CurrentCrew":"",
+              "CurrentJob":""
+            },
+            {
+              "Role":"OPER.ENIGINEERS","EmployeeId":87451, "Name":"ADAM; JOSEPH E", "CurrentCrew":"01-1000.001",
+              "CurrentJob":"01-1000"
+              },
+              {
+                "Role":"CARPENTERS",
+                "EmployeeId":6124,
+                "Name":"AGUILAR;  WILSON JIMENEZ",
+                "CurrentCrew":"",
+                "CurrentJob":""
+              },
+              {
+                "Role":"EMPLOYEE",
+                "EmployeeId":3333,
+                "Name":"ABC;  PQR",
+                "CurrentCrew":"",
+                "CurrentJob":""
+              },
+              {
+                "Role":"OPER.ENIGINEERS","EmployeeId":87451, "Name":"ADAM; JOSEPH E", "CurrentCrew":"01-1000.001",
+                "CurrentJob":"01-1000"
+                },
+                {
+                  "Role":"CARPENTERS",
+                  "EmployeeId":6124,
+                  "Name":"AGUILAR;  WILSON JIMENEZ",
+                  "CurrentCrew":"",
+                  "CurrentJob":""
+                },
+                {
+                  "Role":"EMPLOYEE",
+                  "EmployeeId":3333,
+                  "Name":"ABC;  PQR",
+                  "CurrentCrew":"",
+                  "CurrentJob":""
+                }
     ];
     
   

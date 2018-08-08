@@ -90,7 +90,7 @@
           </div>
        </div>
        <div class="row" style="margin: 10px">
-          <div class="col col-md-5" style="width: 533px;">
+          <div class="col col-md-6" style="max-width: 528px;">
               
               <ngx-datatable #dataTableEmployeeList class="material datatable-EmployeeList" [headerHeight]="50" 
               [footerHeight]="40" [rowHeight]="35" [rows]="EmployeeList" [scrollbarV]="true"
@@ -117,7 +117,7 @@
                   </ng-template>
                 </ngx-datatable-column>
 
-              <ngx-datatable-column name="Current Job" prop="CurrentJob" headerClass="style-header" cellClass ="style-cell"  >
+              <ngx-datatable-column name="Current Job" prop="CurrentJob" headerClass="style-header" cellClass ="style-cell" [width]="96"  >
                 <ng-template ngx-datatable-cell-template let-value="value">
                   {{value}}
                 </ng-template>
@@ -179,7 +179,7 @@
                   </ng-template>
                 </ngx-datatable-column>
 
-              <ngx-datatable-column name="Role" prop="Role" headerClass="style-header" [width]="125" >
+              <ngx-datatable-column name="Role" prop="Role" headerClass="style-header" >
                 <ng-template ngx-datatable-cell-template let-value="value">
                   {{value}}
                 </ng-template>

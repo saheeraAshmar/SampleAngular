@@ -18,9 +18,19 @@
 .style-header{
     text-align: center!important;    
 }
+
 .style-cell{
     text-align: center!important;
 }
+
+.editable-cell{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: #fff0c9;
+    text-align: center!important;
+}
+    
+
+
 .style-button-cell{
     position: relative;
 }

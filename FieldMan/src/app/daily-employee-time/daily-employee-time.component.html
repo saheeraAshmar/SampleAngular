@@ -16,7 +16,7 @@
           </ng-template>
         </ngx-datatable-column> 
 
-        <ngx-datatable-column name="Area" headerClass="style-header"  cellClass ="style-cell" [width]="78"  >
+        <ngx-datatable-column name="Area" headerClass="style-header"  cellClass ="editable-cell" [width]="78"  >
           <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
           <span title="Double click to edit" (dblclick)="editing[rowIndex + '-area'] = true"  *ngIf="!editing[rowIndex + '-area']" style="display: inline-block;width:50px;height:100px;">
               {{value}}            
@@ -31,7 +31,7 @@
           </ng-template>
         </ngx-datatable-column> 
           
-        <ngx-datatable-column name="CostCode" headerClass="style-header" cellClass ="style-cell" [width]="80"  >
+        <ngx-datatable-column name="CostCode" headerClass="style-header" cellClass ="editable-cell" [width]="80"  >
           <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
             <span title="Double click to edit" (dblclick)="editing[rowIndex + '-costCode'] = true" *ngIf="!editing[rowIndex + '-costCode']">
               {{value}}
@@ -51,7 +51,7 @@
           </ng-template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="Hours" headerClass="style-header" cellClass ="style-cell" [width]="60">
+        <ngx-datatable-column name="Hours" headerClass="style-header" cellClass ="editable-cell" [width]="60">
           <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
             <span title="Double click to edit" (dblclick)="editing[rowIndex + '-hours'] = true" *ngIf="!editing[rowIndex + '-hours']">
               {{value}}
@@ -60,7 +60,7 @@
           </ng-template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column name="HRS Type" headerClass="style-header" cellClass ="style-cell" [width]="80"  >
+        <ngx-datatable-column name="HRS Type" headerClass="style-header" cellClass ="editable-cell" [width]="80"  >
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
               <span title="Double click to edit" (dblclick)="editing[rowIndex + '-hrsType'] = true" *ngIf="!editing[rowIndex + '-hrsType']">
                 {{value}}
