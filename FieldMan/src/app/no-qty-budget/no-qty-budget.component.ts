@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-no-qty-budget',
   templateUrl: './no-qty-budget.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./no-qty-budget.component.css']
 })
 export class NoQtyBudgetComponent implements OnInit {

@@ -1,0 +1,6 @@
+@media screen {
+    .modal-adaptive .modal-lg {
+        width: 65% !important;
+        max-width: calc(65%);
+    }
+}

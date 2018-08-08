@@ -1,0 +1,7 @@
+.datatable-NoBudgetCostCode .datatable-body{
+    height: 300px !important;
+}
+
+.datatable-NoBudgetCostCode .datatable-body-cell-label{
+    font-size: 9pt
+}

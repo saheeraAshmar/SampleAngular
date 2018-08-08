@@ -5,6 +5,7 @@ import { NgbModalOptions, NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstr
 @Component({
   selector: 'app-quantity-entry',
   templateUrl: './quantity-entry.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./quantity-entry.component.css'],
  
 })

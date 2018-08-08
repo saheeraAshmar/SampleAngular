@@ -38,76 +38,6 @@
     text-align: center
 }
 
-.datatable-CrewTimeEntry .datatable-body{
-    height: 377px !important;
-}
-
-.datatable-CrewDailyTotal .datatable-body-cell{
-    border: none;
-}
-
-.datatable-crewMembers .datatable-body{
-    height: 218px !important;
-    width:330px !important;
-}
-
-.datatable-EmployeeTimeEntry .datatable-body{
-    height: 377px !important;
-}
-
-.datatable-Reimbursables .datatable-body{
-    height: 377px !important;
-}
-
-.datatable-EmployeeList .datatable-body{
-    height: 377px !important;
-}
-
-.datatable-CrewMemberList .datatable-body{
-    height: 377px !important;
-}
-.datatable-quantityEntry .datatable-body{
-    height: 300px !important;
-}
-
-.datatable-DailyquantityEntry .datatable-body{
-    height: 26px !important
-}
-
-.datatable-DailyquantityEntry .datatable-body-row{
-    border-bottom: none;
-    border-right: 1px solid black !important
-}
-
-.space-header{
-    background-color: unset !important
-}
-.datatable-quantityEntry .datatable-body-cell-label{
-    font-size: 9pt
-}
-
-.datatable-EmployeeList .datatable-body-cell-label{
-    font-size: 9pt
-}
-
-.datatable-CrewMemberList .datatable-body-cell-label{
-    font-size: 9pt
-}
-
-.datatable-CrewDailyTotal .datatable-body-row {
-    border-bottom: none ;
-}
-
-
-.datatable-QuantityTracking .datatable-body{
-    height: 500px !important;
-}
-
-.ngx-datatable.material{
-    box-shadow: unset;
-    border: 1px solid black;
-}
-
 .center-align{
     display: flex;
   align-items: center;
@@ -146,6 +76,11 @@
 }
 
 /*DATA TABLE -  COMMON CSS*/
+
+.ngx-datatable.material{
+    box-shadow: unset;
+    border: 1px solid black;
+}
 
 .datatable-body-row{
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);

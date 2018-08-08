@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ProductionTrackingComponent } from '../production-tracking/production-tracking.component';
 import { NgbModalOptions, NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-quantity-tracking',
   templateUrl: './quantity-tracking.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./quantity-tracking.component.css']
 })
 export class QuantityTrackingComponent implements OnInit {
@@ -47,7 +48,16 @@ export class QuantityTrackingComponent implements OnInit {
         "CompletedLFPerc":""
       }
     ];
-    this.QtyWeekEndDates=[];
+    this.QtyWeekEndDates=[
+      {
+          "SIPWeekEndDate":"08/08/2018",
+          "Finalized":"No"          
+      },
+      {
+        "SIPWeekEndDate":"05/07/2017",
+        "Finalized":"Yes"          
+    }
+    ];
   }
 
 

@@ -1,7 +1,16 @@
-.style-header{
-    text-align: center!important
+.datatable-CrewTimeEntry .datatable-body{
+    height: 377px !important;
 }
 
-.datatable-header-cell{
-    text-align: center!important
+.datatable-CrewDailyTotal .datatable-body-cell{
+    border: none;
+}
+
+.datatable-crewMembers .datatable-body{
+    height: 218px !important;
+    width:330px !important;
+}
+
+.datatable-CrewDailyTotal .datatable-body-row {
+    border-bottom: none ;
 }

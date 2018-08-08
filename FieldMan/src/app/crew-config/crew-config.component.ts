@@ -7,13 +7,8 @@ import {NgbModal, NgbActiveModal, NgbModalOptions} from '@ng-bootstrap/ng-bootst
   selector: 'app-crew-config',
   templateUrl: './crew-config.component.html',
   encapsulation: ViewEncapsulation.None,
-  styles: [`
-    @media screen {
-        .modal-adaptive .modal-lg {
-            width: 70% !important;
-            max-width: calc(75%);
-        }
-        `]
+  
+  styleUrls: ['./crew-config.component.css']
 })
 export class CrewConfigComponent implements OnInit{ 
   Roles=[];

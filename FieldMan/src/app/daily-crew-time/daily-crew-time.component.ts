@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { HrType } from '../BusinessModel/HRType';
 import { Employee } from '../BusinessModel/employee';
 
 @Component({
   selector: 'app-daily-crew-time',
   templateUrl: './daily-crew-time.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./daily-crew-time.component.css']
 })
 export class DailyCrewTimeComponent implements OnInit {

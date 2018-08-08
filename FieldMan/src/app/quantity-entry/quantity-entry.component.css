@@ -1,0 +1,7 @@
+.datatable-quantityEntry .datatable-body{
+    height: 300px !important;
+}
+
+.datatable-quantityEntry .datatable-body-cell-label{
+    font-size: 9pt
+}

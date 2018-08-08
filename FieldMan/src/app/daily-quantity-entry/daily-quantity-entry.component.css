@@ -1,0 +1,9 @@
+.datatable-DailyquantityEntry .datatable-body{
+    height: 26px !important
+}
+
+.datatable-DailyquantityEntry .datatable-body-row{
+    border-bottom: none;
+    border-right: 1px solid black !important
+}
+

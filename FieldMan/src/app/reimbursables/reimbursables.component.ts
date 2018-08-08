@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { NgbModalOptions, NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { NewReimbComponent } from '../new-reimb/new-reimb.component';
@@ -7,6 +7,7 @@ import { TimeNoteComponent } from '../time-note/time-note.component';
 @Component({
   selector: 'app-reimbursables',
   templateUrl: './reimbursables.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./reimbursables.component.css']
 })
 export class ReimbursablesComponent implements OnInit {

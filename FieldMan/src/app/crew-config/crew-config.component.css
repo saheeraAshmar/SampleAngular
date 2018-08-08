@@ -1,3 +1,22 @@
-.modal-opened{
-    opacity: 1 !important;
+@media screen {
+    .modal-adaptive .modal-lg {
+        width: 70% !important;
+        max-width: calc(75%);
+    }
+}
+
+.datatable-EmployeeList .datatable-body{
+    height: 377px !important;
+}
+
+.datatable-CrewMemberList .datatable-body{
+    height: 377px !important;
+}
+
+.datatable-EmployeeList .datatable-body-cell-label{
+    font-size: 9pt
+}
+
+.datatable-CrewMemberList .datatable-body-cell-label{
+    font-size: 9pt
 }

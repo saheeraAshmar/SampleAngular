@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {NgbModal, NgbActiveModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-daily-quantity-entry',
   templateUrl: './daily-quantity-entry.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./daily-quantity-entry.component.css']
 })
 export class DailyQuantityEntryComponent implements OnInit {

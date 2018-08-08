@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import {NgbDateStruct, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
@@ -8,6 +8,7 @@ import { TimeNoteComponent } from '../time-note/time-note.component';
 @Component({
   selector: 'app-daily-employee-time',
   templateUrl: './daily-employee-time.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./daily-employee-time.component.css'],
   providers: [NgbModal]
 })
