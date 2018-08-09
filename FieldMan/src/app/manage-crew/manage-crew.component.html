@@ -1,5 +1,4 @@
-<!-- <div class="modal-dialog">
-  <div class="modal-content" > -->
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <div class="modal-header">
         <h4 class="modal-title">{{title}}</h4>
       <button type="button" class="close" (click)="activeModal.dismiss('Cross click')" >&times;</button>
@@ -10,27 +9,43 @@
      <div class="row">
        <div class="col col-md-4">
          CREW ID:
-         <input type="text" class="form-control"  disabled="true" [(ngModel)]="Crew.CrewId">       
+         <input type="text" class="form-control" name="CrewId" disabled="true" [(ngModel)]="Crew.CrewId" #CrewId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && CrewId.invalid }" required>       
+         <div *ngIf="f.submitted && CrewId.invalid" class="invalid-feedback">
+            <div *ngIf="CrewId.errors.required">Crew ID is required</div>            
+        </div>
        </div>
-       <div class="col col-md-8" >
+       <div class="col col-md-8 form-group" >
          Crew Description:
-         <input type="text" class="form-control" [(ngModel)]="Crew.CrewDescription">
+         <input type="text" class="form-control" name="CrewDescription" [(ngModel)]="Crew.CrewDescription" #CrewDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && CrewDescription.invalid }" 
+         required minlength="3" maxlength="10"  [pattern]="CrewDescPattern">
+         <div *ngIf="f.submitted && CrewDescription.invalid" class="invalid-feedback">
+            <div *ngIf="CrewDescription.errors.required">Crew Description is required</div>
+            <div *ngIf="CrewDescription.errors.minlength">Crew Description requires minimum 3 characters</div>
+            <div *ngIf="CrewDescription.errors.maxlength">Crew Description allows maximum 10 characters</div>
+            <div *ngIf="CrewDescription.errors.pattern">At least one alphabet required and No special characters allowed</div>
+        </div>
        </div>
      </div>
      <div class="row">
         <div class="col col-md-4"></div>
         <div class="col col-md-4">
             Crew HRS / DAY :
-            <input type="text" class="form-control" [(ngModel)]="Crew.ShiftLength" >
+            <input type="number" class="form-control" name="ShiftLength" [(ngModel)]="Crew.ShiftLength" #ShiftLength="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ShiftLength.invalid }" 
+            required min="1">
+            <div *ngIf="f.submitted && ShiftLength.invalid" class="invalid-feedback">
+                <div *ngIf="ShiftLength.errors.required">Shift Length is required</div>
+                <div *ngIf="ShiftLength.errors.min">Minimum Value is 1</div>
+            </div>
         </div>
         <div class="col col-md-4 checkbox" *ngIf="IsUpdate" style="margin-top: 27px;text-align: -webkit-center">
-          <label><input type="checkbox" [(ngModel)] = "!Crew.IsActive" >Mark this Crew As INACTIVE</label>         
+          <label><input type="checkbox" [(ngModel)] = "!Crew.IsActive" [ngModelOptions]="{standalone: true}" >Mark this Crew As INACTIVE</label>         
         </div>
      </div>
 
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer form-group">
         <button type="button" class="btn btn-danger mr-auto" *ngIf="IsUpdate" >Delete This Crew</button>
-        <button type="button" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')"  >Cancel</button>
     </div>
+  </form>

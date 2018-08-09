@@ -20,6 +20,10 @@ export class ManageCrewComponent implements Crew,OnInit {
   IsUpdate:Boolean;
   title:string;
   SelectedCrew:String
+
+
+  //at least one character
+  CrewDescPattern:string="[a-zA-Z0-9]*[a-zA-Z][a-zA-Z0-9]*";
   
 
   constructor(public activeModal: NgbActiveModal) {    
@@ -47,6 +51,10 @@ export class ManageCrewComponent implements Crew,OnInit {
       this.IsUpdate=true;
       this.Crew=this.Crews.find(x => x.CrewId == this.CrewId);
     }
+  }
+
+  onSubmit() {
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.Crew))
   }
 
 }
