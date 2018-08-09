@@ -31,10 +31,11 @@
         <div class="col col-md-4">
             Crew HRS / DAY :
             <input type="number" class="form-control" name="ShiftLength" [(ngModel)]="Crew.ShiftLength" #ShiftLength="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ShiftLength.invalid }" 
-            required min="1">
+            required min="1" customMin="1" max="24" customMax="24">
             <div *ngIf="f.submitted && ShiftLength.invalid" class="invalid-feedback">
                 <div *ngIf="ShiftLength.errors.required">Shift Length is required</div>
-                <div *ngIf="ShiftLength.errors.min">Minimum Value is 1</div>
+                <div *ngIf="ShiftLength.errors.customMin">Minimum required Shift Length is 15</div>
+                <div *ngIf="ShiftLength.errors.customMax">Maximum Shift Length can be 24</div>
             </div>
         </div>
         <div class="col col-md-4 checkbox" *ngIf="IsUpdate" style="margin-top: 27px;text-align: -webkit-center">

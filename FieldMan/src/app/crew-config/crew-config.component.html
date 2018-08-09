@@ -1,194 +1,198 @@
+<div class="modal-header">
+  <h4 class="modal-title">Crew Configuration</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss('Cross click')">&times;</button>
 
-     <div class="modal-header">
-        <h4 class="modal-title">Crew Configuration</h4>
-       <button type="button" class="close" (click)="activeModal.dismiss('Cross click')" >&times;</button>
-       
-     </div>
-     <div class="modal-body">
-       <div class="row">
-          <div class="col col-md-6">
-            <div style="text-align: center;">
-                <label>Search Crew Resource List</label>
-                <hr size="30">
-            </div>
-              <div class="row">
-                  <div class="col col-md-4">
-                      <div class="div-header">
-                          Role
-                      </div>
-                      <div>
-                        <select class="form-control div-append-input" [(ngModel)]='SelectedRole'>
-                              <option *ngFor="let r of Roles" value={{r}}>
-                                 {{r}}
-                              </option>
-                        </select>
-                      </div>
-                  </div>
-                  <div class="col col-md-4">
-                    <div class="div-header">
-                      Name
-                    </div>
-                    <div>
-                      <input type="text" [(ngModel)]='SelectedName' class="form-control div-append-input">
-                    </div>
-                  </div>
-                  <div class="col col-md-2">
-                      <div class="checkbox">
-                        <label><input type="checkbox" value="">This Job</label>
-                      </div>
-                      <div class="checkbox">
-                          <label><input type="checkbox" value="">Unassigned</label>
-                      </div>
-                  </div>
-                  <div class="col col-md-1">
-                    <input type="button" value="Show All" class="btn btn-primary" style="margin-top: 10px">
-                  </div>
-              </div>
-           </div>
-           <div class="col col-md-6">
-              <div style="text-align: center;">
-                  <label>Crew Selection</label>
-                  <hr size="30">
-              </div>
-              <div class="row">
-               <div class="col col-md-8">
-                 <div class="div-header">
-                        Select Crew:
-                    </div>
-                    <div>
-                      <select class="form-control div-append-input" [(ngModel)]='SelectedCrew'>
-                            <option *ngFor="let c of Crews" value={{c.CrewId}}>
-                             {{c.CrewId}} : {{c.CrewDescription}}
-                            </option>
-                      </select>
-                    </div>
-                      
-               </div>
-                <div class="col col-md-4"> 
-                    <ul style="list-style-type: none;margin-left: -55px">
-                      <li>
-                        <button class="btn btn-primary btn-sm" (click)="OpenManageCrew(true)" style="margin-bottom:5px;height: 25px; ">
-                          <span>New Crew</span>
-                        </button> 
-                      </li>
-                      <li>
-                        <button class="btn btn-primary btn-sm" (click)="OpenManageCrew(false)" style="height: 25px">
-                          <span>
-                            Change
-                          </span>
-                        </button>                         
-                      </li>
-                    </ul>
-                </div>           
-              </div>              
-           </div>
-       </div>  
-
-       <div class="row">
-          <div class="col col-md-12 checkbox" style="margin-left: 714px;margin-top: -5px;" >
-              <label><input type="checkbox" value="">Show Inactive Crews</label>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col col-md-6">
+      <div style="text-align: center;">
+        <label>Search Crew Resource List</label>
+        <hr size="30">
+      </div>
+      <div class="row">
+        <div class="col col-md-4">
+          <div class="div-header">
+            Role
           </div>
-       </div>
-       <div class="row" style="margin: 10px">
-          <div class="col col-md-6" style="max-width: 528px;">
-              
-              <ngx-datatable #dataTableEmployeeList class="material datatable-EmployeeList" [headerHeight]="50" 
-              [footerHeight]="40" [rowHeight]="35" [rows]="EmployeeList" [scrollbarV]="true"
-              (activate)="onActivateEmployee($event)" 
-              [selected]="selectedEmployees"
-              [selectionType]="'multi'"              
-              (select)='onSelectEmployee($event)'>
+          <div>
+            <select class="form-control div-append-input" [(ngModel)]='SelectedRole'>
+              <option *ngFor="let r of Roles" value={{r}}>
+                {{r}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col col-md-4">
+          <div class="div-header">
+            Name
+          </div>
+          <div>
+            <input type="text" [(ngModel)]='SelectedName' class="form-control div-append-input">
+          </div>
+        </div>
+        <div class="col col-md-2">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="">This Job</label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="">Unassigned</label>
+          </div>
+        </div>
+        <div class="col col-md-1">
+          <input type="button" value="Show All" class="btn btn-primary" style="margin-top: 10px">
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-6">
+      <div style="text-align: center;">
+        <label>Crew Selection</label>
+        <hr size="30">
+      </div>
+      <div class="row">
+        <div class="col col-md-8">
+          <div class="div-header">
+            Select Crew:
+          </div>
+          <div>
+            <select class="form-control div-append-input" [(ngModel)]='SelectedCrew'>
+              <option *ngFor="let c of Crews" value={{c.CrewId}}>
+                {{c.CrewId}} : {{c.CrewDescription}}
+              </option>
+            </select>
+          </div>
 
-              <ngx-datatable-column name="Role" prop="Role" headerClass="style-header" cellClass ="style-cell" [width]="125" >
-                  <ng-template ngx-datatable-cell-template let-value="value">
-                    {{value}}
-                  </ng-template>
-                </ngx-datatable-column> 
+        </div>
+        <div class="col col-md-4">
+          <ul style="list-style-type: none;margin-left: -55px">
+            <li>
+              <button class="btn btn-primary btn-sm" (click)="OpenManageCrew(true)" style="margin-bottom:5px;height: 25px; ">
+                <span>New Crew</span>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-primary btn-sm" (click)="OpenManageCrew(false)" style="height: 25px">
+                <span>
+                  Change
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                <ngx-datatable-column name="Employee Name" prop="Name" headerClass="style-header" cellClass ="style-cell" [width]="180" >
-                    <ng-template ngx-datatable-cell-template let-value="value">
-                      {{value}}
-                    </ng-template>
-                  </ngx-datatable-column>
+  <div class="row">
+    <div class="col col-md-12 checkbox" style="margin-left: 714px;margin-top: -5px;">
+      <label>
+        <input type="checkbox" value="">Show Inactive Crews</label>
+    </div>
+  </div>
+  <div class="row" style="margin: 10px">
+    <div class="col col-md-6" style="max-width: 528px;">
 
-              <ngx-datatable-column name="Current Crew" prop="CurrentCrew" headerClass="style-header" cellClass ="style-cell" [width]="96" >
-                  <ng-template ngx-datatable-cell-template let-value="value">
-                    {{value}}
-                  </ng-template>
-                </ngx-datatable-column>
+      <ngx-datatable #dataTableEmployeeList class="material datatable-EmployeeList" [headerHeight]="50" [footerHeight]="40" [rowHeight]="35"
+        [rows]="EmployeeList" [scrollbarV]="true" (activate)="onActivateEmployee($event)" [selected]="selectedEmployees" [selectionType]="'multi'"
+        (select)='onSelectEmployee($event)'>
 
-              <ngx-datatable-column name="Current Job" prop="CurrentJob" headerClass="style-header" cellClass ="style-cell" [width]="96"  >
-                <ng-template ngx-datatable-cell-template let-value="value">
-                  {{value}}
-                </ng-template>
-              </ngx-datatable-column>
-             
+        <ngx-datatable-column name="Role" prop="Role" headerClass="style-header" cellClass="style-cell" [resizeable]="false" [sortable]="true"
+          [draggable]="false" [canAutoResize]="false" [width]="125">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
 
-             
-            </ngx-datatable>
+        <ngx-datatable-column name="Employee Name" prop="Name" headerClass="style-header" cellClass="style-cell" [resizeable]="false"
+          [sortable]="true" [draggable]="false" [canAutoResize]="false" [width]="180">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
 
-           
-          </div> 
-          <div class="col col-md-1"> 
-            <div class="row">
-                <button class="btn btn-primary btn-sm" (click)="AddCrewMembers()" style="margin-left: 43px;margin-top:160px;width: 40px;height: 40px;">
-                    <span style="font-size: x-large;display: inline-block;margin-top: -4px;">
-                      >
-                    </span>
-                  </button>
-            </div>
-            <div class="row">
-                <button class="btn btn-primary btn-sm" (click)="RemoveCrewMembers()" style="margin-left: 43px;margin-top:10px;width: 40px;height: 40px;">
-                    <span style="font-size: x-large;display: inline-block;margin-top: -4px;">
-                      <
-                    </span>
-                  </button>
-            </div>
-            
-          </div> 
-         <div class="col col-md-6" style="max-width: 594px">
-              <ngx-datatable #dataTableCrewMemberList class="material datatable-CrewMemberList" [headerHeight]="50" 
-              [footerHeight]="40" [rowHeight]="35" [rows]="CrewMemberList" [scrollbarV]="true"
-              [selected]="selectedCrewMembers"
-              [selectionType]="'multi'"
-              (activate)="onActivateCrewMember($event)"
-              (select)='onSelectCrewMember($event)'>
+        <ngx-datatable-column name="Current Crew" prop="CurrentCrew" headerClass="style-header" cellClass="style-cell" [resizeable]="false"
+          [sortable]="true" [draggable]="false" [canAutoResize]="false" [width]="96">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
 
-              <ngx-datatable-column name="Crew Lead" prop="CrewLead" headerClass="style-header" cellClass ="style-cell" [width]="50" >
-                  <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
-                    <input type="checkbox" [checked]="value" (onchange)="UpdateCrewLead(rowIndex)">
-                  </ng-template>
-              </ngx-datatable-column> 
-
-              <ngx-datatable-column name="Crew #" prop="Crew" headerClass="style-header" cellClass ="style-cell" [width]="103" >
-                <ng-template ngx-datatable-cell-template let-value="value">
-                  {{value}}
-                </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Emp #" prop="EmployeeId" headerClass="style-header" cellClass ="style-cell"  [width]="100" >
-                  <ng-template ngx-datatable-cell-template let-value="value">
-                    {{value}}
-                  </ng-template>
-                </ngx-datatable-column>
+        <ngx-datatable-column name="Current Job" prop="CurrentJob" headerClass="style-header" cellClass="style-cell" [resizeable]="false"
+          [sortable]="true" [draggable]="false" [canAutoResize]="false" [width]="96">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
 
 
-              <ngx-datatable-column name="Name" prop="Name" headerClass="style-header"  [width]="180" >
-                  <ng-template ngx-datatable-cell-template let-value="value">
-                    {{value}}
-                  </ng-template>
-                </ngx-datatable-column>
 
-              <ngx-datatable-column name="Role" prop="Role" headerClass="style-header" >
-                <ng-template ngx-datatable-cell-template let-value="value">
-                  {{value}}
-                </ng-template>
-              </ngx-datatable-column> 
-            </ngx-datatable>
-          </div> 
-       </div> 
-       
-     </div>     
-     <div class="modal-footer">
-       <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')" >Cancel</button>
-     </div>
+      </ngx-datatable>
+
+
+    </div>
+    <div class="col col-md-1">
+      <div class="row">
+        <button class="btn btn-primary btn-sm" (click)="AddCrewMembers()" style="margin-left: 43px;margin-top:160px;width: 40px;height: 40px;">
+          <span style="font-size: x-large;display: inline-block;margin-top: -4px;">
+            >
+          </span>
+        </button>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary btn-sm" (click)="RemoveCrewMembers()" style="margin-left: 43px;margin-top:10px;width: 40px;height: 40px;">
+          <span style="font-size: x-large;display: inline-block;margin-top: -4px;">
+            < </span>
+        </button>
+      </div>
+
+    </div>
+    <div class="col col-md-6" style="max-width: 594px">
+      <ngx-datatable #dataTableCrewMemberList class="material datatable-CrewMemberList" [headerHeight]="50" [footerHeight]="40"
+        [rowHeight]="35" [rows]="CrewMemberList" [scrollbarV]="true" [selected]="selectedCrewMembers" [selectionType]="'multi'"
+        (activate)="onActivateCrewMember($event)" (select)='onSelectCrewMember($event)'>
+
+        <ngx-datatable-column name="Crew Lead" prop="CrewLead" headerClass="style-header" cellClass="style-cell" [resizeable]="false"
+          [sortable]="false" [draggable]="false" [canAutoResize]="false" [width]="60">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value">
+            <input type="checkbox" name="CLead" [checked]="value" (onchange)="UpdateCrewLead(rowIndex)">
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Crew #" prop="Crew" headerClass="style-header" cellClass="style-cell" [resizeable]="false" [sortable]="true"
+          [draggable]="false" [canAutoResize]="false" [width]="103">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Emp #" prop="EmployeeId" headerClass="style-header" cellClass="style-cell" [resizeable]="false"
+          [sortable]="true" [draggable]="false" [canAutoResize]="false" [width]="100">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column name="Name" prop="Name" headerClass="style-header" [resizeable]="false" [sortable]="true" [draggable]="false"
+          [canAutoResize]="false" [width]="180">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Role" prop="Role" headerClass="style-header" [resizeable]="false" [sortable]="true" [draggable]="false"
+          [canAutoResize]="false">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')">Cancel</button>
+</div>

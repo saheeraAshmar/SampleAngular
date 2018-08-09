@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Crew } from '../BusinessModel/crew';
 import {NgbModal, NgbActiveModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 
+//import {CustomDirective} from '../CustomDirectives/custom-min-validator.directive'
+
 
 @Component({
   selector: 'app-manage-crew',
@@ -22,7 +24,7 @@ export class ManageCrewComponent implements Crew,OnInit {
   SelectedCrew:String
 
 
-  //at least one character
+  //at least one alphabet and no 
   CrewDescPattern:string="[a-zA-Z0-9]*[a-zA-Z][a-zA-Z0-9]*";
   
 
