@@ -2,11 +2,12 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { HrType } from '../BusinessModel/HRType';
 import { Employee } from '../BusinessModel/employee';
 
+
 @Component({
   selector: 'app-daily-crew-time',
   templateUrl: './daily-crew-time.component.html',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./daily-crew-time.component.css']
+  styleUrls: ['./daily-crew-time.component.css'], 
 })
 export class DailyCrewTimeComponent implements OnInit {
 
@@ -22,6 +23,8 @@ export class DailyCrewTimeComponent implements OnInit {
   @Input() HRTypes=[];
 
   editing = {};
+  Invalid={}
+
   CrewTimeEntries_WithoutFilter=[];
   CrewTimeEntries = [];
   CrewMembers=[];
@@ -49,15 +52,25 @@ export class DailyCrewTimeComponent implements OnInit {
     return this._area.toUpperCase();
   }
 
-  UpdateCrewTime(event, cell, rowIndex) {
-    console.log('inline editing rowIndex', rowIndex)
-    this.editing[rowIndex + '-' + cell] = false;
+  VaidateEntry(event,cell,rowIndex){
+    this.Invalid[rowIndex + '-' + cell] = !this.ValidEntry(cell,+event.target.value); 
+  }
+
+  UpdateCrewTime(event, cell, rowIndex,f) {   
     if(cell=="otherType")
       this.CrewTimeEntries[rowIndex][cell] = event.target.value;
-    else
-      this.CrewTimeEntries[rowIndex][cell] = +event.target.value;
+    else{
+      if(this.ValidEntry(cell,+event.target.value)){
+        //this.editing[rowIndex + '-' + cell] = false;
+        this.CrewTimeEntries[rowIndex][cell] = +event.target.value;
+      }
+      else{       
+        
+        this.Invalid[rowIndex + '-' + cell] = true;
+        return;
+      }
+    }
     this.CrewTimeEntries = [...this.CrewTimeEntries];
-    console.log('UPDATED!', this.CrewTimeEntries[rowIndex][cell]);
     this.UpdateCrewDailyTotals();
   }
 
@@ -219,6 +232,17 @@ export class DailyCrewTimeComponent implements OnInit {
 
     this.UpdateCrewDailyTotals_Area()
    
+  }
+
+  ValidEntry(cell,value){
+    let IsValid=true;
+
+    switch(cell){
+      case "reg":
+        if(value<0 || value>8)
+          IsValid=false
+    }
+    return IsValid;    
   }
 
   ngOnInit() {

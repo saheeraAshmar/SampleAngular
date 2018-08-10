@@ -14,3 +14,17 @@
 .datatable-CrewDailyTotal .datatable-body-row {
     border-bottom: none ;
 }
+
+
+.datatable-body-cell-label{
+    position: absolute;
+    top:10%
+}
+
+.edit-cell-input{
+    padding: unset !important;
+    text-align: center;
+    width: 35px !important;
+    height: 28px !important;
+    border-radius: unset !important;
+}

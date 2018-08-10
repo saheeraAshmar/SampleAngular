@@ -9,6 +9,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { CustomMinDirective } from './CustomDirectives/custom-min-validator.directive';
 import { CustomMaxDirective } from './CustomDirectives/custom-max-validator.directive';
 
+
 import { CONST_ROUTING } from './app.routing'; 
 
 import { AppComponent } from './app.component';

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Crew } from '../BusinessModel/crew';
 import {NgbModal, NgbActiveModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
+//import { FormGroup, FormControl, Form } from '../../../node_modules/@angular/forms';
 
 //import {CustomDirective} from '../CustomDirectives/custom-min-validator.directive'
 
@@ -21,8 +22,7 @@ export class ManageCrewComponent implements Crew,OnInit {
   Crew:Crew;
   IsUpdate:Boolean;
   title:string;
-  SelectedCrew:String
-
+  SelectedCrew:String 
 
   //at least one alphabet and no 
   CrewDescPattern:string="[a-zA-Z0-9]*[a-zA-Z][a-zA-Z0-9]*";
@@ -55,8 +55,17 @@ export class ManageCrewComponent implements Crew,OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit() {  
+      //controls['CrewDescription'])
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.Crew))
+  }
+
+  CheckIfValid(f){
+    //f.controls['CrewDescription'].updateValueAndValidity();
+    
+    console.log(f.controls['CrewDescription'].status)//.updateValueAndValidity())
+    //console.log(f.controls['CrewDescription'].updateValueAndValidity().STATUS)
+   // alert(f)
   }
 
 }
