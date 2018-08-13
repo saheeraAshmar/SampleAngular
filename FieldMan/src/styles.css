@@ -24,8 +24,8 @@
 }
 
 .editable-cell{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    background-color: #fff0c9;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: #fff0c9; */
     text-align: center!important;
 }
     

@@ -1,102 +1,135 @@
-
 <div class="row" style="margin-top: 15px">
-    <form name="DailyCrewTimeForm" #f="ngForm" novalidate>
+  <form name="DailyCrewTimeForm" #f="ngForm" novalidate>
     <div class="col form-group" style="min-width: 820px;width: 835px;">
-    <ngx-datatable #dailyCrewTime class="material datatable-CrewTimeEntry" [headerHeight]="50" [footerHeight]="40" [rowHeight]="37"
-      [rows]="CrewTimeEntries" [scrollbarV]="true">
+      <ngx-datatable #dailyCrewTime class="material datatable-CrewTimeEntry" [headerHeight]="50" [footerHeight]="40" [rowHeight]="37"
+        [rows]="CrewTimeEntries" [scrollbarV]="true">
 
-      <ngx-datatable-column name="Crew" headerClass="style-header" cellClass="style-cell" [width]="105">
-        <ng-template ngx-datatable-cell-template let-value="value">
-          {{value}}
-        </ng-template>
-      </ngx-datatable-column>
-
-      <ngx-datatable-column name="Cost Code" headerClass="style-header" cellClass="style-cell" [width]="72">
-        <ng-template ngx-datatable-cell-template let-value="value">
-          {{value}}
-        </ng-template>
-      </ngx-datatable-column>
-
-      <ngx-datatable-column prop="costCodeDescription" name="" headerClass="style-header" [width]="150">
-        <ng-template ngx-datatable-cell-template let-value="value">
-          {{value}}
-        </ng-template>
-      </ngx-datatable-column>
-
-      <ngx-datatable-column name="Area" headerClass="style-header" cellClass="style-cell" [width]="60">
-        <ng-template ngx-datatable-cell-template let-value="value">
-          {{value}}
-        </ng-template>
-      </ngx-datatable-column>
-
-      <ngx-datatable-column name="Reg" headerClass="style-header" cellClass="editable-cell" [width]="60">
-        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-          <span title="Double click to edit" (dblclick)="editing[rowIndex + '-reg'] = true" *ngIf="!editing[rowIndex + '-reg']">
+        <ngx-datatable-column name="Crew" headerClass="style-header" cellClass="style-cell" [width]="105">
+          <ng-template ngx-datatable-cell-template let-value="value">
             {{value}}
-          </span>
-          <input type="number" 	
-          placement="bottom" container="body" ngbTooltip="Errors" [disableTooltip]="Invalid[rowIndex + '-reg']?false:true"
-          attr.name="{{rowIndex + '-reg'}}"  class="form-control edit-cell-input" autofocus 
-          [ngClass]="{ 'is-invalid': Invalid[rowIndex + '-reg'] == true }" 
-          (blur)="UpdateCrewTime($event, 'reg', rowIndex)" (input)="VaidateEntry($event, 'reg', rowIndex)" 
-          *ngIf="editing[rowIndex+ '-reg']"  [value]="value"
-          min="0" max="8" customMin="0"/>
           </ng-template>
-      </ngx-datatable-column>
+        </ngx-datatable-column>
 
-     <ngx-datatable-column name="OT" headerClass="style-header" cellClass="editable-cell" [width]="60"> 
-        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-          <span title="Double click to edit" (dblclick)="editing[rowIndex + '-ot'] = true" *ngIf="!editing[rowIndex + '-ot']">
+        <ngx-datatable-column name="Cost Code" headerClass="style-header" cellClass="style-cell" [width]="72">
+          <ng-template ngx-datatable-cell-template let-value="value">
             {{value}}
-          </span>
-          <input autofocus min="0" (blur)="UpdateCrewTime($event, 'ot', rowIndex)" *ngIf="editing[rowIndex+ '-ot']" type="number" [value]="value"
-            style="width:35px;text-align: center" />
-        </ng-template>
-      </ngx-datatable-column>
+          </ng-template>
+        </ngx-datatable-column>
 
-      <ngx-datatable-column name="DT" headerClass="style-header" cellClass="editable-cell" [width]="60">
-        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-          <span title="Double click to edit" (dblclick)="editing[rowIndex + '-dt'] = true" *ngIf="!editing[rowIndex + '-dt']">
+        <ngx-datatable-column prop="costCodeDescription" name="" headerClass="style-header" [width]="150">
+          <ng-template ngx-datatable-cell-template let-value="value">
             {{value}}
-          </span>
-          <input autofocus min="0" (blur)="UpdateCrewTime($event, 'dt', rowIndex)" *ngIf="editing[rowIndex+ '-dt']" type="number" [value]="value"
-            style="width:35px;text-align: center" />
-        </ng-template>
-      </ngx-datatable-column>
+          </ng-template>
+        </ngx-datatable-column>
 
-      <ngx-datatable-column name="Other" headerClass="style-header" cellClass="editable-cell" [width]="60">
-        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
-          <span title="Double click to edit" (dblclick)="editing[rowIndex + '-other'] = true" *ngIf="!editing[rowIndex + '-other']">
+        <ngx-datatable-column name="Area" headerClass="style-header" cellClass="style-cell" [width]="60">
+          <ng-template ngx-datatable-cell-template let-value="value">
             {{value}}
-          </span>
-          <input autofocus min="0" (blur)="UpdateCrewTime($event, 'other', rowIndex)" *ngIf="editing[rowIndex+ '-other']" type="number" [value]="value"
-            style="width:35px;text-align: center" />
-        </ng-template>
-      </ngx-datatable-column>
+          </ng-template>
+        </ngx-datatable-column>
 
-      <ngx-datatable-column name="Other Type" headerClass="style-header" cellClass="editable-cell" [width]="87">
-        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
-          <span title="Double click to edit" (dblclick)="editing[rowIndex + '-otherType'] = true" *ngIf="!editing[rowIndex + '-otherType']"
-            style="display: inline-block;width:50px;height:100px;">
-            {{value}}
-          </span>
-          <select *ngIf="editing[rowIndex + '-otherType']" (blur)="editing[rowIndex + '-otherType'] = false" (change)="UpdateCrewTime($event, 'otherType', rowIndex)"
-            [value]="value" style="width:61px">
-            <option *ngFor="let hr of HRTypes" value={ {hr.HrTypeId}}>
-              {{hr.HrType }}
-            </option>
-          </select>
-        </ng-template>
-      </ngx-datatable-column>
+        <ngx-datatable-column name="Reg" headerClass="style-header" cellClass="editable-cell" [width]="60">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-reg'] = true" *ngIf="!editing[rowIndex + '-reg']">
+              {{value}}
+            </span>
+            <div class="tooltipDiv" *ngIf="editing[rowIndex+ '-reg']">
+              <input type="number" attr.name="{{rowIndex + '-reg'}}" class="form-control edit-cell-input" autofocus [ngClass]="{ 'is-invalid': Invalid[rowIndex + '-reg'] == true }"
+                (blur)="UpdateCrewTime($event, 'reg', rowIndex)" (input)="VaidateEntry($event, 'reg', rowIndex)" *ngIf="editing[rowIndex+ '-reg']"
+                [value]="value" min="0" max="8" />
+              <span *ngIf="Invalid[rowIndex + '-reg'] == true" class="tooltiptext">
+                {{errors[rowIndex + '-reg']}}
+              </span>
+            </div>
 
-      <ngx-datatable-column headerClass="style-header" cellClass="style-cell" >
-        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
-          <input type="button" value="X" style="color: red;font-weight: 700;line-height: normal" (click)="DeleteTimeEntry($event, rowIndex)">
-        </ng-template>
-      </ngx-datatable-column>
-    </ngx-datatable>
-      </div>
-    </form>
+          </ng-template>
+
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="OT" headerClass="style-header" cellClass="editable-cell" [width]="60">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-ot'] = true" *ngIf="!editing[rowIndex + '-ot']">
+              {{value}}
+            </span>
+
+            <div class="tooltipDiv" *ngIf="editing[rowIndex+ '-ot']">
+              <input type="number" attr.name="{{rowIndex + '-ot'}}" class="form-control edit-cell-input" autofocus [ngClass]="{ 'is-invalid': Invalid[rowIndex + '-ot'] == true }"
+                (blur)="UpdateCrewTime($event, 'ot', rowIndex)" (input)="VaidateEntry($event, 'ot', rowIndex)" *ngIf="editing[rowIndex+ '-ot']"
+                [value]="value" min="0" max="8" />
+              <span *ngIf="Invalid[rowIndex + '-ot'] == true" class="tooltiptext">
+                {{errors[rowIndex + '-ot']}}
+              </span>
+            </div>
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="DT" headerClass="style-header" cellClass="editable-cell" [width]="60">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-dt'] = true" *ngIf="!editing[rowIndex + '-dt']">
+              {{value}}
+            </span>
+            <div class="tooltipDiv" *ngIf="editing[rowIndex+ '-dt']">
+                  <input type="number" attr.name="{{rowIndex + '-dt'}}" class="form-control edit-cell-input" autofocus [ngClass]="{ 'is-invalid': Invalid[rowIndex + '-dt'] == true }"
+                    (blur)="UpdateCrewTime($event, 'dt', rowIndex)" (input)="VaidateEntry($event, 'dt', rowIndex)" *ngIf="editing[rowIndex+ '-dt']"
+                    [value]="value" min="0" max="8" />
+                  <span *ngIf="Invalid[rowIndex + '-dt'] == true" class="tooltiptext">
+                    {{errors[rowIndex + '-dt']}}
+                  </span>
+                </div>
+
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Other" headerClass="style-header" cellClass="editable-cell" [width]="60">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-other'] = true" *ngIf="!editing[rowIndex + '-other']">
+              {{value}}
+            </span>
+            <!-- <input autofocus min="0" (blur)="UpdateCrewTime($event, 'other', rowIndex)" *ngIf="editing[rowIndex+ '-other']" type="number"
+              [value]="value" style="width:35px;text-align: center" /> -->
+
+              <div class="tooltipDiv" *ngIf="editing[rowIndex+ '-other']">
+                  <input type="number" attr.name="{{'other'+rowIndex}}" class="form-control edit-cell-input" autofocus [ngClass]="{ 'is-invalid': Invalid[rowIndex + '-other'] == true }"
+                    (blur)="UpdateCrewTime($event, 'other', rowIndex)" (input)="VaidateEntry($event, 'other', rowIndex)" *ngIf="editing[rowIndex+ '-other']"
+                    [value]="value" min="0" max="8" />
+                  <span *ngIf="Invalid[rowIndex + '-other'] == true" class="tooltiptext">
+                    {{errors[rowIndex + '-other']}}
+                  </span>
+                </div>
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Other Type" headerClass="style-header" cellClass="editable-cell" [width]="87">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+            <span title="Double click to edit" (dblclick)="editing[rowIndex + '-otherType'] = true" *ngIf="!editing[rowIndex + '-otherType']"
+              style="display: inline-block;width:50px;height:100px;">
+              {{value}}
+            </span>
+           <div class="tooltipDiv" *ngIf="editing[rowIndex+ '-otherType']">
+              <select class="form-control" *ngIf="editing[rowIndex + '-otherType']"   [ngClass]="{ 'is-invalid': Invalid[rowIndex + '-otherType'] == true }"
+              (change)="VaidateEntry($event, 'otherType', rowIndex)"        
+              (blur)="UpdateCrewTime($event, 'otherType', rowIndex)"
+              [value]="value" style="width:65px;height: 28px;padding: unset">
+              <option *ngFor="let hr of HRTypes" value={{hr.HrTypeId}}>
+                {{hr.HrType }}
+              </option>
+            </select>
+            <span *ngIf="Invalid[rowIndex + '-otherType'] == true" class="tooltiptext">
+                {{errors[rowIndex + '-otherType']}}
+              </span>
+           </div>
+            
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column headerClass="style-header" cellClass="style-cell">
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+            <input type="button" value="X" style="color: red;font-weight: 700;line-height: normal" (click)="DeleteTimeEntry($event, rowIndex)">
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </form>
   <div class="col" style="margin-left:2px ">
     <div class="row" style="width:330px;">
       <ngx-datatable #crewMembers class="material datatable-crewMembers" [headerHeight]="0" [footerHeight]="0" [rowHeight]="37"
@@ -160,14 +193,14 @@
         </div>
         <div style="margin:3px 15px 3px 15px;width: 299px">
           <ngx-datatable #dailyCrewTime class="material datatable-CrewDailyTotal" [headerHeight]="25" [footerHeight]="0" [rowHeight]="25"
-            [rows]="CrewDailyTotal" >
+            [rows]="CrewDailyTotal">
             <ngx-datatable-column name="REG" headerClass="style-header" cellClass="style-cell" [width]="75">
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
             </ngx-datatable-column>
 
-            <ngx-datatable-column name="OT" headerClass="style-header" cellClass="style-cell" [width]="74" >
+            <ngx-datatable-column name="OT" headerClass="style-header" cellClass="style-cell" [width]="74">
               <ng-template ngx-datatable-cell-template let-value="value">
                 {{value}}
               </ng-template>
@@ -195,4 +228,3 @@
   </div>
 
 </div>
-

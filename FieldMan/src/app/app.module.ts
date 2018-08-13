@@ -3,11 +3,13 @@ import { RouterModule, Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { CustomMinDirective } from './CustomDirectives/custom-min-validator.directive';
 import { CustomMaxDirective } from './CustomDirectives/custom-max-validator.directive';
+
 
 
 import { CONST_ROUTING } from './app.routing'; 
@@ -56,7 +58,6 @@ import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
     NoQtyBudgetComponent,
     CustomMinDirective,
     CustomMaxDirective
-    
   ],
   entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent,ProductionTrackingComponent,DailyQuantityEntryComponent],
   imports: [
