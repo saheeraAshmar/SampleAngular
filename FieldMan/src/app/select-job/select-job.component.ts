@@ -19,11 +19,13 @@ export class SelectJobComponent implements OnInit{
   subscription: Subscription;
 
   constructor(private jobService: JobService,private modalService: NgbModal) {
-    this.CurrentJob=this.jobService.getCurrentJobObject();     
+     
   }
 
   ngOnInit() {
-   // this.CurrentJob=this.jobService.getCurrentJobObject(); 
+    //Service Calls in Constructor - NOT GOOD 
+    //TIME CONSUMING TASK are moved here
+    this.CurrentJob=this.jobService.getCurrentJobObject();    
   }
 
   getCurrentJobId():string{

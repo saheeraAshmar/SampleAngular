@@ -67,7 +67,7 @@
 
             <ngx-datatable-column name="% Completed" prop="LW_CompletedPerc" headerClass="style-header" cellClass="style-cell" [width]="85">
                 <ng-template ngx-datatable-cell-template let-value="value">
-                    {{value}}
+                    {{value | number:'1.2-2'|appendSymbol:'%'}}
                 </ng-template>
             </ngx-datatable-column>
 

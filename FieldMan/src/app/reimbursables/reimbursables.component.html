@@ -49,7 +49,7 @@
 
             <ngx-datatable-column name="Amount" prop="Amount" headerClass="style-header" cellClass ="style-cell" [width]="75" > 
               <ng-template ngx-datatable-cell-template let-value="value">
-                 {{value}}
+                 {{value | currency:'USD':true:'1.3-3'}}
               </ng-template>
             </ngx-datatable-column>
 
@@ -61,7 +61,7 @@
 
              <ngx-datatable-column name="Work Date" prop="WorkDate" headerClass="style-header" cellClass ="style-cell" [width]="85" > 
               <ng-template ngx-datatable-cell-template let-value="value">
-                {{value}}
+                  {{value | date: 'MM/dd/yyyy'}}
               </ng-template>
             </ngx-datatable-column>
 

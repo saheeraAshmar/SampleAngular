@@ -22,40 +22,40 @@ export class ReimbursablesComponent implements OnInit {
   constructor(private modalService: NgbModal) {
     this.EmployeeReimbursables=[
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       {"reimbursementItem":"Mileage","employee":"Abc Pqr","area":"","units":"7.00",
-        "um":"MILES","costCode":"G-07","Amount":"$3.78","Hours":"3","WorkDate":"08/01/2018"
+        "um":"MILES","costCode":"G-07","Amount":"3.78","Hours":"3","WorkDate":"08/01/2018"
       },
       
     ]
@@ -104,7 +104,7 @@ export class ReimbursablesComponent implements OnInit {
       "units":NewReimbEntry["units"],
       "um":NewReimbEntry["um"],
       "costCode":"",
-      "Amount":"$"+(NewReimbEntry["units"]*NewReimbEntry["unitRate"]),
+      "Amount":(NewReimbEntry["units"]*NewReimbEntry["unitRate"]),
       "Hours":NewReimbEntry["units"],
       "WorkDate":NewReimbEntry["WorkDate"]
     }

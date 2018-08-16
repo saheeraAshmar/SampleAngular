@@ -1,5 +1,6 @@
 
 <div class="row" style="margin-top: 15px">
+    <!-- <form name="DailyEmployeeTimeForm" #f="ngForm" novalidate> -->
   <div class="col" style="min-width: 975px">
     <ngx-datatable #dailyEmployeeTime class="material datatable-EmployeeTimeEntry" [headerHeight]="50" 
         [footerHeight]="40" [rowHeight]="37" [rows]="EmployeeTimeEntries" [scrollbarV]="true">
@@ -77,7 +78,7 @@
           <ngx-datatable-column name="Work Date" headerClass="style-header" cellClass ="style-cell" [width]="115">
             <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
               <span>
-                {{value}}
+                  {{value | date: 'MM/dd/yyyy'}}
               </span>              
             </ng-template>
           </ngx-datatable-column>        
@@ -94,6 +95,7 @@
     </ngx-datatable>
  
   </div>
+<!-- </form> -->
   <div class="col">
       <input type="Button" style="margin: 2px" class="btn btn-primary" value="Daily Time Report">
       <input type="Button" style="margin: 2px" class="btn btn-primary" value="Weekly Time Report">

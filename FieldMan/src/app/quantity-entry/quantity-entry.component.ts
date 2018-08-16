@@ -16,7 +16,7 @@ export class QuantityEntryComponent implements OnInit {
   constructor(private modalService: NgbModal) { 
     this.Quantities=[
       {"CostCode":"G-02","CostCodeDesc":"TRUCKING","Area":"","BudgetQuantity":100,"UM":"",
-        "LW_CompletedPerc":"","LW_Quantity":"","LW_JTDQty":"","Target":"","CompletedPerc":"",
+        "LW_CompletedPerc":100,"LW_Quantity":"","LW_JTDQty":"","Target":"","CompletedPerc":"",
         "Quantity":"","JTDQty":"",        
       },
       {"CostCode":"G-08","CostCodeDesc":"TVL-F CREW","Area":"P2","BudgetQuantity":100,"UM":"",
