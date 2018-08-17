@@ -35,6 +35,10 @@ import { DailyQuantityEntryComponent } from './daily-quantity-entry/daily-quanti
 import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
 
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +62,7 @@ import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
     NoQtyBudgetComponent,
     CustomMinDirective,
     CustomMaxDirective,
-    AppendSymbolPipe
+    AppendSymbolPipe,
   ],
   entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent,ProductionTrackingComponent,DailyQuantityEntryComponent],
   imports: [
@@ -69,9 +73,10 @@ import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
     HttpModule,
     NgxDatatableModule,
     NgbModule.forRoot(),
-    ReactiveFormsModule 
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

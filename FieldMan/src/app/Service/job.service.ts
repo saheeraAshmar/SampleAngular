@@ -6,18 +6,6 @@ import { Subject, Observable }    from 'rxjs';
 export class JobService {
 
     private SelectedJob:Job
-   
-    // getCurrentJob():Job {
-    //    return this.SelectedJob;
-    // }
-    // SetCurrentJob(job){        
-    //     this.SelectedJob=job;
-    //     this.CurrentJob=job;
-    // }
-
-    // getCurrentJobId():string{
-    //    return this.SelectedJob.jobId
-    // }
 
     private CurrentJob = new Subject<Job>();
     public Job:Observable<Job>;
@@ -27,8 +15,7 @@ export class JobService {
       this.SelectedJob=job;    
     }
 
-    getCurrentJobObject():Job{
-        
+    getCurrentJobObject():Job{        
         return this.SelectedJob;
     }
 
@@ -36,12 +23,4 @@ export class JobService {
         return this.CurrentJob.asObservable();
     }
 
-   
-    // alertJobId(job:Job):void{
-    //     alert("display job Id :"+ job.jobId);
-    // }
-    // alertmsg(msg){
-    //     alert(msg);
-    // }
-   
 }
