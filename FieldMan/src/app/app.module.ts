@@ -5,6 +5,7 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CustomMinDirective } from './CustomDirectives/custom-min-validator.directive';
 import { CustomMaxDirective } from './CustomDirectives/custom-max-validator.directive';
@@ -33,7 +34,9 @@ import { ProductionTrackingComponent } from './production-tracking/production-tr
 import { QuantityEntryComponent } from './quantity-entry/quantity-entry.component';
 import { DailyQuantityEntryComponent } from './daily-quantity-entry/daily-quantity-entry.component';
 import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
-
+import { LoginComponent } from './login/login.component';
+import {AuthGuard} from './Guards/auth.guard'
+import {AuthenticationService} from './Service/authentication.service'
 
 
 
@@ -63,6 +66,7 @@ import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
     CustomMinDirective,
     CustomMaxDirective,
     AppendSymbolPipe,
+    LoginComponent,
   ],
   entryComponents: [CrewConfigComponent,ManageCrewComponent,NewTimeEntryComponent,TimeNoteComponent,NewReimbComponent,ProductionTrackingComponent,DailyQuantityEntryComponent],
   imports: [
@@ -74,9 +78,9 @@ import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
     NgxDatatableModule,
     NgbModule.forRoot(),
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [
-    ],
+  providers: [AuthGuard,AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

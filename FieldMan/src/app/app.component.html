@@ -3,15 +3,20 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <div class="container">
-    <div class="page-header">
-  <div class="row">
+  <div class="page-header">
+    <div class="row">
+      <div class="col"  style="text-align: right" *ngIf="UserAuthenticated">
+          <button type="button" (click)="Logout()" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-log-out"></span> Log out
+          </button>
+      </div>
+     
+    </div>
+  <div class="row" style="margin-top: 10px">
     <div class="col-12 col-md-6">
       <h1>{{title}}</h1>
     </div>
-    <div class="col-12 col-md-2">
-      <label style="color:blue">{{version}}</label>
-    </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4" *ngIf="UserAuthenticated" >
       <table class="table table-bordered">
         <thead style="background-color: #ddd">
           <tr>
@@ -31,23 +36,7 @@
     </div>
   </div>
 </div>
+<app-menu [UserAuthenticated]="UserAuthenticated"></app-menu>
+<router-outlet></router-outlet>
 </div>
-<app-menu></app-menu>
 
- <router-outlet></router-outlet>
-
-<!-- <div class="container">
-  <div class="page-header"> -->
-    <!-- <div class="row">
-      <div class="col">    
-        <h1>{{title}}</h1>
-      </div>
-      <div class="col">
-        {{version}}
-      </div>
-      <div class="col">
-        Job Table
-      </div>
-    </div> -->
-  <!-- </div>
-  </div> -->

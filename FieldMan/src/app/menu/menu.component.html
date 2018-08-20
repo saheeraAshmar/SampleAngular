@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="UserAuthenticated">
   <ul class="nav nav-tabs">
       <li routerLinkActive="active"><a [routerLink]="['/dashboard']" >Dashboard</a></li>
       <li routerLinkActive="active"><a [routerLink]="['/quantityTracking']" >Quantity Tracking</a></li>

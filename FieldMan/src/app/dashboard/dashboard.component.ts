@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Job } from '../BusinessModel/job';
-import { Subscription } from 'rxjs/Subscription';
 import { JobService } from '../service/job.service';
-import { Observable }    from 'rxjs';
+import {AuthenticationService} from '../Service/authentication.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,12 +13,14 @@ export class DashboardComponent implements OnInit {
   public CurrentJob:Job;
   
 
-  constructor(private jobService:JobService) {
+  constructor(private jobService:JobService, 
+              private router: Router,
+              private AuthenticationService: AuthenticationService ) {
     this.CurrentJob= this.jobService.getCurrentJobObject();
   }
 
-  ngOnInit() {
-   
+  ngOnInit() {    
+    
   }
 
 }

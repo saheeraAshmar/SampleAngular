@@ -5,28 +5,30 @@ import { Subscription } from 'rxjs/Subscription';
 import { CrewConfigComponent } from '../crew-config/crew-config.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import {AuthenticationService} from '../Service/authentication.service'
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-select-job',
   templateUrl: './select-job.component.html',
   styles: [] ,
-  providers: [NgbModal],
 })
 export class SelectJobComponent implements OnInit{  
 
   public CurrentJob:Job;
   subscription: Subscription;
 
-  constructor(private jobService: JobService,private modalService: NgbModal) {
+  constructor(private jobService: JobService,
+              private modalService: NgbModal,
+              private router: Router,
+              private AuthenticationService: AuthenticationService) {
      
   }
 
   ngOnInit() {
-    //Service Calls in Constructor - NOT GOOD 
-    //TIME CONSUMING TASK are moved here
     this.CurrentJob=this.jobService.getCurrentJobObject();    
-  }
+  }  
 
   getCurrentJobId():string{
     return this.CurrentJob.jobId;
