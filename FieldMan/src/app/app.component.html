@@ -6,6 +6,7 @@
   <div class="page-header">
     <div class="row">
       <div class="col"  style="text-align: right" *ngIf="UserAuthenticated">
+          <i class="fa fa-user" aria-hidden="true" style="margin-right: 30px;">{{user}}</i>
           <button type="button" (click)="Logout()" class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-log-out"></span> Log out
           </button>
@@ -36,7 +37,9 @@
     </div>
   </div>
 </div>
-<app-menu [UserAuthenticated]="UserAuthenticated"></app-menu>
+<app-menu [UserAuthenticated]="UserAuthenticated">
+  
+</app-menu>
 <router-outlet></router-outlet>
 </div>
 

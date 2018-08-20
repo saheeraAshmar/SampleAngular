@@ -16,6 +16,7 @@ export class AppComponent implements OnInit,OnDestroy {
   version:string;
   CurrentJob:Job;
   subscription: Subscription;
+  user:string;
 
 
   constructor(private jobService:JobService,
@@ -26,14 +27,14 @@ export class AppComponent implements OnInit,OnDestroy {
    this.version ='1.0';
    this.CurrentJob=new Job('09-4856', 'VALLEY HS - PHASE 2 IMPRVMENTS','G VARON','S EVANS',true);
    this.jobService.setCurrentJob(this.CurrentJob);
-  // this.subscription = this.jobService.getCurrentJob().subscribe(job => { this.CurrentJob = job; });
+   var UserObject=JSON.parse(localStorage.getItem('currentUser'))
+   if(UserObject!=null){
+      this.user=UserObject.lastName+', '+UserObject.firstName
+   }
+   
   }  
 
 ngOnInit(){
-  // if(!this.UserAuthenticated){
-  //     this.router.navigate(['/login']);
-  //   }   
-  //Service Call moved here
   this.jobService.getCurrentJob().subscribe(job => { this.CurrentJob = job; });
 }
 
