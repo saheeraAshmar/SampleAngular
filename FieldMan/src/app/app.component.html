@@ -37,7 +37,7 @@
     </div>
   </div>
 </div>
-<app-menu [UserAuthenticated]="UserAuthenticated">
+<app-menu [UserAuthenticated]="UserAuthenticated" *ngIf="UserAuthenticated">
   
 </app-menu>
 <router-outlet></router-outlet>
