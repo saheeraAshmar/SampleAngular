@@ -37,6 +37,8 @@ import { NoQtyBudgetComponent } from './no-qty-budget/no-qty-budget.component';
 import { LoginComponent } from './login/login.component';
 import {AuthGuard} from './Guards/auth.guard'
 import {AuthenticationService} from './Service/authentication.service'
+import {LoadingIndicatorService} from './Service/LoadingIndicator.Service'
+import {LoadingIndicatorInterceptor} from './Service/LoadingIndicator.Interceptor'
 
 
 
@@ -80,7 +82,14 @@ import {AuthenticationService} from './Service/authentication.service'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthGuard,AuthenticationService],
+  providers: [AuthGuard,AuthenticationService,
+    LoadingIndicatorService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: (service: LoadingIndicatorService) => new LoadingIndicatorInterceptor(service),
+      multi: true,
+      deps: [LoadingIndicatorService]
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,11 @@ import { Job } from './BusinessModel/job';
 import {JobService} from './service/job.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
+
+import {  HttpClient} from '@angular/common/http';
 import { AuthenticationService } from './Service/authentication.service';
+import {LoadingIndicatorService} from './Service/LoadingIndicator.Service'
+
 
 @Component({
   selector: 'app-root',
@@ -17,11 +21,15 @@ export class AppComponent implements OnInit,OnDestroy {
   CurrentJob:Job;
   subscription: Subscription;
   user:string;
+  loading: boolean = false;
+  entries: string[] = [];
 
 
   constructor(private jobService:JobService,
    private router: Router,
-    public AuthenticationService: AuthenticationService ) {
+    public AuthenticationService: AuthenticationService,
+    private http: HttpClient,
+    private loadingIndicatorService: LoadingIndicatorService) {
   
     this.title= 'Field Reporting Manager';
    this.version ='1.0';
@@ -31,8 +39,23 @@ export class AppComponent implements OnInit,OnDestroy {
    if(UserObject!=null){
       this.user=UserObject.lastName+', '+UserObject.firstName
    }
+
+   // change isLoading status whenever notified
+   loadingIndicatorService
+   .onLoadingChanged
+   .subscribe(isLoading => this.loading = isLoading);
    
   }  
+
+  launchRequests() {
+    // posts/0 will fail
+    for (let i = 0; i < 10; i++) {
+      this.http
+        .get(`https://jsonplaceholder.typicode.com/posts/${i}`)
+        .subscribe();
+    }
+    
+  }
 
 ngOnInit(){
   this.jobService.getCurrentJob().subscribe(job => { this.CurrentJob = job; });

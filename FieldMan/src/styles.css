@@ -158,3 +158,72 @@
     border-top: 1px solid black !important
 }
 
+     
+/*Loader*/
+
+.loader-wrapper{
+    background: #e9e9e9;      
+     position: absolute;
+     /* left: 50%;
+     top: 50%;     */
+     top:0;         
+    right: 0;              
+    bottom: 0;
+    left: 0;
+    opacity: 0.5; 
+}
+
+  .app-loading {
+    left: 50%;
+    /* top: 50%; */
+    z-index: 1;    
+    margin: -75px 0 0 -75px;   
+    width: 120px;   
+    animation: spin 2s linear infinite;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+   
+  }
+  .app-loading .spinner {
+    height: 100px;
+    width: 100px;
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .app-loading .spinner .path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite;
+    stroke-linecap: round;
+    stroke: black;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+    }
+  }

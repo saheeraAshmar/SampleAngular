@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
  
 import { AuthenticationService } from '../Service/authentication.service';
+import {LoadingIndicatorService} from '../Service/LoadingIndicator.Service'
  
 @Component({
     templateUrl: 'login.component.html'
@@ -19,8 +20,15 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authenticationService: AuthenticationService
-      ) {}
+        private authenticationService: AuthenticationService,
+        private loadingIndicatorService: LoadingIndicatorService
+      ) {
+
+        // change isLoading status whenever notified
+            loadingIndicatorService
+            .onLoadingChanged
+            .subscribe(isLoading => this.loading = isLoading);
+      }
  
     ngOnInit() {
 
