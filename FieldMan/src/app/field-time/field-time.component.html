@@ -52,12 +52,14 @@
         </div>
         <div>
             <div class="input-group">
-                <input class="form-control div-append-input" style="width: 122px;border-right: unset!important" placeholder="yyyy-mm-dd" 
-                name="dp" [(ngModel)]="SelectedDate" ngbDatepicker #d="ngbDatepicker" >
-                <button class="input-group-addon div-append-input btn btn-default" type="button" style="height: 34px;width: 38px;border-left: unset!important" 
-                (click)="d.toggle();">
+                <input class="form-control div-append-input" style="width: 122px;border-right: unset!important" placeholder="MM-dd-YYYY"
+                name="dp" [(ngModel)]="SelectedDate" 
+                bsDatepicker #dp= "bsDatepicker" [maxDate]="maxDate" [(bsValue)] ="SelectedDate" (bsValueChange)="onWorkDateChanged($event)" 
+                [bsConfig]="datePickerConfig" />
+                <button type="button" class="div-append-input btn btn-default" type="button" style="box-shadow:unset;height: 34px;width: 38px;border-left: unset!important" 
+                (click)="dp.toggle();">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                </button>
+                </button>               
             </div>
         </div>
     </div>
@@ -83,7 +85,7 @@
         <div class="col col-md-2"></div>
         <div class="col col-md-2">
             <input type="button" class="btn btn-primary" value="<" style="width: 65px;" (click)="PrevDate()">      
-            <input type="button" class="btn btn-primary" value=">" style="float: right; width: 65px;" (click)="nextDate()">
+            <input type="button" class="btn btn-primary" value=">" style="float: right; width: 65px;" (click)="nextDate()" [disabled]="nextDateDisabled">
         </div>
         <div class="col col-md-2" style="text-align: center;">
             <input type="button" class="btn btn-primary" value="Configure Crew" (click)="OpenCrewConfig()">

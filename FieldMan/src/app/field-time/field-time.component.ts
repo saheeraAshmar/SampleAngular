@@ -3,8 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { CrewConfigComponent } from '../crew-config/crew-config.component';
 import { DailyCrewTimeComponent } from '../daily-crew-time/daily-crew-time.component';
-import { DailyEmployeeTimeComponent } from '../daily-employee-time/daily-employee-time.component';
-
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 import { Job } from '../BusinessModel/job';
 
@@ -16,8 +15,8 @@ import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { HrType } from '../BusinessModel/HRType';
+import { ignoreElements } from '../../../node_modules/rxjs/operators';
 
-const now = new Date();
 
 @Component({
   selector: 'app-field-time',
@@ -34,13 +33,23 @@ export class FieldTimeComponent implements OnInit {
   division:string
   Crews=[];
   HRTypes=[];
-  crew:string;
-  SelectedDate: NgbDateStruct = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
+  crew:string;  
+  SelectedDate:Date
+  maxDate:Date = new Date();
+  nextDateDisabled=true;
+  datePickerConfig: Partial<BsDatepickerConfig>;
+  
   
   @ViewChild(DailyCrewTimeComponent) DailyCrewTime:DailyCrewTimeComponent;
 
   constructor(private jobService:JobService,private modalService: NgbModal) {
     this.CurrentJob= this.jobService.getCurrentJobObject();
+    this.SelectedDate=new Date();
+    this.datePickerConfig = Object.assign({}, 
+        { containerClass: 'theme-dark-blue',
+          showWeekNumbers: false
+        });
+
     this.Areas=[
       new Area("Select",""),
       new Area(""," : Main Job"),
@@ -83,21 +92,40 @@ export class FieldTimeComponent implements OnInit {
     this.area="";
     this.division="";
   }
+  onWorkDateChanged(value: Date){   
+    if(value==null || value.toString()=="Invalid Date"){      
+      this.SelectedDate=new Date();
+    }
+    else{
+      this.SelectedDate=value;
+   }
+    this.DisableButtons();
+  }
+
+  DisableButtons(){
+    if(this.SelectedDate.setHours(0,0,0,0)>=new Date().setHours(0,0,0,0)){
+      this.nextDateDisabled=true;
+    }
+    else{
+      this.nextDateDisabled=false;
+    }
+  }
+   
 
   PrevDate():void{   
-    var cDate=new Date(this.SelectedDate.year,this.SelectedDate.month-1,this.SelectedDate.day);
-    cDate.setDate(cDate.getDate()-1);
-    this.formatDate(cDate);
+    this.SelectedDate = new Date(this.SelectedDate.setDate(this.SelectedDate.getDate()-1));
+    this.DisableButtons()   
+   
   }
 
-  nextDate():void{    
-    var cDate=new Date(this.SelectedDate.year,this.SelectedDate.month-1,this.SelectedDate.day);
-    cDate.setDate(cDate.getDate()+1);
-    this.formatDate(cDate);
+  nextDate():void{     
+    this.SelectedDate = new Date(this.SelectedDate.setDate(this.SelectedDate.getDate()+1));
+    this.DisableButtons()  
   }
-  formatDate(cDate):void{
-    this.SelectedDate = {year: cDate.getFullYear(), month: cDate.getMonth()+1, day: cDate.getDate()};
-  }
+
+  // formatDate(cDate):void{
+  //   this.SelectedDate = {year: cDate.getFullYear(), month: cDate.getMonth()+1, day: cDate.getDate()};
+  // }
 
   OpenCrewConfig():void{
     let options: NgbModalOptions = {backdrop:'static',size: 'lg',centered: true, windowClass: 'modal-adaptive modal-opened'};
@@ -143,8 +171,9 @@ export class FieldTimeComponent implements OnInit {
   }
 
   getWorkDate(){
-    var wDate=new Date(this.SelectedDate.year,this.SelectedDate.month-1,this.SelectedDate.day);
-    return (wDate.getMonth() + 1)  + '/' + wDate.getDate() + '/' +  wDate.getFullYear()
+    return this.SelectedDate;
+    // var wDate=new Date(this.SelectedDate.year,this.SelectedDate.month-1,this.SelectedDate.day);
+    // return (wDate.getMonth() + 1)  + '/' + wDate.getDate() + '/' +  wDate.getFullYear()
   }
   
 

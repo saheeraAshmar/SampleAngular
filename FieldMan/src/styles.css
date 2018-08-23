@@ -227,3 +227,17 @@
       stroke-dashoffset: -124px;
     }
   }
+
+  /*Date picker*/
+  .bs-datepicker-container{
+      padding: unset !important;
+  }
+  
+  /* .bs-datepicker-head{
+    background-color: #337ab7 !important;
+  }
+
+  .bs-datepicker-body table td.week span {
+    color: #337ab7 !important;
+} */
+

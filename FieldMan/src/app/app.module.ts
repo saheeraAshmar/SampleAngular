@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { CustomMinDirective } from './CustomDirectives/custom-min-validator.directive';
 import { CustomMaxDirective } from './CustomDirectives/custom-max-validator.directive';
@@ -80,7 +81,8 @@ import {LoadingIndicatorInterceptor} from './Service/LoadingIndicator.Intercepto
     NgxDatatableModule,
     NgbModule.forRoot(),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [AuthGuard,AuthenticationService,
     LoadingIndicatorService,
